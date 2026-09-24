@@ -1,0 +1,36 @@
+0→W
+inString(Str3,"ᴇ")→K
+If K>1
+Then
+expr(sub(Str3,K+1,length(Str3)-K))→W
+sub(Str3,1,K-1)→Str3
+End
+If sub(Str3,1,1)="⁻" and length(Str3)>1
+sub(Str3,2,length(Str3)-1)→Str3
+length(Str3)→L
+inString(Str3,".")→D
+0→F
+0→G
+For(J,1,L)
+sub(Str3,J,1)→Str5
+If inString("123456789",Str5)
+Then
+If not(F)
+J→F
+J→G
+End
+End
+0→S
+0→P
+If F
+Then
+If D
+Then
+L-F+1-(D>F)→S
+D-L→P
+Else
+G-F+1→S
+L-G→P
+End
+End
+P+W→P

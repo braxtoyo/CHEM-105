@@ -1,0 +1,94 @@
+Lbl 0
+Menu("MY NOTES","SI PREFIXES k μ n",A,"CONSTANTS c h me RH",B,"E=hc/λ + ARROWS",C,"λ=h/mv  KE  Φ",D,"En  +  RYDBERG n₁ n₂",E,"QUANTUM #S & NODES",F,"BACK",Z)
+Lbl Z
+ClrHome
+Return
+Lbl A
+ClrHome
+Disp "MY PREFIX NOTES:","T  tera   10^12","G  giga   10^9"
+Disp "M  mega   10^6","k  kilo   10^3","h  hecto  10^2"
+Disp "d  deca   10^1  (da)","b  BASE   10^0","d  deci   10^⁻1"
+Output(10,12,"ENTER=NEXT  1/2")
+Pause
+ClrHome
+Disp "c  centi  10^⁻2","m  milli  10^⁻3","μ  micro  10^⁻6"
+Disp "n  nano   10^⁻9","p  pico   10^⁻12","f  femto  10^⁻15"
+Disp "a  atto   10^⁻18","(TA ADDS: E exa 10^18,"," P peta 10^15)"
+Output(10,12,"ENTER=BACK  2/2")
+Pause
+ClrHome
+Goto 0
+Lbl B
+ClrHome
+Disp "SPEED OF LIGHT:"," c=2.99792458ᴇ8 m/s","PLANCKS:"
+Disp " h=6.62607ᴇ⁻34 J s","MASS OF ELECTRON:"," me=9.109383ᴇ⁻31 kg"
+Disp "MASS OF NEUTRON:"," mn=1.6749273ᴇ⁻27 kg","MASS OF PROTON:"
+Output(10,12,"ENTER=NEXT  1/2")
+Pause
+ClrHome
+Disp " mp=1.6726217ᴇ⁻27 kg","RYDBERGS:"," RH=1.0974ᴇ7 m⁻1"
+Output(10,12,"ENTER=BACK  2/2")
+Pause
+ClrHome
+Goto 0
+Lbl C
+ClrHome
+Disp "c=λv  ]","E=hv  ] E=hc/λ"," v = FREQUENCY"
+Disp " λ = WAVELENGTH"," E = ENERGY",""
+Disp "SIDEWAYS ARROWS:"," ► m  (MASS)"," ► v  (FREQUENCY)"
+Output(10,12,"ENTER=NEXT  1/2")
+Pause
+ClrHome
+Disp " ► E  (ENERGY)"," ◄ λ  (WAVELENGTH)","m, v, E GO TOGETHER;"
+Disp "λ GOES THE OPPOSITE WAY"
+Output(10,12,"ENTER=BACK  2/2")
+Pause
+ClrHome
+Goto 0
+Lbl D
+ClrHome
+Disp "DE BROGLIE:"," λ=h/mv"," m = MASS"
+Disp " [ PAIRED WITH:"," Ekinetic=1/2mv²",""
+Disp "WORK FUNCTION:"," Φ=hv-KEelectron"," KE = KE OF e⁻ THAT"
+Output(10,12,"ENTER=NEXT  1/2")
+Pause
+ClrHome
+Disp "      COMES OFF"
+Output(10,12,"ENTER=BACK  2/2")
+Pause
+ClrHome
+Goto 0
+Lbl E
+ClrHome
+Disp "ENERGY OF ELECTRON","WHILE IN ORBIT:"," En=-Z²RHhc/n²"
+Disp " Z = ATOMIC NUMBER","SIMPLIFIED:"," En=-Rh/n²"
+Disp " (ONLY USE IF H)"," [Rh=RHhc=2.18ᴇ⁻18 J]",""
+Output(10,12,"ENTER=NEXT  1/2")
+Pause
+ClrHome
+Disp "RYDBERG/BALMER EQUATION:"," 1/λ=RH(1/n₁²-1/n₂²)"," n₁ = LOWER"
+Disp " n₂ = HIGHER"
+Output(10,12,"ENTER=BACK  2/2")
+Pause
+ClrHome
+Goto 0
+Lbl F
+ClrHome
+Disp "n l ml ms","n = PRINCIPAL QUANTUM #"," n ≥ 1"
+Disp " -PRINCIPAL ENERGY LEVEL"," -DISTANCE FROM NUCLEUS"," -ORBITAL SIZE"
+Disp "l = ANGULAR MOMENTUM QN"," l = 0 TO n-1"," -SUBLEVEL"
+Output(10,12,"ENTER=NEXT  1/3")
+Pause
+ClrHome
+Disp " -ORBITAL TYPE"," -ORBITAL SHAPE"," l= 0-s 1-p 2-d 3-f"
+Disp "ml = MAGNETIC QUANTUM #"," ml = -l TO +l"," -ORIENTATION IN SPACE"
+Disp "","TOTAL NODES = n-1","PLANAR NODE (= l)"
+Output(10,12,"ENTER=NEXT  2/3")
+Pause
+ClrHome
+Disp " -FLAT 2D SLICE THROUGH","  ATOMIC ORBITAL","RADIAL NODE (= TOTAL-l)"
+Disp " -HOLLOW SPHERICAL GAP","  IN AN ORBITAL"
+Output(10,12,"ENTER=BACK  3/3")
+Pause
+ClrHome
+Goto 0

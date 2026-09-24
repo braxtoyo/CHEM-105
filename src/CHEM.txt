@@ -1,0 +1,24 @@
+ClrHome
+Lbl 0
+Menu("CHEM 105","UNITS ×10^x k μ n",1,"MATTER ρ=m/V n=m/M",2,"LIGHT E=hv c=λv Φ",3,"ATOM λ=h/mv Δx n l",4,"MY NOTES",5,"EQUATION SHEET",6,"MORE/SI TABLE/QUIT",7)
+Lbl 1
+prgmCHUNIT
+Goto 0
+Lbl 2
+prgmCHMATTR
+Goto 0
+Lbl 3
+prgmCHLIGHT
+Goto 0
+Lbl 4
+prgmCHATOM
+Goto 0
+Lbl 5
+prgmCHNOTES
+Goto 0
+Lbl 6
+prgmCHEQN
+Goto 0
+Lbl 7
+prgmCHREF
+Goto 0

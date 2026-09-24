@@ -1,0 +1,222 @@
+6.022141ᴇ23→N
+Lbl 0
+Menu("MATTER & MOLES","SIG FIGS  4.50►3 SF",S,"DENSITY ρ=m/V",D,"MOLES n=m/M #=n×NA",M,"ISOTOPE AVG Σ(m×%)",I,"BACK",Z)
+Lbl Z
+ClrHome
+Return
+Lbl S
+Menu("SIG FIGS","COUNT SIG FIGS",S1,"ROUND TO N SIG FIGS",S2,"CALC +- PLACE ×/ SF",S3,"RULES",S4,"BACK",0)
+Lbl S1
+ClrHome
+Disp "TYPE IT EXACTLY:","KEEP 0S + DECIMAL PT","USE EE FOR ×10^"
+Input "NUMBER:",Str3
+prgmCHSFN
+Disp "","SIG FIGS:",S,"LAST SIG DIGIT 10^x:",P
+If not(S)
+Disp "(ALL ZEROS)"
+Pause
+Goto S
+Lbl S2
+ClrHome
+Input "NUMBER:",X
+Input "# SIG FIGS:",A
+If X=0
+Goto S8
+int(log(abs(X)))→E
+If abs(X)/10^E≥10
+E+1→E
+If abs(X)/10^E<1
+E-1→E
+E-A+1→Q
+round(X/10^Q,0)*10^Q→R
+int(log(abs(R)))→B
+If abs(R)/10^B≥10
+B+1→B
+ClrHome
+Disp "ROUNDED:",R,"MANTISSA:",R/10^B,"×10^",B,"ADD TRAILING 0S IF","NEEDED TO SHOW ALL SF"
+Pause
+Goto S
+Lbl S8
+Disp "0 STAYS 0"
+Pause
+Goto S
+Lbl S3
+ClrHome
+Disp "TYPE THE CALC, E.G.","21+43.7   44.0*3","(-) KEY FOR NEGATIVE","MIX +- AND ×/ ONE STEP","AT A TIME"
+Input "CALC:",Str1
+expr(Str1)→X
+99→M
+⁻99→Q
+0→A
+0→B
+""→Str2
+Str1+")"→Str1
+For(I,1,length(Str1))
+sub(Str1,I,1)→Str6
+If inString("0123456789.ᴇ⁻",Str6)
+Then
+Str2+Str6→Str2
+Else
+If length(Str2)
+Then
+Str2→Str3
+prgmCHSFN
+If S
+Then
+min(M,S)→M
+max(Q,P)→Q
+End
+""→Str2
+End
+If Str6="+" or Str6="-"
+1→A
+If Str6="*" or Str6="/"
+1→B
+End
+End
+ClrHome
+Disp "RAW ANSWER:",X
+If M=99
+Goto SZ
+If A and B
+Goto SX
+If B and X=0
+Goto SZ
+If B
+Goto SM
+If A
+Goto SA
+Disp "SIG FIGS:",M
+Goto SZ
+Lbl SA
+round(X/10^Q,0)*10^Q→R
+Disp "+- RULE: KEEP PLACE 10^",Q,"ANSWER:",R
+Goto SZ
+Lbl SM
+int(log(abs(X)))→E
+If abs(X)/10^E≥10
+E+1→E
+If abs(X)/10^E<1
+E-1→E
+round(X/10^(E-M+1),0)*10^(E-M+1)→R
+Disp "×/ RULE: FEWEST SF",M,"ANSWER:",R
+Goto SZ
+Lbl SX
+Disp "MIXED +- AND ×/:","DO ONE STEP AT A TIME"
+Lbl SZ
+Pause
+Goto S
+Lbl S4
+ClrHome
+Disp "SIG FIG RULES (TA):","NONZERO DIGITS: SIG","CAPTIVE 0 (4.502): SIG"
+Disp "TRAILING 0 W/ DECIMAL"," (3.900): SIG","620. (DECIMAL PT): SIG"
+Disp "PLACEHOLD 0 (200): NOT","LEADING 0 (0.0014): NOT","EXACT #S: INFINITE SF"
+Output(10,12,"ENTER=NEXT  1/2")
+Pause
+ClrHome
+Disp "+- : USE PLACE VALUE"," FARTHEST LEFT"," 21+43.7=65 (ONES)"
+Disp "×/ : USE FEWEST SIG FIGS"," 44.0×3=100 (1 SF)","LAST DIGIT = ESTIMATED"
+Output(10,12,"ENTER=BACK  2/2")
+Pause
+ClrHome
+Goto S
+Lbl D
+Menu("DENSITY ρ=m/V","FIND ρ = m/V",D1,"FIND m = ρV",D2,"FIND V = m/ρ",D3,"BACK",0)
+Lbl D1
+ClrHome
+Input "MASS m (g):",M
+Input "VOLUME V (mL):",V
+ClrHome
+Disp "ρ=m/V","DENSITY (g/mL):",M/V
+Pause
+Goto D
+Lbl D2
+ClrHome
+Input "DENSITY ρ (g/mL):",P
+Input "VOLUME V (mL):",V
+ClrHome
+Disp "m=ρV","MASS (g):",P*V
+Pause
+Goto D
+Lbl D3
+ClrHome
+Input "MASS m (g):",M
+Input "DENSITY ρ (g/mL):",P
+ClrHome
+Disp "V=m/ρ","VOLUME (mL):",M/P
+Pause
+Goto D
+Lbl M
+ClrHome
+Disp "n=m/M  #=n×NA","ENTER 0 IF UNKNOWN","TIP: M CAN BE TYPED","AS 2*1.008+16.00"
+Input "MASS m (g):",A
+Input "MOLAR MASS M:",B
+Input "MOLES n:",C
+Input "# PARTICLES:",D
+If C=0 and D≠0
+D/N→C
+If C=0 and A≠0 and B≠0
+A/B→C
+If C=0
+Goto M8
+If A=0 and B≠0
+C*B→A
+If B=0 and A≠0
+A/C→B
+C*N→D
+ClrHome
+Disp "n=m/M  #=n×NA","MASS m (g):",A,"MOLAR MASS (g/mol):",B,"MOLES n (mol):",C,"# PARTICLES:",D
+Pause
+Goto 0
+Lbl M8
+ClrHome
+Disp "NEED ONE OF:","  n","  m AND M","  # PARTICLES"
+Pause
+Goto M
+Lbl I
+Menu("ISOTOPES Σ(m×%)","FIND AVG ATOMIC MASS",I1,"FIND 1 ISOTOPE MASS",I2,"FIND % (2 ISOTOPES)",I3,"BACK",0)
+Lbl I1
+ClrHome
+Disp "AVG=Σ(MASS×ABUND)","ENTER % (99.60 NOT .996)"
+Input "# OF ISOTOPES:",K
+0→A
+0→B
+For(J,1,K)
+Disp "ISOTOPE",J
+Input "MASS (amu):",M
+Input "ABUNDANCE %:",P
+A+M*P/100→A
+B+P→B
+End
+ClrHome
+Disp "AVG=Σ(MASS×ABUND)","AVG ATOMIC MASS:",A,"(amu = g/mol)","TOTAL % (CHECK 100):",B
+Pause
+Goto I
+Lbl I2
+ClrHome
+Disp "SOLVE FOR ONE","UNKNOWN ISOTOPE MASS"
+Input "AVG MASS (amu):",A
+Input "UNKNOWN %:",U
+Input "# OTHER ISOTOPES:",K
+0→B
+For(J,1,K)
+Disp "OTHER ISOTOPE",J
+Input "MASS (amu):",M
+Input "ABUNDANCE %:",P
+B+M*P/100→B
+End
+ClrHome
+Disp "UNKNOWN ISOTOPE","MASS (amu):",(A-B)/(U/100)
+Pause
+Goto I
+Lbl I3
+ClrHome
+Disp "2 ISOTOPES, FIND %"
+Input "AVG MASS (amu):",A
+Input "ISOTOPE 1 MASS:",M
+Input "ISOTOPE 2 MASS:",R
+(A-R)/(M-R)→X
+ClrHome
+Disp "X=(AVG-m2)/(m1-m2)","ISOTOPE 1 %:",100X,"ISOTOPE 2 %:",100(1-X)
+Pause
+Goto I
