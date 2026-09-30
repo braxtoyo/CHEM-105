@@ -94,6 +94,10 @@ def check(name, src):
             for lab in re.sub(r'"[^"]*"', "", s[5:-1]).split(",")[1:]:
                 if lab and len(lab) > 2:
                     probs.append((ln, "menu label longer than 2 characters", lab))
+    # empty strings are banned: joining text onto "" errors on the calculator
+    for ln, line in enumerate(src.strip("\n").split("\n"), 1):
+        if '""→' in line:
+            probs.append((ln, "empty string (causes errors when joined)", line.strip()))
     # Output( column + length must fit
     for ln, line in enumerate(src.strip("\n").split("\n"), 1):
         m = re.match(r'Output\((\d+),(\d+),"([^"]*)"\)', line.strip())

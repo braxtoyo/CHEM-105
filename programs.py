@@ -286,10 +286,13 @@ PAGE = "\n".join([
 ])
 
 
-def _render(prefix):
-    """Print filled subshells with Aufbau index > U, in n-then-l order, wrapped to 26."""
+def _render(prefix, has_text):
+    """Print filled subshells with Aufbau index > U, in n-then-l order, wrapped to 26.
+    Never joins onto an empty string (that errors on the calculator): W=1 means
+    Str2 already holds text; otherwise Str2 is a placeholder that gets replaced."""
     return "\n".join([
         prefix + "→Str2",
+        "%d→W" % (1 if has_text else 0),
         "For(J,1,19)",
         "ʟOR(J)→I",
         "If ʟEC(I)>0 and I>U",
@@ -297,6 +300,8 @@ def _render(prefix):
         "sub(Str6,2I-1,2)+sub(Str5,2ʟEC(I)-1,2)→Str3",
         'If sub(Str3,4,1)=" "',
         "sub(Str3,1,3)→Str3",
+        "If W",
+        "Then",
         "If length(Str2)+length(Str3)≥26",
         "Then",
         PAGE,
@@ -304,13 +309,15 @@ def _render(prefix):
         "V+1→V",
         "Str3→Str2",
         "Else",
-        "If length(Str2)",
-        'Str2+" "→Str2',
-        "Str2+Str3→Str2",
+        'Str2+" "+Str3→Str2',
+        "End",
+        "Else",
+        "Str3→Str2",
+        "1→W",
         "End",
         "End",
         "End",
-        "If length(Str2)",
+        "If W",
         "Then",
         PAGE,
         "Disp Str2",
@@ -426,14 +433,14 @@ CONFIG_CODE = "\n".join([
     'Disp "FULL:"',
     "V+1→V",
     "0→U",
-    _render('""'),
+    _render('"?"', False),
     PAGE,
     'Disp "CONDENSED:"',
     "V+1→V",
     "If P",
     "Then",
     "ʟCI(P)→U",
-    _render('"["+sub(Str4,2P-1,2)+"]"'),
+    _render('"["+sub(Str4,2P-1,2)+"]"', True),
     "Else",
     PAGE,
     'Disp "(SAME AS FULL)"',

@@ -186,7 +186,8 @@ End
 Disp "FULL:"
 V+1→V
 0→U
-""→Str2
+"?"→Str2
+0→W
 For(J,1,19)
 ʟOR(J)→I
 If ʟEC(I)>0 and I>U
@@ -194,6 +195,8 @@ Then
 sub(Str6,2I-1,2)+sub(Str5,2ʟEC(I)-1,2)→Str3
 If sub(Str3,4,1)=" "
 sub(Str3,1,3)→Str3
+If W
+Then
 If length(Str2)+length(Str3)≥26
 Then
 If V≥8
@@ -207,13 +210,15 @@ Disp Str2
 V+1→V
 Str3→Str2
 Else
-If length(Str2)
-Str2+" "→Str2
-Str2+Str3→Str2
+Str2+" "+Str3→Str2
+End
+Else
+Str3→Str2
+1→W
 End
 End
 End
-If length(Str2)
+If W
 Then
 If V≥8
 Then
@@ -238,6 +243,7 @@ If P
 Then
 ʟCI(P)→U
 "["+sub(Str4,2P-1,2)+"]"→Str2
+1→W
 For(J,1,19)
 ʟOR(J)→I
 If ʟEC(I)>0 and I>U
@@ -245,6 +251,8 @@ Then
 sub(Str6,2I-1,2)+sub(Str5,2ʟEC(I)-1,2)→Str3
 If sub(Str3,4,1)=" "
 sub(Str3,1,3)→Str3
+If W
+Then
 If length(Str2)+length(Str3)≥26
 Then
 If V≥8
@@ -258,13 +266,15 @@ Disp Str2
 V+1→V
 Str3→Str2
 Else
-If length(Str2)
-Str2+" "→Str2
-Str2+Str3→Str2
+Str2+" "+Str3→Str2
+End
+Else
+Str3→Str2
+1→W
 End
 End
 End
-If length(Str2)
+If W
 Then
 If V≥8
 Then
