@@ -84,6 +84,16 @@ def check(name, src):
             for lit in lits:
                 if width(lit) > 20:
                     probs.append((ln, "prompt %d>20" % width(lit), lit))
+    # labels and Goto/Menu targets must be 1-2 characters
+    for ln, line in enumerate(src.strip("\n").split("\n"), 1):
+        s = line.strip()
+        for lab in re.findall(r"^(?:Lbl|Goto) (\S+)$", s):
+            if len(lab) > 2:
+                probs.append((ln, "label longer than 2 characters", s))
+        if s.startswith("Menu("):
+            for lab in re.sub(r'"[^"]*"', "", s[5:-1]).split(",")[1:]:
+                if lab and len(lab) > 2:
+                    probs.append((ln, "menu label longer than 2 characters", lab))
     # Output( column + length must fit
     for ln, line in enumerate(src.strip("\n").split("\n"), 1):
         m = re.match(r'Output\((\d+),(\d+),"([^"]*)"\)', line.strip())

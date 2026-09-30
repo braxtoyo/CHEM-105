@@ -691,12 +691,12 @@ for _c in FULL_CATS:
 
 PROGRAMS["CHFULL"] = "\n".join([
     "Lbl 0",
-    'Menu("FULL NOTES",' + ",".join('"%s",%s' % (CAT_NAMES[n], "A%d" % n) for n in range(1, 6))
+    'Menu("FULL NOTES",' + ",".join('"%s",%s' % (CAT_NAMES[n], "C%d" % (n % 10)) for n in range(1, 6))
     + ',"MORE CATEGORIES ►",P,"◄ BACK TO CHEM",Z)',
     "Lbl P",
-    'Menu("FULL NOTES 2",' + ",".join('"%s",%s' % (CAT_NAMES[n], "A%d" % n) for n in range(6, 11))
+    'Menu("FULL NOTES 2",' + ",".join('"%s",%s' % (CAT_NAMES[n], "C%d" % (n % 10)) for n in range(6, 11))
     + ',"◄ BACK",0)',
     "Lbl Z",
     "ClrHome",
     "Return",
-] + sum([["Lbl A%d" % n, "prgmCHF%d" % n, "Goto %s" % ("0" if n <= 5 else "P")] for n in range(1, 11)], []))
+] + sum([["Lbl C%d" % (n % 10), "prgmCHF%d" % n, "Goto %s" % ("0" if n <= 5 else "P")] for n in range(1, 11)], []))
