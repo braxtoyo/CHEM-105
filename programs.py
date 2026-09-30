@@ -440,7 +440,7 @@ CONFIG_CODE = "\n".join([
     "End",
     'Output(10,15,"ENTER=BACK")',
     "Pause ",
-    "Goto M",
+    "Goto 0",
 ])
 
 ISO_CODE = "\n".join([
@@ -470,7 +470,7 @@ ISO_CODE = "\n".join([
     "End",
     'Output(10,17,"ENTER=BACK")',
     "Pause ",
-    "Goto M",
+    "Goto 0",
 ])
 
 # ------------------------------------------------------------------ PROGRAM
@@ -478,9 +478,7 @@ ISO_CODE = "\n".join([
 PROGRAMS = {}
 PROGRAMS["CHEM"] = r"""
 Lbl 0
-Menu("CHEM 105 NOTES","FULL NOTES ►",N,"PREFIXES 10^x k μ n",A,"QUANTUM #S & NODES",B,"e⁻ RULES/PRINCIPLES",C,"PERIODIC TRENDS",D,"EXPERIMENTS",E,"MORE ►",M)
-Lbl M
-Menu("MORE NOTES","LAWS LIST A-F",F,"LIGHT RELATIONSHIPS",G,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"ACCURATE VS PRECISE",I,"QUIT",Q,"◄ BACK",0)
+Menu("CHEM 105 NOTES","FULL NOTES ►",N,"PREFIXES 10^x k μ n",A,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"QUIT",Q)
 Lbl N
 prgmCHFULL
 Goto 0
@@ -543,9 +541,7 @@ Lbl J0
 """ + CONFIG_CODE + "\n" + "\n".join(
     "Lbl %s\n%s" % (lbl, pages(txt, back))
     for lbl, txt, back in [
-        ("A", PREFIXES, "0"), ("B", QUANTUM, "0"), ("C", RULES, "0"),
-        ("D", TRENDS, "0"), ("E", EXPERIMENTS, "0"),
-        ("F", LAWS, "M"), ("G", LIGHT, "M"), ("I", ACCURACY, "M"),
+        ("A", PREFIXES, "0"),
     ]
 ) + "\n"
 

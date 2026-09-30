@@ -1,7 +1,5 @@
 Lbl 0
-Menu("CHEM 105 NOTES","FULL NOTES ►",N,"PREFIXES 10^x k μ n",A,"QUANTUM #S & NODES",B,"e⁻ RULES/PRINCIPLES",C,"PERIODIC TRENDS",D,"EXPERIMENTS",E,"MORE ►",M)
-Lbl M
-Menu("MORE NOTES","LAWS LIST A-F",F,"LIGHT RELATIONSHIPS",G,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"ACCURATE VS PRECISE",I,"QUIT",Q,"◄ BACK",0)
+Menu("CHEM 105 NOTES","FULL NOTES ►",N,"PREFIXES 10^x k μ n",A,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"QUIT",Q)
 Lbl N
 prgmCHFULL
 Goto 0
@@ -77,7 +75,7 @@ End
 End
 Output(10,17,"ENTER=BACK")
 Pause 
-Goto M
+Goto 0
 Lbl H7
 Disp "CHARGE MUST BE A","WHOLE NUMBER"
 Pause 
@@ -290,7 +288,7 @@ Disp "(SAME AS FULL)"
 End
 Output(10,15,"ENTER=BACK")
 Pause 
-Goto M
+Goto 0
 Lbl A
 ClrHome
 Disp "SI PREFIXES (10^x)","E  exa     10^18","P  peta    10^15"
@@ -311,141 +309,3 @@ Disp " ex: 450 nm to m:","     450×10^⁻9 m"
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto 0
-Lbl B
-ClrHome
-Disp "N = PRINCIPAL QUANTUM #","n ≥ 1","principal energy level,"
-Disp " distance from nucleus,"," orbital size",""
-Disp "L = ANGULAR MOMENTUM QN","l can only be 0 to n-1","sublevel, orbital type,"
-Output(10,13,"ENTER=NEXT 1/3")
-Pause 
-ClrHome
-Disp " and orbital shape","","ML = MAGNETIC QN"
-Disp "ml = -l to +l","orientation in space",""
-Disp "NODES","total nodes = n-1","planar nodes = l"
-Output(10,13,"ENTER=NEXT 2/3")
-Pause 
-ClrHome
-Disp " - flat 2D slice through"," atomic orbital","radial nodes = total - l"
-Disp " - hollow spherical gap in"," between orbitals"
-Output(10,13,"ENTER=BACK 3/3")
-Pause 
-Goto 0
-Lbl C
-ClrHome
-Disp "I. AUFBAU PRINCIPLE","Electrons are placed in"," lowest energy orbitals"
-Disp " first.","","II. PAULI EXCLUSION"
-Disp "Only 2 electrons can be"," placed in each orbital.",""
-Output(10,13,"ENTER=NEXT 1/3")
-Pause 
-ClrHome
-Disp "III. HUNDS RULE","Electrons fill all"," orbitals of equal energy"
-Disp " (degenerate orbitals)"," singly before pairing up"," so all unpaired e⁻ have"
-Disp " the same spin. It costs"," energy to put two"," electrons in the same"
-Output(10,13,"ENTER=NEXT 2/3")
-Pause 
-ClrHome
-Disp " orbital because they"," repel each other.",""
-Disp "IV. OCTET RULE","  (ADD NOTES LATER)",""
-Disp "V. LE CHATELIERS PRINCIPLE","  (ADD NOTES LATER)"
-Output(10,13,"ENTER=BACK 3/3")
-Pause 
-Goto 0
-Lbl D
-ClrHome
-Disp "GENERAL","Metallic character and"," atomic radius increase to"
-Disp " the LEFT and DOWN","Nonmetallic character,"," electron affinity and"
-Disp " ionization energy"," increase RIGHT and UP",""
-Output(10,13,"ENTER=NEXT 1/7")
-Pause 
-ClrHome
-Disp "ATOMIC RADIUS","- Going up and right: the"," increased nuclear charge"
-Disp " from an increasing number"," of protons pulls the e⁻"," more tightly = smaller"
-Disp " radius.","- Going down: each new"," period adds a new e⁻"
-Output(10,13,"ENTER=NEXT 2/7")
-Pause 
-ClrHome
-Disp " shell, which increases"," the overall size of the"," atom."
-Disp "- Cations (take e⁻) are"," smaller than their"," neutral atom: increased"
-Disp " Zeff.","- Anions (give e⁻) are"," larger than their neutral"
-Output(10,13,"ENTER=NEXT 3/7")
-Pause 
-ClrHome
-Disp " atom: same # of protons"," but more e⁻ to repel one"," another. The increased"
-Disp " repulsion makes the e⁻"," cloud expand = bigger"," ion."
-Disp "","IONIZATION ENERGY","- In general IE increases"
-Output(10,13,"ENTER=NEXT 4/7")
-Pause 
-ClrHome
-Disp " across a period because"," Zeff increases left to"," right. More protons ="
-Disp " valence e⁻ feel greater"," nuclear attraction,"," despite adding e⁻ to the"
-Disp " same energy level.","- EXCEPTIONS: N and O. N"," 1st IE is unusually high"
-Output(10,13,"ENTER=NEXT 5/7")
-Pause 
-ClrHome
-Disp " because it requires"," breaking a stable"," half-filled p subshell. O"
-Disp " 2nd IE increases less"," than expected because it"," results in a stable"
-Disp " half-filled p subshell."," e⁻ configuration can"," sometimes override the"
-Output(10,13,"ENTER=NEXT 6/7")
-Pause 
-ClrHome
-Disp " trend.","- As each e⁻ is removed,"," the Zeff felt by the"
-Disp " remaining e⁻ increases."
-Output(10,13,"ENTER=BACK 7/7")
-Pause 
-Goto 0
-Lbl E
-ClrHome
-Disp "CATHODE RAY","e⁻ exist and have a charge","OIL DROP"
-Disp "what the charge of e⁻ is","RADIOACTIVE EMISSIONS","atoms have +/-"
-Disp " subparticles","GOLD FOIL","there is something in the"
-Output(10,13,"ENTER=NEXT 1/2")
-Pause 
-ClrHome
-Disp " middle (nucleus)","CHADWICK","discovered neutron, atomic"
-Disp " mass did not match count"
-Output(10,13,"ENTER=BACK 2/2")
-Pause 
-Goto 0
-Lbl F
-ClrHome
-Disp "LAWS & PRINCIPLES LIST","A. Law of Conservation of"," Mass"
-Disp "B. Newtons Second Law of"," Motion","C. Law of Conservation of"
-Disp " Energy","D. Law of Definite"," Proportions"
-Output(10,13,"ENTER=NEXT 1/2")
-Pause 
-ClrHome
-Disp "E. Archimedes Principle","F. Bernoullis Principle"
-Output(10,13,"ENTER=BACK 2/2")
-Pause 
-Goto M
-Lbl G
-ClrHome
-Disp "LIGHT RELATIONSHIPS","+ both go up together","- one up, other goes down"
-Disp "0 no effect","(freq = frequency v,"," vel = velocity)"
-Disp "","c=λv  E=hv=hc/λ"," freq & E          +"
-Output(10,13,"ENTER=NEXT 1/4")
-Pause 
-ClrHome
-Disp " λ & freq          -"," λ & E             -","λ=h/mv (DE BROGLIE)"
-Disp " λ & m             -"," λ & vel           -","KE=1/2mv²"
-Disp " KE & m            +"," KE & vel          +","KE=hv-Φ (PHOTOELECTRIC)"
-Output(10,13,"ENTER=NEXT 2/4")
-Pause 
-ClrHome
-Disp " KE & freq         +"," KE & E of photon  +"," KE & Φ            -"
-Disp " Φ & threshold freq +","INTENSITY (BRIGHTNESS)"," intensity & # photons +"
-Disp " intensity & # e⁻ out  +"," intensity & KE of e⁻  0"," intensity & E/photon  0"
-Output(10,13,"ENTER=NEXT 3/4")
-Pause 
-ClrHome
-Disp " # photons & total E   +","BELOW THRESHOLD FREQ:"," no e⁻ out, even if"
-Disp " brighter"
-Output(10,13,"ENTER=BACK 4/4")
-Pause 
-Goto M
-Lbl I
-ClrHome
-Disp "ACCURATE VS PRECISE","  (ADD NOTES LATER)"
-Output(10,13,"ENTER=BACK 1/1")
-Pause 
-Goto M

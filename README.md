@@ -11,19 +11,12 @@ One program, `CHEM`, with my CHEM 105 notes organized by category.
 ## Menu
 ```
 CHEM 105 NOTES
-0 FULL NOTES ►            10 categories (CHFULL + CHF1..CHF10), each with topic pages
-1 PREFIXES 10^x k μ n     E..a table with powers of ten + converting
-2 QUANTUM #S & NODES      n, l, ml, total/planar/radial nodes
-3 e⁻ RULES/PRINCIPLES     Aufbau, Pauli, Hund, Octet*, Le Chatelier*
-4 PERIODIC TRENDS         general trends, atomic radius, ions, ionization energy
-5 EXPERIMENTS             cathode ray, oil drop, radioactivity, gold foil, Chadwick
-6 MORE ►                  Laws list A-F, Light relationships (+/-), Isoelectronic list tool,
-                          Electron config tool (full + noble-gas condensed),
-                          Accurate vs precise*
-7 QUIT
+1 FULL NOTES ►            10 categories (CHFULL + CHF1..CHF10), each with topic pages
+2 PREFIXES 10^x k μ n     E..a table with powers of ten + converting
+3 ISOELECTRONIC LIST      type symbol + charge -> atoms/known ions with same e- count
+4 ELECTRON CONFIG         type symbol + charge -> full + noble-gas condensed config
+5 QUIT
 ```
-`*` = title only, notes to be added later.
-
 Each page: ENTER goes to the next screen; after the last screen it returns to the menu.
 
 ## Adding notes
