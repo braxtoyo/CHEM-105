@@ -1,0 +1,139 @@
+Lbl 0
+Menu("LIGHT & PHOTOELECTRIC","LIGHT VOCABULARY",A1,"ELECTROMAGNETIC ORDER",A2,"VISIBLE COLORS",A3,"RELATIONSHIPS",A4,"BLACKBODY RADIATION",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("LIGHT & PHOTOELECTRIC","PHOTOELECTRIC THRESH.",A6,"FREQUENCY VS INTENSITY",A7,"CALCULATION CLUES",A8,"◄ BACK",0)
+Lbl Z
+Return
+Lbl A1
+ClrHome
+Disp "LIGHT VOCABULARY","λ means wavelength:","  distance between"
+Disp "  corresponding points on","  neighboring waves.","nu means frequency: cycles"
+Disp "  per second.","Frequency units are Hz,","  meaning per second."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "v means particle speed,","  not frequency.","Amplitude is wave height."
+Disp "A photon is a discrete","  packet of","  electromagnetic energy."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "ELECTROMAGNETIC ORDER","From lowest frequency and","  photon energy to"
+Disp "  highest:","Radio.","Microwave."
+Disp "Infrared.","Visible.","Ultraviolet."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "X-ray.","Gamma.","Wavelength decreases in"
+Disp "  that order.","The course guide says to","  memorize the order, not"
+Disp "  numerical boundaries."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "VISIBLE COLORS","From lowest photon energy","  to highest:"
+Disp "Red, orange, yellow,","  green, blue, violet.","Red has the longest"
+Disp "  visible wavelength and","  lowest visible frequency","  and photon energy."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Violet has the shortest","  visible wavelength and","  highest visible"
+Disp "  frequency and photon","  energy.","Infrared is beyond red at"
+Disp "  longer wavelengths.","Ultraviolet is beyond","  violet at shorter"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  wavelengths."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "RELATIONSHIPS","Longer wavelength means","  lower frequency and"
+Disp "  photon energy.","Shorter wavelength means","  higher frequency and"
+Disp "  photon energy.","At fixed frequency, higher","  intensity does not"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  increase energy per","  photon.","For monochromatic light,"
+Disp "  higher intensity means","  more photons arriving","  per unit area per unit"
+Disp "  time.","Use the","  wavelength-frequency and"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  photon-energy equations","  on the equation sheet."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "BLACKBODY RADIATION","Heated objects emit","  electromagnetic"
+Disp "  radiation.","As temperature rises, peak","  emission shifts toward"
+Disp "  shorter wavelengths.","Planck explained this","  behavior using quantized"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  energy exchanges."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "PHOTOELECTRIC THRESHOLD","Φ is the work function:","  minimum energy needed to"
+Disp "  remove an electron from","  the material.","Photon energy below Φ: no"
+Disp "  electron is emitted in","  the ordinary","  single-photon process."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Photon energy equal to Φ:","  threshold; maximum","  emitted kinetic energy"
+Disp "  is zero.","Photon energy above Φ: the","  extra energy becomes"
+Disp "  electron kinetic energy.","Threshold frequency is the","  minimum frequency that"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  can produce emission.","Threshold wavelength is","  the maximum wavelength"
+Disp "  that can produce","  emission.","Higher frequency means"
+Disp "  shorter wavelength."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl A7
+ClrHome
+Disp "FREQUENCY VERSUS INTENSITY","Increasing frequency above","  threshold increases"
+Disp "  maximum electron kinetic","  energy.","Increasing intensity at"
+Disp "  fixed frequency above","  threshold increases the","  number of emitted"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  electrons, not their","  maximum kinetic energy.","Below threshold,"
+Disp "  increasing intensity","  does not produce","  ordinary single-photon"
+Disp "  emission."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0
+Lbl A8
+ClrHome
+Disp "CALCULATION CLUES","For emitted electron","  speed:"
+Disp "Find photon energy.","Subtract the work function","  to find maximum kinetic"
+Disp "  energy.","Use the kinetic-energy","  equation to solve for"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "  speed.","A negative calculated","  kinetic energy means the"
+Disp "  photon is below","  threshold; no emission","  occurs."
+Disp "Use meters for wavelength.","Use Hz for frequency.","Use joules for energy."
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "Use kilograms for mass.","If energy is given in","  electron volts, convert"
+Disp "  to joules before using","  SI equations.","Use constants provided on"
+Disp "  the equation sheet.","If absent, the","  electron-volt conversion"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "  is 1 eV = 1.602E-19 J."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto A0

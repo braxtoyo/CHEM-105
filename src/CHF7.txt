@@ -1,0 +1,308 @@
+Lbl 0
+Menu("SCIENTISTS/EXPERIMENTS","GREEK ATOMISTS",A3,"BOYLE",A4,"LAVOISIER",A5,"PROUST",A6,"DALTON",A7,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("SCIENTISTS/EXPERIMENTS","THOMSON",A8,"MILLIKAN & FLETCHER",A9,"CURIE",B0,"RUTHERFORD",B1,"CHADWICK",B2,"MORE TOPICS ►",A1,"◄ BACK",0)
+Lbl A1
+Menu("SCIENTISTS/EXPERIMENTS","PLANCK",B3,"EINSTEIN",B4,"FRAUNHOFER",B5,"BUNSEN & KIRCHHOFF",B6,"BALMER & RYDBERG",B7,"MORE TOPICS ►",A2,"◄ BACK",A0)
+Lbl A2
+Menu("SCIENTISTS/EXPERIMENTS","BOHR",B8,"DE BROGLIE",B9,"HEISENBERG",C0,"SCHRODINGER",C1,"ALPHA, BETA, GAMMA",C2,"◄ BACK",A1)
+Lbl Z
+Return
+Lbl A3
+ClrHome
+Disp "GREEK ATOMISTS","METHOD:","Philosophical reasoning"
+Disp "  about matter.","PROPOSED:","Matter consists of atoms."
+Disp "LEARNED:","An early atomic idea, not","  an experimental"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  discovery.","Many other Greeks favored","  earth, air, fire, and"
+Disp "  water as the basic","  constituents."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "BOYLE","METHOD:","Chemical observations and"
+Disp "  experiments challenged","  traditional","  explanations."
+Disp "OBSERVED:","The four-element idea did","  not adequately explain"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  chemical behavior.","LEARNED:","Helped develop the modern"
+Disp "  idea of elements;","  explanations should be","  tested by observation"
+Disp "  and experiment."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "LAVOISIER","METHOD:","Used accurate balances and"
+Disp "  sealed containers to","  study combustion.","OBSERVED:"
+Disp "Burning metal gained mass","  by combining with","  oxygen; total"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  sealed-system mass","  remained constant.","LEARNED:"
+Disp "Oxygen participates in","  combustion; mass is","  conserved."
+Disp "Mass before a chemical","  reaction equals mass","  after, for a closed"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  system."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "PROUST","METHOD:","Compared the composition"
+Disp "  of compound samples.","OBSERVED:","A pure compound contained"
+Disp "  the same elements in","  fixed mass proportions.","LEARNED:"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "Law of definite","  proportions."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A7
+ClrHome
+Disp "DALTON","METHOD:","Compared different"
+Disp "  compounds containing the","  same two elements.","OBSERVED:"
+Disp "For a fixed mass of one","  element, masses of the","  other occurred in small"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "  whole-number ratios.","EXAMPLE:","Oxygen masses in CO and"
+Disp "  CO2 have a 1:2 ratio for","  the same carbon mass.","LEARNED:"
+Disp "Law of multiple","  proportions supports","  atomic theory."
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "DALTONS THEORY:","Matter consists of atoms.","Different elements have"
+Disp "  different atoms.","Compounds contain atoms in","  whole-number ratios."
+Disp "Chemical reactions","  rearrange atoms.","Later discoveries revised"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "  the claims that atoms","  are indivisible and that","  every atom of one"
+Disp "  element has identical","  mass."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto 0
+Lbl A8
+ClrHome
+Disp "THOMSON","METHOD:","Studied cathode rays and"
+Disp "  their deflection by","  electric and magnetic","  fields."
+Disp "OBSERVED:","The beam bent toward a","  positive plate."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "LEARNED:","The beam contained","  negative particles,"
+Disp "  electrons.","Measured electron","  charge-to-mass ratio."
+Disp "Electrons occurred in","  different materials,","  showing atoms contain"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  smaller particles.","Proposed plum-pudding","  model: electrons"
+Disp "  embedded in diffuse","  positive matter."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl A9
+ClrHome
+Disp "MILLIKAN AND FLETCHER","METHOD:","Observed charged oil"
+Disp "  droplets in an electric","  field that opposed","  gravity."
+Disp "OBSERVED:","Droplet charges were","  multiples of one basic"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  charge.","LEARNED:","Measured electron charge."
+Disp "Electron mass was","  calculated by combining","  this charge with"
+Disp "  Thomsons charge-to-mass","  ratio.","Do not say the oil-drop"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  experiment independently","  measured electron mass."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl B0
+ClrHome
+Disp "CURIE","METHOD:","Studied radiation from"
+Disp "  radioactive materials.","OBSERVED:","Radioactivity was"
+Disp "  associated with atomic","  properties; identified","  polonium and radium with"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  Pierre Curie.","LEARNED:","Atoms can undergo changes"
+Disp "  beyond ordinary chemical","  reactions.","Do not credit Curie with"
+Disp "  discovering the proton","  or every radiation type."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0
+Lbl B1
+ClrHome
+Disp "RUTHERFORD","METHOD:","Directed positive alpha"
+Disp "  particles at thin gold","  foil.","OBSERVED:"
+Disp "Most passed through; some","  deflected; very few","  turned back."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "LEARNED:","Atoms are mostly empty","  space with a tiny,"
+Disp "  dense, positive nucleus","  containing most atomic","  mass."
+Disp "Disproved the diffuse","  positive-charge","  plum-pudding model."
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "Alpha particles are helium","  nuclei, not single","  protons."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl B2
+ClrHome
+Disp "CHADWICK","METHOD:","Bombarded beryllium with"
+Disp "  alpha particles;","examined neutral radiation","  that knocked protons out"
+Disp "  of paraffin.","OBSERVED:","Collision behavior"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  indicated neutral","  particles with","  approximately proton"
+Disp "  mass.","LEARNED:","Discovered the neutron."
+Disp "Neutrons explain much of","  atomic mass and isotope","  mass differences."
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "Isotopes were known before","  Chadwicks discovery."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl B3
+ClrHome
+Disp "PLANCK","METHOD:","Theoretical explanation of"
+Disp "  blackbody radiation.","EXPLAINED:","Energy exchanges occur in"
+Disp "  discrete amounts.","LEARNED:","Energy is quantized;"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  packet energy depends on","  frequency."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A1
+Lbl B4
+ClrHome
+Disp "EINSTEIN","METHOD:","Theoretical explanation of"
+Disp "  the photoelectric","  effect.","EXPLAINED:"
+Disp "One photon transfers","  energy to one electron;","  emission requires"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  sufficient photon","  energy.","LEARNED:"
+Disp "Light has particle","  behavior.","Excess photon energy"
+Disp "  becomes electron kinetic","  energy."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A1
+Lbl B5
+ClrHome
+Disp "FRAUNHOFER","METHOD:","Examined the solar"
+Disp "  spectrum.","OBSERVED:","Dark lines at particular"
+Disp "  wavelengths.","LEARNED:","Some wavelengths are"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  missing from sunlight","  reaching us."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A1
+Lbl B6
+ClrHome
+Disp "BUNSEN AND KIRCHHOFF","METHOD:","Examined spectra of heated"
+Disp "  elements and compared","  emission and absorption.","OBSERVED:"
+Disp "Elements had","  characteristic spectral","  lines; corresponding"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  wavelengths could be","  emitted and absorbed.","LEARNED:"
+Disp "Spectra identify elements","  and explain missing","  wavelengths caused by"
+Disp "  absorption."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A1
+Lbl B7
+ClrHome
+Disp "BALMER AND RYDBERG","METHOD:","Analyzed hydrogen spectral"
+Disp "  wavelengths","  mathematically.","OBSERVED:"
+Disp "Wavelength patterns","  followed relationships","  involving whole numbers."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "LEARNED:","Hydrogen spectral lines","  could be predicted."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A1
+Lbl B8
+ClrHome
+Disp "BOHR","METHOD:","Proposed quantized"
+Disp "  electron energy levels","  to explain hydrogen","  spectra."
+Disp "EXPLAINED:","Electrons absorb or emit","  photons when changing"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  allowed levels.","LEARNED:","Discrete levels explain"
+Disp "  hydrogens line spectrum."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A2
+Lbl B9
+ClrHome
+Disp "DE BROGLIE","METHOD:","Theoretical proposal"
+Disp "  extending wave-particle","  behavior to matter.","PROPOSED:"
+Disp "Moving particles have a","  wavelength related to","  momentum."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "LEARNED:","Matter has wave","  properties; later"
+Disp "  diffraction experiments","  supported this."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A2
+Lbl C0
+ClrHome
+Disp "HEISENBERG","METHOD:","Developed"
+Disp "  quantum-mechanical","  uncertainty","  relationships."
+Disp "ESTABLISHED:","Exact position and","  momentum cannot both be"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  specified","  simultaneously.","LEARNED:"
+Disp "A fundamental limit","  applies to their","  combined precision."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A2
+Lbl C1
+ClrHome
+Disp "SCHRODINGER","METHOD:","Developed a wave equation"
+Disp "  for electron states.","ESTABLISHED:","Solutions describe allowed"
+Disp "  energies and spatial","  wavefunctions.","LEARNED:"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "Probability density","  replaces fixed electron","  paths in the orbital"
+Disp "  description."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A2
+Lbl C2
+ClrHome
+Disp "ALPHA, BETA, GAMMA","Alpha: helium nucleus; +2","  charge; relatively low"
+Disp "  penetrating power.","Beta-minus: emitted","  electron; -1 charge;"
+Disp "  generally more","  penetrating than alpha.","Gamma: high-energy photon;"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  no charge; highly","  penetrating.","Radioactive decay does not"
+Disp "  always split an atom","  into two large pieces."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A2

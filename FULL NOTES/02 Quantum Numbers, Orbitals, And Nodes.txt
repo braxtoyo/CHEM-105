@@ -1,0 +1,52 @@
+CATEGORY 2: QUANTUM NUMBERS, ORBITALS, AND NODES
+
+FOUR QUANTUM NUMBERS
+n identifies the shell. Allowed n: 1, 2, 3, and larger positive integers.
+l identifies subshell shape. Allowed l: integers from 0 through n−1.
+l = 0 means s. l = 1 means p. l = 2 means d. l = 3 means f.
+ml identifies orbital orientation. Allowed ml: integers from −l through +l.
+ms identifies electron spin. Allowed ms: +1/2 or −1/2 only.
+
+ALLOWED SETS
+Every rule must be satisfied.
+n = 2, l = 2 is impossible because l can only be 0 or 1.
+l = 1, ml = 2 is impossible because ml must be −1, 0, or +1.
+ms = 0 is impossible.
+For l = 3, ml can be −3, −2, −1, 0, +1, +2, +3.
+
+SHELL, SUBSHELL, ORBITAL
+Shell: same n.
+Subshell: same n and l.
+Orbital: one spatial state specified by n, l, and ml.
+Each orbital holds up to two electrons with opposite spins.
+Orbitals in a subshell = 2l+1. Maximum electrons in a subshell = 2(2l+1).
+s: 1 orbital, 2 electrons. p: 3 orbitals, 6 electrons. d: 5 orbitals, 10 electrons. f: 7 orbitals, 14 electrons.
+Orbitals in a shell = n squared. Maximum electrons in a shell = 2n squared.
+n = 1: 1 orbital, 2 electrons. n = 2: 4 orbitals, 8 electrons. n = 3: 9 orbitals, 18 electrons. n = 4: 16 orbitals, 32 electrons.
+
+FIRST POSSIBLE SUBSHELL
+s first occurs at n = 1. p first occurs at n = 2. d first occurs at n = 3. f first occurs at n = 4.
+There is no 1p, 2d, or 3f subshell.
+
+SHAPES AND PROBABILITY
+s orbitals are spherical.
+p orbitals have two lobes.
+Most d orbitals have four lobes. The dz2 orbital has two lobes and a ring.
+Orbital colors or plus/minus labels represent wavefunction phase, not positive and negative electric charge.
+An orbital is not a fixed circular electron path.
+|ψ| squared gives probability density.
+Orbital drawings often enclose about 90% of the electron’s probability. That drawn boundary is not a hard wall.
+
+NODES
+A node has zero electron probability density.
+Total nodes = n−1. Angular nodes = l. Radial nodes = n−l−1.
+Angular nodes are not always flat planes. Some are conical.
+To identify an orbital from nodes: Add angular and radial nodes. n = total nodes+1. l = angular nodes. Convert l to s, p, d, or f.
+Examples: 3p: 2 total, 1 angular, 1 radial. 5p: 4 total, 1 angular, 3 radial. 5d: 4 total, 2 angular, 2 radial.
+
+DEGENERACY
+Degenerate means equal energy.
+In the basic hydrogen model, orbitals with the same n have the same energy. Hydrogen 2s and 2p are degenerate.
+In many-electron atoms, orbitals within the same subshell are degenerate in the usual isolated-atom model.
+Many-electron 2s and 2p have different energies.
+

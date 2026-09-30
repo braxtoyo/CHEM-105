@@ -1,0 +1,55 @@
+CATEGORY 5: BOHR MODEL AND ATOMIC SPECTRA
+
+SPECTRUM TYPES
+Continuous spectrum: a continuous range of wavelengths.
+Emission spectrum: bright lines at wavelengths emitted by atoms.
+Absorption spectrum: dark lines where particular wavelengths were absorbed.
+Each element has a characteristic spectral pattern.
+An element absorbs and emits corresponding transition wavelengths.
+
+ENERGY LEVELS
+Ground state is the lowest allowed energy state.
+Excited states have higher allowed energies.
+Absorption moves an electron to a higher energy level.
+Emission moves an electron to a lower energy level.
+The absorbed or emitted photon matches the energy gap.
+
+ENERGY SIGNS
+Atomic energy change means final energy minus initial energy.
+Absorption: positive atomic energy change.
+Emission: negative atomic energy change.
+Photon energy is always positive.
+Use the magnitude of the atomic energy change when calculating photon wavelength or frequency.
+Never report a negative photon wavelength.
+
+INITIAL AND FINAL LEVELS
+ni is the initial level. nf is the final level.
+Emission: nf is lower than ni.
+Absorption: nf is higher than ni.
+Check the stated transition before substituting into an equation.
+A larger energy gap gives higher-frequency, shorter-wavelength light.
+A smaller gap gives lower-frequency, longer-wavelength light.
+
+BOUND ENERGY AND IONIZATION
+Bound-state energies are negative relative to a separated electron and nucleus.
+Higher n corresponds to energy closer to zero.
+Ionization takes the electron out of the bound atom.
+For ionization, final n approaches infinity, so its inverse-square term becomes zero.
+An electron starting at higher n requires less ionization energy.
+
+HYDROGEN SERIES
+Emission ending at n = 1: Lyman series; ultraviolet.
+Emission ending at n = 2: Balmer series; visible and near-ultraviolet.
+Emission ending at n = 3: Paschen series; infrared.
+
+MODEL LIMITS
+Bohr’s model works for hydrogen and other one-electron species, such as He+ and Li2+.
+It does not correctly describe general many-electron atoms.
+Use the nuclear-charge factor when the equation sheet calls for a one-electron ion rather than hydrogen.
+Note: the study guide wavelength equation has an incorrect sign for emission. Wavelength is always positive and depends on the magnitude of the energy gap.
+
+OBSERVED COLOR
+Emission can produce the color of a glowing source or atomic emission line.
+Ordinary objects can also appear colored because they reflect or transmit some wavelengths and absorb others.
+Do not claim every observed color is emitted light.
+

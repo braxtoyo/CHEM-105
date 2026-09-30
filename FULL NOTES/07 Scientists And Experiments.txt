@@ -1,0 +1,118 @@
+CATEGORY 7: SCIENTISTS AND EXPERIMENTS
+
+GREEK ATOMISTS
+METHOD: Philosophical reasoning about matter.
+PROPOSED: Matter consists of atoms.
+LEARNED: An early atomic idea, not an experimental discovery.
+Many other Greeks favored earth, air, fire, and water as the basic constituents.
+
+BOYLE
+METHOD: Chemical observations and experiments challenged traditional explanations.
+OBSERVED: The four-element idea did not adequately explain chemical behavior.
+LEARNED: Helped develop the modern idea of elements; explanations should be tested by observation and experiment.
+
+LAVOISIER
+METHOD: Used accurate balances and sealed containers to study combustion.
+OBSERVED: Burning metal gained mass by combining with oxygen; total sealed-system mass remained constant.
+LEARNED: Oxygen participates in combustion; mass is conserved.
+Mass before a chemical reaction equals mass after, for a closed system.
+
+PROUST
+METHOD: Compared the composition of compound samples.
+OBSERVED: A pure compound contained the same elements in fixed mass proportions.
+LEARNED: Law of definite proportions.
+
+DALTON
+METHOD: Compared different compounds containing the same two elements.
+OBSERVED: For a fixed mass of one element, masses of the other occurred in small whole-number ratios.
+EXAMPLE: Oxygen masses in CO and CO2 have a 1:2 ratio for the same carbon mass.
+LEARNED: Law of multiple proportions supports atomic theory.
+DALTON’S THEORY: Matter consists of atoms. Different elements have different atoms. Compounds contain atoms in whole-number ratios. Chemical reactions rearrange atoms.
+Later discoveries revised the claims that atoms are indivisible and that every atom of one element has identical mass.
+
+THOMSON
+METHOD: Studied cathode rays and their deflection by electric and magnetic fields.
+OBSERVED: The beam bent toward a positive plate.
+LEARNED: The beam contained negative particles, electrons.
+Measured electron charge-to-mass ratio.
+Electrons occurred in different materials, showing atoms contain smaller particles.
+Proposed plum-pudding model: electrons embedded in diffuse positive matter.
+
+MILLIKAN AND FLETCHER
+METHOD: Observed charged oil droplets in an electric field that opposed gravity.
+OBSERVED: Droplet charges were multiples of one basic charge.
+LEARNED: Measured electron charge.
+Electron mass was calculated by combining this charge with Thomson’s charge-to-mass ratio.
+Do not say the oil-drop experiment independently measured electron mass.
+
+CURIE
+METHOD: Studied radiation from radioactive materials.
+OBSERVED: Radioactivity was associated with atomic properties; identified polonium and radium with Pierre Curie.
+LEARNED: Atoms can undergo changes beyond ordinary chemical reactions.
+Do not credit Curie with discovering the proton or every radiation type.
+
+RUTHERFORD
+METHOD: Directed positive alpha particles at thin gold foil.
+OBSERVED: Most passed through; some deflected; very few turned back.
+LEARNED: Atoms are mostly empty space with a tiny, dense, positive nucleus containing most atomic mass.
+Disproved the diffuse positive-charge plum-pudding model.
+Alpha particles are helium nuclei, not single protons.
+
+CHADWICK
+METHOD: Bombarded beryllium with alpha particles; examined neutral radiation that knocked protons out of paraffin.
+OBSERVED: Collision behavior indicated neutral particles with approximately proton mass.
+LEARNED: Discovered the neutron.
+Neutrons explain much of atomic mass and isotope mass differences.
+Isotopes were known before Chadwick’s discovery.
+
+PLANCK
+METHOD: Theoretical explanation of blackbody radiation.
+EXPLAINED: Energy exchanges occur in discrete amounts.
+LEARNED: Energy is quantized; packet energy depends on frequency.
+
+EINSTEIN
+METHOD: Theoretical explanation of the photoelectric effect.
+EXPLAINED: One photon transfers energy to one electron; emission requires sufficient photon energy.
+LEARNED: Light has particle behavior. Excess photon energy becomes electron kinetic energy.
+
+FRAUNHOFER
+METHOD: Examined the solar spectrum.
+OBSERVED: Dark lines at particular wavelengths.
+LEARNED: Some wavelengths are missing from sunlight reaching us.
+
+BUNSEN AND KIRCHHOFF
+METHOD: Examined spectra of heated elements and compared emission and absorption.
+OBSERVED: Elements had characteristic spectral lines; corresponding wavelengths could be emitted and absorbed.
+LEARNED: Spectra identify elements and explain missing wavelengths caused by absorption.
+
+BALMER AND RYDBERG
+METHOD: Analyzed hydrogen spectral wavelengths mathematically.
+OBSERVED: Wavelength patterns followed relationships involving whole numbers.
+LEARNED: Hydrogen spectral lines could be predicted.
+
+BOHR
+METHOD: Proposed quantized electron energy levels to explain hydrogen spectra.
+EXPLAINED: Electrons absorb or emit photons when changing allowed levels.
+LEARNED: Discrete levels explain hydrogen’s line spectrum.
+
+DE BROGLIE
+METHOD: Theoretical proposal extending wave-particle behavior to matter.
+PROPOSED: Moving particles have a wavelength related to momentum.
+LEARNED: Matter has wave properties; later diffraction experiments supported this.
+
+HEISENBERG
+METHOD: Developed quantum-mechanical uncertainty relationships.
+ESTABLISHED: Exact position and momentum cannot both be specified simultaneously.
+LEARNED: A fundamental limit applies to their combined precision.
+
+SCHRODINGER
+METHOD: Developed a wave equation for electron states.
+ESTABLISHED: Solutions describe allowed energies and spatial wavefunctions.
+LEARNED: Probability density replaces fixed electron paths in the orbital description.
+
+ALPHA, BETA, GAMMA
+Alpha: helium nucleus; +2 charge; relatively low penetrating power.
+Beta-minus: emitted electron; −1 charge; generally more penetrating than alpha.
+Gamma: high-energy photon; no charge; highly penetrating.
+Radioactive decay does not always split an atom into two large pieces.
+

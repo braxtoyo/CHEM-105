@@ -1,0 +1,68 @@
+CATEGORY 3: PERIODIC TRENDS AND EXCEPTIONS
+
+IONIZATION EXCEPTIONS
+B has lower first ionization energy than Be. Al has lower first ionization energy than Mg.
+Reason: removing the first p electron is easier than removing an electron from the filled s subshell.
+O has lower first ionization energy than N. S has lower first ionization energy than P.
+Reason: paired-electron repulsion makes an electron easier to remove than from the half-filled p arrangement.
+
+ELECTRON-AFFINITY EXCEPTIONS
+Electron addition generally becomes more favorable toward the upper right, but this has important exceptions.
+Halogens have strongly negative electron affinities.
+Noble gases have unfavorable electron addition.
+Group 2 atoms have filled s subshells, making addition relatively unfavorable.
+Group 15 atoms have half-filled p subshells, making addition less favorable than a simple trend predicts.
+Chlorine has a more negative electron affinity than fluorine.
+Fluorine’s small orbital causes greater electron-electron repulsion.
+A single periodic-table arrow cannot correctly rank every electron-affinity comparison.
+
+EFFECTIVE NUCLEAR CHARGE
+Zeff is the effective positive nuclear charge felt by an electron.
+The nucleus attracts electrons. Other electrons provide shielding.
+A simple estimate subtracts shielding from nuclear charge. Using the number of core electrons as shielding is an approximation.
+Across a period, Zeff generally increases.
+Core electrons shield more effectively than electrons in the same shell.
+Stronger effective attraction tends to pull electrons closer and make removal harder.
+
+ATOMIC SIZE
+Atomic radius generally increases down a group because additional shells are occupied.
+Atomic radius generally decreases from left to right because effective nuclear attraction increases.
+Largest atoms are generally toward the bottom left.
+Do not assume a simple trend resolves every comparison between unrelated positions.
+
+ION SIZE
+Cations are smaller than their neutral parent atoms.
+Anions are larger than their neutral parent atoms.
+Losing an entire outer shell can produce a large size decrease.
+Adding electrons increases electron-electron repulsion.
+
+ISOELECTRONIC SERIES
+Isoelectronic species have the same electron count.
+Within an isoelectronic series: More protons means stronger attraction and smaller radius.
+Largest to smallest: O2−, F−, Ne, Na+, Mg2+.
+All five have 10 electrons. Their proton counts increase from 8 to 12.
+
+IONIZATION ENERGY
+Ionization energy is the energy needed to remove an electron from a gaseous atom or ion.
+Removal requires energy. Ionization energy is positive and endothermic.
+It generally increases up and to the right.
+It generally decreases down and to the left.
+
+SUCCESSIVE IONIZATION
+Successive ionization energies increase.
+After all valence electrons are removed, the next removal takes a much larger amount of energy.
+A large jump between the second and third ionization energies suggests two valence electrons for a main-group atom.
+
+ELECTRON AFFINITY
+Use the course’s energy-change convention: A gaseous atom gains an electron to form a gaseous negative ion.
+Negative electron affinity means energy is released.
+More negative means more energy released.
+Positive electron affinity means energy is required.
+Do not confuse “more negative electron affinity” with “larger positive ionization energy.”
+Ionization energy removes an electron. Electron affinity describes adding one.
+
+METALLIC CHARACTER
+Metals tend to lose electrons.
+Metallic character generally increases down and to the left.
+Nonmetallic character generally increases up and to the right.
+

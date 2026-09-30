@@ -1,0 +1,47 @@
+CATEGORY 8: MOLES, MASSES, AND ISOTOPES
+
+THREE MASS TERMS
+Mass number: whole-number count of protons plus neutrons.
+Atomic mass: isotope mass or isotope-weighted average, depending on context.
+Periodic-table atomic mass: average over naturally occurring isotopes.
+Molar mass: mass per mole, in grams per mole.
+An element’s atomic mass in amu and molar mass in grams per mole have numerically corresponding values at this course’s precision.
+One amu is one-twelfth the mass of a carbon-12 atom.
+
+ISOTOPE AVERAGES
+Multiply each isotope’s mass by its fractional abundance, then add.
+Convert percent abundance to a decimal first.
+All fractional abundances sum to 1. All percentages sum to 100%.
+The average lies between the isotope masses.
+For two isotopes, if one fraction is x, the other is 1−x.
+A more abundant isotope pulls the average closer to its mass.
+
+MASS SPECTROMETRY
+Mass spectrometry separates ions according to mass-to-charge ratio.
+It helps determine isotope masses and relative abundances.
+Do not describe it as measuring mass alone without considering charge.
+
+MOLES
+A mole is a particle-counting unit, like a very large dozen.
+One mole contains approximately 6.022E23 specified particles.
+Specify whether the particles are atoms, molecules, or formula units.
+Use the Avogadro constant supplied on the exam.
+
+CONVERSION WORKFLOW
+Grams to moles: divide by molar mass.
+Moles to grams: multiply by molar mass.
+Moles to particles: multiply by Avogadro’s constant.
+Particles to moles: divide by Avogadro’s constant.
+For grams to particles, go through moles.
+For compound molar mass, multiply each element’s atomic mass by its subscript, then add.
+
+COUNTING ATOMS IN COMPOUNDS
+One mole of H2O molecules contains: Two moles of hydrogen atoms. One mole of oxygen atoms. Three moles of atoms total.
+Subscripts count atoms per molecule; they do not change the number of molecules.
+Use parentheses correctly when a subscript multiplies an entire group.
+
+MASS PERCENT
+Mass percent means component mass divided by total mass, times 100.
+For an element in a compound, compare that element’s contribution to the compound’s molar mass with the total molar mass.
+Mass percent is not the same as atom-count percent.
+

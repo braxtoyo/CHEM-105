@@ -1,0 +1,56 @@
+CATEGORY 4: LIGHT AND PHOTOELECTRIC EFFECT
+
+LIGHT VOCABULARY
+λ means wavelength: distance between corresponding points on neighboring waves.
+ν means frequency: cycles per second.
+Frequency units are Hz, meaning per second.
+v means particle speed, not frequency.
+Amplitude is wave height.
+A photon is a discrete packet of electromagnetic energy.
+
+ELECTROMAGNETIC ORDER
+From lowest frequency and photon energy to highest:
+Radio. Microwave. Infrared. Visible. Ultraviolet. X-ray. Gamma.
+Wavelength decreases in that order.
+The course guide says to memorize the order, not numerical boundaries.
+
+VISIBLE COLORS
+From lowest photon energy to highest: Red, orange, yellow, green, blue, violet.
+Red has the longest visible wavelength and lowest visible frequency and photon energy.
+Violet has the shortest visible wavelength and highest visible frequency and photon energy.
+Infrared is beyond red at longer wavelengths.
+Ultraviolet is beyond violet at shorter wavelengths.
+
+RELATIONSHIPS
+Longer wavelength means lower frequency and photon energy.
+Shorter wavelength means higher frequency and photon energy.
+At fixed frequency, higher intensity does not increase energy per photon.
+For monochromatic light, higher intensity means more photons arriving per unit area per unit time.
+Use the wavelength-frequency and photon-energy equations on the equation sheet.
+
+BLACKBODY RADIATION
+Heated objects emit electromagnetic radiation.
+As temperature rises, peak emission shifts toward shorter wavelengths.
+Planck explained this behavior using quantized energy exchanges.
+
+PHOTOELECTRIC THRESHOLD
+Φ is the work function: minimum energy needed to remove an electron from the material.
+Photon energy below Φ: no electron is emitted in the ordinary single-photon process.
+Photon energy equal to Φ: threshold; maximum emitted kinetic energy is zero.
+Photon energy above Φ: the extra energy becomes electron kinetic energy.
+Threshold frequency is the minimum frequency that can produce emission.
+Threshold wavelength is the maximum wavelength that can produce emission.
+Higher frequency means shorter wavelength.
+
+FREQUENCY VERSUS INTENSITY
+Increasing frequency above threshold increases maximum electron kinetic energy.
+Increasing intensity at fixed frequency above threshold increases the number of emitted electrons, not their maximum kinetic energy.
+Below threshold, increasing intensity does not produce ordinary single-photon emission.
+
+CALCULATION CLUES
+For emitted electron speed: Find photon energy. Subtract the work function to find maximum kinetic energy. Use the kinetic-energy equation to solve for speed.
+A negative calculated kinetic energy means the photon is below threshold; no emission occurs.
+Use meters for wavelength. Use Hz for frequency. Use joules for energy. Use kilograms for mass.
+If energy is given in electron volts, convert to joules before using SI equations.
+Use constants provided on the equation sheet. If absent, the electron-volt conversion is 1 eV = 1.602E−19 J.
+

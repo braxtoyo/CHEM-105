@@ -1,0 +1,105 @@
+Lbl 0
+Menu("MOLES, MASS, ISOTOPES","THREE MASS TERMS",A1,"ISOTOPE AVERAGES",A2,"MASS SPECTROMETRY",A3,"MOLES",A4,"CONVERSION WORKFLOW",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("MOLES, MASS, ISOTOPES","COUNT ATOMS/COMPOUNDS",A6,"MASS PERCENT",A7,"◄ BACK",0)
+Lbl Z
+Return
+Lbl A1
+ClrHome
+Disp "THREE MASS TERMS","Mass number: whole-number","  count of protons plus"
+Disp "  neutrons.","Atomic mass: isotope mass","  or isotope-weighted"
+Disp "  average, depending on","  context.","Periodic-table atomic"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  mass: average over","  naturally occurring","  isotopes."
+Disp "Molar mass: mass per mole,","  in grams per mole.","An elements atomic mass in"
+Disp "  amu and molar mass in","  grams per mole have","  numerically"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  corresponding values at","  this courses precision.","One amu is one-twelfth the"
+Disp "  mass of a carbon-12","  atom."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "ISOTOPE AVERAGES","Multiply each isotopes","  mass by its fractional"
+Disp "  abundance, then add.","Convert percent abundance","  to a decimal first."
+Disp "All fractional abundances","  sum to 1.","All percentages sum to"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  100%.","The average lies between","  the isotope masses."
+Disp "For two isotopes, if one","  fraction is x, the other","  is 1-x."
+Disp "A more abundant isotope","  pulls the average closer","  to its mass."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "MASS SPECTROMETRY","Mass spectrometry","  separates ions according"
+Disp "  to mass-to-charge ratio.","It helps determine isotope","  masses and relative"
+Disp "  abundances.","Do not describe it as","  measuring mass alone"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  without considering","  charge."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "MOLES","A mole is a","  particle-counting unit,"
+Disp "  like a very large dozen.","One mole contains","  approximately 6.022E23"
+Disp "  specified particles.","Specify whether the","  particles are atoms,"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  molecules, or formula","  units.","Use the Avogadro constant"
+Disp "  supplied on the exam."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "CONVERSION WORKFLOW","Grams to moles: divide by","  molar mass."
+Disp "Moles to grams: multiply","  by molar mass.","Moles to particles:"
+Disp "  multiply by Avogadros","  constant.","Particles to moles: divide"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  by Avogadros constant.","For grams to particles, go","  through moles."
+Disp "For compound molar mass,","  multiply each elements","  atomic mass by its"
+Disp "  subscript, then add."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "COUNTING ATOMS IN"," COMPOUNDS","One mole of H2O molecules"
+Disp "  contains:","Two moles of hydrogen","  atoms."
+Disp "One mole of oxygen atoms.","Three moles of atoms","  total."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "Subscripts count atoms per","  molecule; they do not","  change the number of"
+Disp "  molecules.","Use parentheses correctly","  when a subscript"
+Disp "  multiplies an entire","  group."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0
+Lbl A7
+ClrHome
+Disp "MASS PERCENT","Mass percent means","  component mass divided"
+Disp "  by total mass, times","  100.","For an element in a"
+Disp "  compound, compare that","  elements contribution to","  the compounds molar mass"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  with the total molar","  mass.","Mass percent is not the"
+Disp "  same as atom-count","  percent."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0

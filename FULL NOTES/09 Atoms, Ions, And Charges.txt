@@ -1,0 +1,38 @@
+CATEGORY 9: ATOMS, IONS, AND CHARGES
+
+SUBATOMIC PARTICLES
+Proton: positive charge; nucleus; approximately 1 amu.
+Neutron: no charge; nucleus; approximately 1 amu.
+Electron: negative charge; outside nucleus; much smaller mass, approximately 1/1836 of proton mass.
+Most atomic mass is in the nucleus.
+
+PARTICLE COUNTS
+Atomic number Z = number of protons.
+The proton count determines the element.
+Mass number A = protons plus neutrons.
+Neutrons = A−Z.
+Neutral atom: electrons equal protons.
+Positive ion: fewer electrons than protons.
+Negative ion: more electrons than protons.
+Signed charge = protons minus electrons.
+
+EXAMPLES
+Ca has 20 protons. Ca2+ has 18 electrons.
+Cl has 17 protons. Cl− has 18 electrons.
+Changing electrons changes charge, not element identity.
+Changing protons changes the element.
+Changing neutrons changes the isotope.
+
+ISOTOPES VERSUS IONS
+Isotopes of one element have the same protons and different neutrons.
+Ions have a net charge because proton and electron counts differ.
+A species is not an ion merely because it appears in an isoelectronic list.
+Neutral Ar has no net charge.
+
+ELECTROSTATIC INTERACTIONS
+Like charges repel.
+Opposite charges attract.
+Larger charge magnitudes increase force magnitude.
+Greater separation decreases force magnitude.
+Coulomb force follows an inverse-square distance relationship.
+

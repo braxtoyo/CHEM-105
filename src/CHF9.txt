@@ -1,0 +1,68 @@
+Lbl 0
+Menu("ATOMS, IONS, CHARGES","SUBATOMIC PARTICLES",A0,"PARTICLE COUNTS",A1,"EXAMPLES",A2,"ISOTOPES VERSUS IONS",A3,"ELECTROSTATIC FORCES",A4,"◄ BACK",Z)
+Lbl Z
+Return
+Lbl A0
+ClrHome
+Disp "SUBATOMIC PARTICLES","Proton: positive charge;","  nucleus; approximately 1"
+Disp "  amu.","Neutron: no charge;","  nucleus; approximately 1"
+Disp "  amu.","Electron: negative charge;","  outside nucleus; much"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  smaller mass,","  approximately 1/1836 of","  proton mass."
+Disp "Most atomic mass is in the","  nucleus."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A1
+ClrHome
+Disp "PARTICLE COUNTS","Atomic number Z = number","  of protons."
+Disp "The proton count","  determines the element.","Mass number A = protons"
+Disp "  plus neutrons.","Neutrons = A-Z.","Neutral atom: electrons"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  equal protons.","Positive ion: fewer","  electrons than protons."
+Disp "Negative ion: more","  electrons than protons.","Signed charge = protons"
+Disp "  minus electrons."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "EXAMPLES","Ca has 20 protons.","Ca2+ has 18 electrons."
+Disp "Cl has 17 protons.","Cl- has 18 electrons.","Changing electrons changes"
+Disp "  charge, not element","  identity.","Changing protons changes"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  the element.","Changing neutrons changes","  the isotope."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "ISOTOPES VERSUS IONS","Isotopes of one element","  have the same protons"
+Disp "  and different neutrons.","Ions have a net charge","  because proton and"
+Disp "  electron counts differ.","A species is not an ion","  merely because it"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  appears in an","  isoelectronic list.","Neutral Ar has no net"
+Disp "  charge."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "ELECTROSTATIC INTERACTIONS","Like charges repel.","Opposite charges attract."
+Disp "Larger charge magnitudes","  increase force","  magnitude."
+Disp "Greater separation","  decreases force","  magnitude."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "Coulomb force follows an","  inverse-square distance","  relationship."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0

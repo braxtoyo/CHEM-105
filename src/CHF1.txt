@@ -1,0 +1,161 @@
+Lbl 0
+Menu("e⁻ CONFIG & MAGNETISM","CONFIG EXCEPTIONS",A1,"TRANSITION METAL IONS",A2,"THREE FILLING RULES",A3,"FILLING ORDER",A4,"COUNT ELECTRONS FIRST",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("e⁻ CONFIG & MAGNETISM","VALENCE ELECTRONS",A6,"MAGNETISM",A7,"LAST e⁻ QUANTUM #S",A8,"◄ BACK",0)
+Lbl Z
+Return
+Lbl A1
+ClrHome
+Disp "CONFIGURATION EXCEPTIONS","Exceptions specifically","  named in the study"
+Disp "  guide:","Cr: [Ar]4s1 3d5.","Mo: [Kr]5s1 4d5."
+Disp "Cu: [Ar]4s1 3d10.","Ag: [Kr]5s1 4d10.","Au: [Xe]6s1 4f14 5d10."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Cr and Mo have half-filled","  d subshells.","Cu, Ag, and Au have filled"
+Disp "  d subshells.","Nearby s and d energies","  make these arrangements"
+Disp "  favorable.","Half-filled or filled","  subshell stability is a"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  useful simplified","  explanation.","Do not apply it as a"
+Disp "  universal rule that","  predicts every","  transition-metal"
+Disp "  configuration."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "TRANSITION-METAL IONS","When forming these","  cations, remove outer ns"
+Disp "  electrons before","  electrons in the (n-1)d","  subshell."
+Disp "For the first transition","  series, remove 4s before","  3d."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Filling 4s before 3d does","  not mean removing 3d","  first."
+Disp "Examples:","Co: [Ar]4s2 3d7.","Co2+: [Ar]3d7."
+Disp "Fe: [Ar]4s2 3d6.","Fe2+: [Ar]3d6.","Fe3+: [Ar]3d5."
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "Cu: [Ar]4s1 3d10.","Cu+: [Ar]3d10.","Cu2+: [Ar]3d9."
+Disp "Do not change an ion back","  to the neutral atoms","  electron count when"
+Disp "  checking its magnetism."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "THREE FILLING RULES","Aufbau: fill the lowest","  available energy"
+Disp "  orbitals first.","Pauli: each orbital holds","  at most two electrons,"
+Disp "  with opposite spins.","No two electrons in an","  atom can have all four"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  quantum numbers","  identical.","Hund: fill equal-energy"
+Disp "  orbitals singly with","  parallel spins before","  pairing."
+Disp "For three p orbitals,","  place one electron in","  each before adding a"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  second electron to any","  orbital."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "FILLING ORDER","Common filling sequence:","1s, 2s, 2p, 3s, 3p, 4s,"
+Disp "  3d, 4p, 5s, 4d, 5p, 6s,","  4f, 5d, 6p, 7s, 5f, 6d,","  7p."
+Disp "Capacities:","s holds 2 electrons.","p holds 6."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "d holds 10.","f holds 14.","This sequence is a basic"
+Disp "  filling guide.","Actual configurations have","  exceptions, and orbital"
+Disp "  energies vary with the","  atom or ion."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "COUNT ELECTRONS FIRST","Neutral atom: electron","  count equals atomic"
+Disp "  number.","Positive ion: subtract","  electrons equal to the"
+Disp "  positive charge.","Negative ion: add","  electrons equal to the"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  charge magnitude.","Configuration exponents","  must add to the correct"
+Disp "  electron count.","Noble-gas shorthand uses","  the preceding noble gas."
+Disp "Example:","Br has 35 electrons.","Br: [Ar]4s2 3d10 4p5."
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "Total:","18+2+10+5 = 35.","The same configuration may"
+Disp "  be written with 3d","  before 4s.","Written order does not"
+Disp "  change occupancy."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "VALENCE ELECTRONS","For main-group atoms,","  valence electrons occupy"
+Disp "  the outermost shell.","Group 1:","1 valence electron."
+Disp "Group 2:","2.","Groups 13-18:"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "3, 4, 5, 6, 7, 8.","Helium:","2."
+Disp "Transition-metal chemistry","  can involve outer s and","  incomplete d subshells."
+Disp "The course guide excludes","  filled d and f subshells","  from its"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  valence-electron","  counting convention."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl A7
+ClrHome
+Disp "MAGNETISM","Diamagnetic: all electrons","  paired; weakly repelled"
+Disp "  by a magnetic field.","Paramagnetic: at least one","  unpaired electron;"
+Disp "  attracted by a magnetic","  field.","Check the actual"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "  configuration of the","  atom or ion.","Unpaired-electron counts"
+Disp "  using Hund filling for","  isolated atoms or ions:","s1: 1. s2: 0."
+Disp "p1, p2, p3, p4, p5, p6:","1, 2, 3, 2, 1, 0.","d1, d2, d3, d4, d5, d6,"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "  d7, d8, d9, d10:","1, 2, 3, 4, 5, 4, 3, 2, 1,","  0."
+Disp "Cu+ has d10: diamagnetic.","Cu2+ has d9: paramagnetic.","A filled subshell has no"
+Disp "  unpaired electrons.","Ferromagnetism involves","  collective alignment of"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "  magnetic moments in","  certain materials.","The study guide gives this"
+Disp "  lower priority."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto A0
+Lbl A8
+ClrHome
+Disp "LAST-ELECTRON QUANTUM"," NUMBERS","Identify the last occupied"
+Disp "  subshell.","Read n from the subshell","  number."
+Disp "Convert s, p, d, f to l =","  0, 1, 2, 3.","Draw the orbital boxes."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Apply Hund and Pauli.","Assign ml and ms using the","  classs stated box order"
+Disp "  and spin convention.","An up arrow is commonly","  assigned ms = +1/2, but"
+Disp "  use the stated","  convention.","Without a specified"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  convention, equivalent","  degenerate orbitals can","  allow different ml"
+Disp "  labels.","Do not claim a unique box","  assignment when the"
+Disp "  question has not","  specified one."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0

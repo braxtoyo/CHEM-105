@@ -1,0 +1,122 @@
+Lbl 0
+Menu("QUANTUM #S & NODES","FOUR QUANTUM NUMBERS",A1,"ALLOWED SETS",A2,"SHELL, SUBSHELL, ORBIT",A3,"FIRST POSSIBLE SUBSHEL",A4,"SHAPES AND PROBABILITY",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("QUANTUM #S & NODES","NODES",A6,"DEGENERACY",A7,"◄ BACK",0)
+Lbl Z
+Return
+Lbl A1
+ClrHome
+Disp "FOUR QUANTUM NUMBERS","n identifies the shell.","Allowed n:"
+Disp "1, 2, 3, and larger","  positive integers.","l identifies subshell"
+Disp "  shape.","Allowed l: integers from 0","  through n-1."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "l = 0 means s.","l = 1 means p.","l = 2 means d."
+Disp "l = 3 means f.","ml identifies orbital","  orientation."
+Disp "Allowed ml: integers from","  -l through +l.","ms identifies electron"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  spin.","Allowed ms: +1/2 or -1/2","  only."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "ALLOWED SETS","Every rule must be","  satisfied."
+Disp "n = 2, l = 2 is impossible","  because l can only be 0","  or 1."
+Disp "l = 1, ml = 2 is","  impossible because ml","  must be -1, 0, or +1."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "ms = 0 is impossible.","For l = 3, ml can be -3,","  -2, -1, 0, +1, +2, +3."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "SHELL, SUBSHELL, ORBITAL","Shell: same n.","Subshell: same n and l."
+Disp "Orbital: one spatial state","  specified by n, l, and","  ml."
+Disp "Each orbital holds up to","  two electrons with","  opposite spins."
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "Orbitals in a subshell =","  2l+1.","Maximum electrons in a"
+Disp "  subshell = 2(2l+1).","s:","1 orbital, 2 electrons."
+Disp "p:","3 orbitals, 6 electrons.","d:"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "5 orbitals, 10 electrons.","f:","7 orbitals, 14 electrons."
+Disp "Orbitals in a shell = n","  squared.","Maximum electrons in a"
+Disp "  shell = 2n squared.","n = 1:","1 orbital, 2 electrons."
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "n = 2:","4 orbitals, 8 electrons.","n = 3:"
+Disp "9 orbitals, 18 electrons.","n = 4:","16 orbitals, 32 electrons."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "FIRST POSSIBLE SUBSHELL","s first occurs at n = 1.","p first occurs at n = 2."
+Disp "d first occurs at n = 3.","f first occurs at n = 4.","There is no 1p, 2d, or 3f"
+Disp "  subshell."
+Output(10,13,"ENTER=BACK 1/1")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "SHAPES AND PROBABILITY","s orbitals are spherical.","p orbitals have two lobes."
+Disp "Most d orbitals have four","  lobes.","The dz² orbital has two"
+Disp "  lobes and a ring.","Orbital colors or","  plus/minus labels"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  represent wavefunction","  phase, not positive and","  negative electric"
+Disp "  charge.","An orbital is not a fixed","  circular electron path."
+Disp "psi² (psi squared) gives","  probability density.","Orbital drawings often"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  enclose about 90% of the","  electrons probability.","That drawn boundary is not"
+Disp "  a hard wall."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "NODES","A node has zero electron","  probability density."
+Disp "Total nodes = n-1.","Angular nodes = l.","Radial nodes = n-l-1."
+Disp "Angular nodes are not","  always flat planes.","Some are conical."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "To identify an orbital","  from nodes:","Add angular and radial"
+Disp "  nodes.","n = total nodes+1.","l = angular nodes."
+Disp "Convert l to s, p, d, or","  f.","Examples:"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "3p:","2 total, 1 angular, 1","  radial."
+Disp "5p:","4 total, 1 angular, 3","  radial."
+Disp "5d:","4 total, 2 angular, 2","  radial."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl A7
+ClrHome
+Disp "DEGENERACY","Degenerate means equal","  energy."
+Disp "In the basic hydrogen","  model, orbitals with the","  same n have the same"
+Disp "  energy.","Hydrogen 2s and 2p are","  degenerate."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "In many-electron atoms,","  orbitals within the same","  subshell are degenerate"
+Disp "  in the usual","  isolated-atom model.","Many-electron 2s and 2p"
+Disp "  have different energies."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0

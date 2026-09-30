@@ -1,0 +1,20 @@
+CATEGORY 6: MATTER WAVES AND UNCERTAINTY
+
+MATTER WAVES
+Moving matter has wave properties.
+Use the de Broglie equation on the equation sheet.
+Wavelength decreases as momentum increases.
+At fixed speed, greater mass gives shorter wavelength.
+At fixed mass, greater speed gives shorter wavelength.
+A large everyday object has an extremely short wavelength, making its wave behavior difficult to notice.
+Use kilograms and meters per second.
+
+UNCERTAINTY
+Position uncertainty describes how precisely position is specified.
+Momentum uncertainty describes how precisely momentum is specified.
+Smaller position uncertainty requires larger momentum uncertainty.
+The uncertainty principle is a fundamental limit, not merely a consequence of bad equipment.
+For fixed mass, momentum uncertainty can be related to speed uncertainty.
+Use the uncertainty equation on the equation sheet.
+If asked for the minimum uncertainty, use equality at the limit.
+

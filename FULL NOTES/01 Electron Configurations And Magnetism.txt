@@ -1,0 +1,62 @@
+CATEGORY 1: ELECTRON CONFIGURATIONS AND MAGNETISM
+
+CONFIGURATION EXCEPTIONS
+Exceptions specifically named in the study guide:
+Cr: [Ar]4s1 3d5. Mo: [Kr]5s1 4d5. Cu: [Ar]4s1 3d10. Ag: [Kr]5s1 4d10. Au: [Xe]6s1 4f14 5d10.
+Cr and Mo have half-filled d subshells. Cu, Ag, and Au have filled d subshells.
+Nearby s and d energies make these arrangements favorable.
+“Half-filled or filled subshell stability” is a useful simplified explanation. Do not apply it as a universal rule that predicts every transition-metal configuration.
+
+TRANSITION-METAL IONS
+When forming these cations, remove outer ns electrons before electrons in the (n−1)d subshell.
+For the first transition series, remove 4s before 3d.
+Filling 4s before 3d does not mean removing 3d first.
+Examples: Co: [Ar]4s2 3d7. Co2+: [Ar]3d7.
+Fe: [Ar]4s2 3d6. Fe2+: [Ar]3d6. Fe3+: [Ar]3d5.
+Cu: [Ar]4s1 3d10. Cu+: [Ar]3d10. Cu2+: [Ar]3d9.
+Do not change an ion back to the neutral atom’s electron count when checking its magnetism.
+
+THREE FILLING RULES
+Aufbau: fill the lowest available energy orbitals first.
+Pauli: each orbital holds at most two electrons, with opposite spins. No two electrons in an atom can have all four quantum numbers identical.
+Hund: fill equal-energy orbitals singly with parallel spins before pairing.
+For three p orbitals, place one electron in each before adding a second electron to any orbital.
+
+FILLING ORDER
+Common filling sequence: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p.
+Capacities: s holds 2 electrons. p holds 6. d holds 10. f holds 14.
+This sequence is a basic filling guide. Actual configurations have exceptions, and orbital energies vary with the atom or ion.
+
+COUNT ELECTRONS FIRST
+Neutral atom: electron count equals atomic number.
+Positive ion: subtract electrons equal to the positive charge.
+Negative ion: add electrons equal to the charge magnitude.
+Configuration exponents must add to the correct electron count.
+Noble-gas shorthand uses the preceding noble gas.
+Example: Br has 35 electrons. Br: [Ar]4s2 3d10 4p5. Total: 18+2+10+5 = 35.
+The same configuration may be written with 3d before 4s. Written order does not change occupancy.
+
+VALENCE ELECTRONS
+For main-group atoms, valence electrons occupy the outermost shell.
+Group 1: 1 valence electron. Group 2: 2. Groups 13–18: 3, 4, 5, 6, 7, 8. Helium: 2.
+Transition-metal chemistry can involve outer s and incomplete d subshells.
+The course guide excludes filled d and f subshells from its valence-electron counting convention.
+
+MAGNETISM
+Diamagnetic: all electrons paired; weakly repelled by a magnetic field.
+Paramagnetic: at least one unpaired electron; attracted by a magnetic field.
+Check the actual configuration of the atom or ion.
+Unpaired-electron counts using Hund filling for isolated atoms or ions:
+s1: 1. s2: 0.
+p1, p2, p3, p4, p5, p6: 1, 2, 3, 2, 1, 0.
+d1, d2, d3, d4, d5, d6, d7, d8, d9, d10: 1, 2, 3, 4, 5, 4, 3, 2, 1, 0.
+Cu+ has d10: diamagnetic. Cu2+ has d9: paramagnetic.
+A filled subshell has no unpaired electrons.
+Ferromagnetism involves collective alignment of magnetic moments in certain materials. The study guide gives this lower priority.
+
+LAST-ELECTRON QUANTUM NUMBERS
+Identify the last occupied subshell.
+Read n from the subshell number. Convert s, p, d, f to l = 0, 1, 2, 3. Draw the orbital boxes. Apply Hund and Pauli. Assign ml and ms using the class’s stated box order and spin convention.
+An up arrow is commonly assigned ms = +1/2, but use the stated convention.
+Without a specified convention, equivalent degenerate orbitals can allow different ml labels. Do not claim a unique box assignment when the question has not specified one.
+

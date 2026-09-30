@@ -1,0 +1,183 @@
+Lbl 0
+Menu("MEASUREMENT & MATTER","CONVERSION TRAPS",A1,"SCIENTIFIC NOTATION",A2,"SIGNIFICANT FIGURES",A3,"ROUNDING RULES",A4,"METRIC PREFIXES",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("MEASUREMENT & MATTER","MATTER CLASSES",A6,"PROPERTIES AND CHANGES",A7,"STATES OF MATTER",A8,"PHASE CHANGES",A9,"ENERGY",B0,"◄ BACK",0)
+Lbl Z
+Return
+Lbl A1
+ClrHome
+Disp "COMMON CONVERSION TRAPS","1 nm = 1E-9 m.","1 MHz = 1E6 Hz."
+Disp "1 ms = 1E-3 s.","1 g = 1E-3 kg.","1 cm3 = 1 mL."
+Disp "1 L = 1000 mL.","Hz means per second.","ms means milliseconds."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Cancel unwanted units","  using conversion","  factors."
+Disp "Square conversion factors","  for area.","Cube conversion factors"
+Disp "  for volume.","Use density to connect","  mass and volume."
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "Kelvin temperature is","  Celsius temperature plus","  273.15."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "SCIENTIFIC NOTATION","Scientific notation uses a","  coefficient with"
+Disp "  magnitude at least 1 and","  less than 10, multiplied","  by a power of ten."
+Disp "Multiplication: multiply","  coefficients and add","  exponents."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Division: divide","  coefficients and","  subtract exponents."
+Disp "A negative exponent","  indicates a small","  magnitude, not a"
+Disp "  negative value.","Calculator E notation","  represents a power of"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  ten."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "SIGNIFICANT FIGURES","Nonzero digits count.","Zeros between nonzero"
+Disp "  digits count.","Leading zeros do not","  count."
+Disp "Trailing zeros after a","  decimal point count.","Trailing zeros in whole"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  numbers without a","  decimal can be","  ambiguous."
+Disp "Scientific notation","  clarifies precision.","Examples:"
+Disp "0.00450 has 3 significant","  figures.","4.502 has 4."
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "3.900 has 4.","620. has 3.","6.20E2 has 3."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "ROUNDING RULES","Multiply or divide: answer","  has the fewest"
+Disp "  significant figures","  among measured inputs.","Add or subtract: answer"
+Disp "  ends at the least","  precise decimal place.","Exact counts and defined"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  conversion factors do","  not limit precision.","Keep extra digits during"
+Disp "  calculations.","Round at the end.","A measured value contains"
+Disp "  certain digits plus one","  estimated digit."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "METRIC PREFIXES","Each entry gives the","  number of base units in"
+Disp "  one prefixed unit.","exa, E:","10^18."
+Disp "peta, P:","10^15.","tera, T:"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "10^12.","giga, G:","10^9."
+Disp "mega, M:","10^6.","kilo, k:"
+Disp "10^3. hecto, h:","10^2.","deka, da:"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "10^1. base unit:","10^0.","deci, d:"
+Disp "10^-1. centi, c:","10^-2. milli, m:","10^-3. micro, μ:"
+Disp "10^-6.","nano, n:","10^-9."
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "pico, p:","10^-12. femto, f:","10^-15."
+Disp "atto, a:","10^-18.","Capitalization matters:"
+Disp "M is mega; m is milli."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "MATTER CLASSES","Matter has mass and","  occupies space."
+Disp "Element: one type of atom.","Compound: different","  elements chemically"
+Disp "  combined in fixed","  proportions.","Molecule: two or more"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "  chemically bonded atoms.","Not every compound","  consists of separate"
+Disp "  molecules.","Pure substance: element or","  compound with fixed"
+Disp "  composition.","Mixture: substances","  physically combined in"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "  variable proportions.","Homogeneous mixture:","  uniform throughout."
+Disp "Heterogeneous mixture: not","  uniform throughout.","Mixtures can be separated"
+Disp "  physically.","Separating a compound into","  its elements requires"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "  chemical change."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto A0
+Lbl A7
+ClrHome
+Disp "PROPERTIES AND CHANGES","Physical property:","  observed without"
+Disp "  changing chemical","  identity.","Examples: density, color,"
+Disp "  melting point,","  conductivity.","Chemical property: ability"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "  to undergo chemical","  change.","Examples: flammability,"
+Disp "  reaction with acid.","Physical change: chemical","  identity stays the same."
+Disp "Examples: melting,","  boiling, cutting.","Chemical change: new"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "  substances form.","Examples: burning,","  rusting."
+Disp "Intensive property:","  independent of sample","  amount."
+Disp "Examples: density,","  temperature.","Extensive property:"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "  depends on sample","  amount.","Examples:"
+Disp "mass, volume, total","  energy."
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto A0
+Lbl A8
+ClrHome
+Disp "STATES OF MATTER","Solid: fixed shape and","  volume."
+Disp "Liquid: fixed volume;","  takes container shape.","Gas: takes container shape"
+Disp "  and volume."
+Output(10,13,"ENTER=BACK 1/1")
+Pause 
+Goto A0
+Lbl A9
+ClrHome
+Disp "PHASE CHANGES","Melting: solid to liquid.","Freezing: liquid to solid."
+Disp "Vaporization: liquid to","  gas.","Condensation: gas to"
+Disp "  liquid.","Sublimation: solid to gas.","Deposition: gas to solid."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "Melting, vaporization, and","  sublimation absorb","  energy."
+Disp "Freezing, condensation,","  and deposition release","  energy."
+Disp "Phase changes are physical","  changes."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0
+Lbl B0
+ClrHome
+Disp "ENERGY","Kinetic energy: energy of","  motion."
+Disp "Potential energy: energy","  associated with position","  or arrangement."
+Disp "Radiant energy: energy","  carried by","  electromagnetic"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  radiation."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0

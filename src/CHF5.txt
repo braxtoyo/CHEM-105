@@ -1,0 +1,114 @@
+Lbl 0
+Menu("BOHR MODEL & SPECTRA","SPECTRUM TYPES",A1,"ENERGY LEVELS",A2,"ENERGY SIGNS",A3,"INITIAL & FINAL LEVELS",A4,"BOUND E & IONIZATION",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Lbl A0
+Menu("BOHR MODEL & SPECTRA","HYDROGEN SERIES",A6,"MODEL LIMITS",A7,"OBSERVED COLOR",A8,"◄ BACK",0)
+Lbl Z
+Return
+Lbl A1
+ClrHome
+Disp "SPECTRUM TYPES","Continuous spectrum: a","  continuous range of"
+Disp "  wavelengths.","Emission spectrum: bright","  lines at wavelengths"
+Disp "  emitted by atoms.","Absorption spectrum: dark","  lines where particular"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  wavelengths were","  absorbed.","Each element has a"
+Disp "  characteristic spectral","  pattern.","An element absorbs and"
+Disp "  emits corresponding","  transition wavelengths."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A2
+ClrHome
+Disp "ENERGY LEVELS","Ground state is the lowest","  allowed energy state."
+Disp "Excited states have higher","  allowed energies.","Absorption moves an"
+Disp "  electron to a higher","  energy level.","Emission moves an electron"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  to a lower energy level.","The absorbed or emitted","  photon matches the"
+Disp "  energy gap."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A3
+ClrHome
+Disp "ENERGY SIGNS","Atomic energy change means","  final energy minus"
+Disp "  initial energy.","Absorption: positive","  atomic energy change."
+Disp "Emission: negative atomic","  energy change.","Photon energy is always"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  positive.","Use the magnitude of the","  atomic energy change"
+Disp "  when calculating photon","  wavelength or frequency.","Never report a negative"
+Disp "  photon wavelength."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
+Disp "INITIAL AND FINAL LEVELS","ni is the initial level.","  nf is the final level."
+Disp "Emission: nf is lower than","  ni.","Absorption: nf is higher"
+Disp "  than ni.","Check the stated","  transition before"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  substituting into an","  equation.","A larger energy gap gives"
+Disp "  higher-frequency,","  shorter-wavelength","  light."
+Disp "A smaller gap gives","  lower-frequency,","  longer-wavelength light."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
+Disp "BOUND ENERGY AND"," IONIZATION","Bound-state energies are"
+Disp "  negative relative to a","  separated electron and","  nucleus."
+Disp "Higher n corresponds to","  energy closer to zero.","Ionization takes the"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  electron out of the","  bound atom.","For ionization, final n"
+Disp "  approaches infinity, so","  its inverse-square term","  becomes zero."
+Disp "An electron starting at","  higher n requires less","  ionization energy."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A6
+ClrHome
+Disp "HYDROGEN SERIES","Emission ending at n = 1:","Lyman series; ultraviolet."
+Disp "Emission ending at n = 2:","Balmer series; visible and","  near-ultraviolet."
+Disp "Emission ending at n = 3:","Paschen series; infrared."
+Output(10,13,"ENTER=BACK 1/1")
+Pause 
+Goto A0
+Lbl A7
+ClrHome
+Disp "MODEL LIMITS","Bohrs model works for","  hydrogen and other"
+Disp "  one-electron species,","  such as He+ and Li2+.","It does not correctly"
+Disp "  describe general","  many-electron atoms.","Use the nuclear-charge"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  factor when the equation","  sheet calls for a","  one-electron ion rather"
+Disp "  than hydrogen.","Note: the study guide","  wavelength equation has"
+Disp "  an incorrect sign for","  emission.","Wavelength is always"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  positive and depends on","  the magnitude of the","  energy gap."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto A0
+Lbl A8
+ClrHome
+Disp "OBSERVED COLOR","Emission can produce the","  color of a glowing"
+Disp "  source or atomic","  emission line.","Ordinary objects can also"
+Disp "  appear colored because","  they reflect or transmit","  some wavelengths and"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "  absorb others.","Do not claim every","  observed color is"
+Disp "  emitted light."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0

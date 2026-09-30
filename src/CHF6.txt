@@ -1,0 +1,42 @@
+Lbl 0
+Menu("MATTER WAVES/UNCERTAIN","MATTER WAVES",A0,"UNCERTAINTY",A1,"◄ BACK",Z)
+Lbl Z
+Return
+Lbl A0
+ClrHome
+Disp "MATTER WAVES","Moving matter has wave","  properties."
+Disp "Use the de Broglie","  equation on the equation","  sheet."
+Disp "Wavelength decreases as","  momentum increases.","At fixed speed, greater"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  mass gives shorter","  wavelength.","At fixed mass, greater"
+Disp "  speed gives shorter","  wavelength.","A large everyday object"
+Disp "  has an extremely short","  wavelength, making its","  wave behavior difficult"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  to notice.","Use kilograms and meters","  per second."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A1
+ClrHome
+Disp "UNCERTAINTY","Position uncertainty","  describes how precisely"
+Disp "  position is specified.","Momentum uncertainty","  describes how precisely"
+Disp "  momentum is specified.","Smaller position","  uncertainty requires"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "  larger momentum","  uncertainty.","The uncertainty principle"
+Disp "  is a fundamental limit,","  not merely a consequence","  of bad equipment."
+Disp "For fixed mass, momentum","  uncertainty can be","  related to speed"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  uncertainty.","Use the uncertainty","  equation on the equation"
+Disp "  sheet.","If asked for the minimum","  uncertainty, use"
+Disp "  equality at the limit."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0

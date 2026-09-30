@@ -1,0 +1,73 @@
+CATEGORY 10: MEASUREMENT AND BASIC MATTER
+
+COMMON CONVERSION TRAPS
+1 nm = 1E−9 m. 1 MHz = 1E6 Hz. 1 ms = 1E−3 s. 1 g = 1E−3 kg. 1 cm3 = 1 mL. 1 L = 1000 mL.
+Hz means per second. ms means milliseconds.
+Cancel unwanted units using conversion factors.
+Square conversion factors for area. Cube conversion factors for volume.
+Use density to connect mass and volume.
+Kelvin temperature is Celsius temperature plus 273.15.
+
+SCIENTIFIC NOTATION
+Scientific notation uses a coefficient with magnitude at least 1 and less than 10, multiplied by a power of ten.
+Multiplication: multiply coefficients and add exponents.
+Division: divide coefficients and subtract exponents.
+A negative exponent indicates a small magnitude, not a negative value.
+Calculator E notation represents a power of ten.
+
+SIGNIFICANT FIGURES
+Nonzero digits count.
+Zeros between nonzero digits count.
+Leading zeros do not count.
+Trailing zeros after a decimal point count.
+Trailing zeros in whole numbers without a decimal can be ambiguous. Scientific notation clarifies precision.
+Examples: 0.00450 has 3 significant figures. 4.502 has 4. 3.900 has 4. 620. has 3. 6.20E2 has 3.
+
+ROUNDING RULES
+Multiply or divide: answer has the fewest significant figures among measured inputs.
+Add or subtract: answer ends at the least precise decimal place.
+Exact counts and defined conversion factors do not limit precision.
+Keep extra digits during calculations. Round at the end.
+A measured value contains certain digits plus one estimated digit.
+
+METRIC PREFIXES
+Each entry gives the number of base units in one prefixed unit.
+exa, E: 10^18. peta, P: 10^15. tera, T: 10^12. giga, G: 10^9. mega, M: 10^6. kilo, k: 10^3. hecto, h: 10^2. deka, da: 10^1. base unit: 10^0. deci, d: 10^−1. centi, c: 10^−2. milli, m: 10^−3. micro, μ: 10^−6. nano, n: 10^−9. pico, p: 10^−12. femto, f: 10^−15. atto, a: 10^−18.
+Capitalization matters: M is mega; m is milli.
+
+MATTER CLASSES
+Matter has mass and occupies space.
+Element: one type of atom.
+Compound: different elements chemically combined in fixed proportions.
+Molecule: two or more chemically bonded atoms.
+Not every compound consists of separate molecules.
+Pure substance: element or compound with fixed composition.
+Mixture: substances physically combined in variable proportions.
+Homogeneous mixture: uniform throughout.
+Heterogeneous mixture: not uniform throughout.
+Mixtures can be separated physically. Separating a compound into its elements requires chemical change.
+
+PROPERTIES AND CHANGES
+Physical property: observed without changing chemical identity. Examples: density, color, melting point, conductivity.
+Chemical property: ability to undergo chemical change. Examples: flammability, reaction with acid.
+Physical change: chemical identity stays the same. Examples: melting, boiling, cutting.
+Chemical change: new substances form. Examples: burning, rusting.
+Intensive property: independent of sample amount. Examples: density, temperature.
+Extensive property: depends on sample amount. Examples: mass, volume, total energy.
+
+STATES OF MATTER
+Solid: fixed shape and volume.
+Liquid: fixed volume; takes container shape.
+Gas: takes container shape and volume.
+
+PHASE CHANGES
+Melting: solid to liquid. Freezing: liquid to solid. Vaporization: liquid to gas. Condensation: gas to liquid. Sublimation: solid to gas. Deposition: gas to solid.
+Melting, vaporization, and sublimation absorb energy.
+Freezing, condensation, and deposition release energy.
+Phase changes are physical changes.
+
+ENERGY
+Kinetic energy: energy of motion.
+Potential energy: energy associated with position or arrangement.
+Radiant energy: energy carried by electromagnetic radiation.
+

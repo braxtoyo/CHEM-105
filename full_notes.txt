@@ -1,0 +1,494 @@
+CATEGORY 1: ELECTRON CONFIGURATIONS AND MAGNETISM
+TOPIC: THREE FILLING RULES
+Aufbau: fill the lowest available energy orbitals first.
+Pauli: each orbital holds at most two electrons, with opposite spins. No two electrons in an atom can have all four quantum numbers identical.
+Hund: fill equal-energy orbitals singly with parallel spins before pairing.
+For three p orbitals, place one electron in each before adding a second electron to any orbital.
+TOPIC: FILLING ORDER
+Common filling sequence: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p.
+Capacities: s holds 2 electrons. p holds 6. d holds 10. f holds 14.
+This sequence is a basic filling guide. Actual configurations have exceptions, and orbital energies vary with the atom or ion.
+TOPIC: COUNT ELECTRONS FIRST
+Neutral atom: electron count equals atomic number.
+Positive ion: subtract electrons equal to the positive charge.
+Negative ion: add electrons equal to the charge magnitude.
+Configuration exponents must add to the correct electron count.
+Noble-gas shorthand uses the preceding noble gas.
+Example: Br has 35 electrons. Br: [Ar]4s2 3d10 4p5. Total: 18+2+10+5 = 35.
+The same configuration may be written with 3d before 4s. Written order does not change occupancy.
+TOPIC: CONFIGURATION EXCEPTIONS
+Exceptions specifically named in the study guide:
+Cr: [Ar]4s1 3d5. Mo: [Kr]5s1 4d5. Cu: [Ar]4s1 3d10. Ag: [Kr]5s1 4d10. Au: [Xe]6s1 4f14 5d10.
+Cr and Mo have half-filled d subshells. Cu, Ag, and Au have filled d subshells.
+Nearby s and d energies make these arrangements favorable.
+“Half-filled or filled subshell stability” is a useful simplified explanation. Do not apply it as a universal rule that predicts every transition-metal configuration.
+TOPIC: TRANSITION-METAL IONS
+When forming these cations, remove outer ns electrons before electrons in the (n−1)d subshell.
+For the first transition series, remove 4s before 3d.
+Filling 4s before 3d does not mean removing 3d first.
+Examples: Co: [Ar]4s2 3d7. Co2+: [Ar]3d7.
+Fe: [Ar]4s2 3d6. Fe2+: [Ar]3d6. Fe3+: [Ar]3d5.
+Cu: [Ar]4s1 3d10. Cu+: [Ar]3d10. Cu2+: [Ar]3d9.
+Do not change an ion back to the neutral atom’s electron count when checking its magnetism.
+TOPIC: VALENCE ELECTRONS
+For main-group atoms, valence electrons occupy the outermost shell.
+Group 1: 1 valence electron. Group 2: 2. Groups 13–18: 3, 4, 5, 6, 7, 8. Helium: 2.
+Transition-metal chemistry can involve outer s and incomplete d subshells.
+The course guide excludes filled d and f subshells from its valence-electron counting convention.
+TOPIC: MAGNETISM
+Diamagnetic: all electrons paired; weakly repelled by a magnetic field.
+Paramagnetic: at least one unpaired electron; attracted by a magnetic field.
+Check the actual configuration of the atom or ion.
+Unpaired-electron counts using Hund filling for isolated atoms or ions:
+s1: 1. s2: 0.
+p1, p2, p3, p4, p5, p6: 1, 2, 3, 2, 1, 0.
+d1, d2, d3, d4, d5, d6, d7, d8, d9, d10: 1, 2, 3, 4, 5, 4, 3, 2, 1, 0.
+Cu+ has d10: diamagnetic. Cu2+ has d9: paramagnetic.
+A filled subshell has no unpaired electrons.
+Ferromagnetism involves collective alignment of magnetic moments in certain materials. The study guide gives this lower priority.
+TOPIC: LAST-ELECTRON QUANTUM NUMBERS
+Identify the last occupied subshell.
+Read n from the subshell number. Convert s, p, d, f to l = 0, 1, 2, 3. Draw the orbital boxes. Apply Hund and Pauli. Assign ml and ms using the class’s stated box order and spin convention.
+An up arrow is commonly assigned ms = +1/2, but use the stated convention.
+Without a specified convention, equivalent degenerate orbitals can allow different ml labels. Do not claim a unique box assignment when the question has not specified one.
+CATEGORY 2: QUANTUM NUMBERS, ORBITALS, AND NODES
+TOPIC: FOUR QUANTUM NUMBERS
+n identifies the shell. Allowed n: 1, 2, 3, and larger positive integers.
+l identifies subshell shape. Allowed l: integers from 0 through n−1.
+l = 0 means s. l = 1 means p. l = 2 means d. l = 3 means f.
+ml identifies orbital orientation. Allowed ml: integers from −l through +l.
+ms identifies electron spin. Allowed ms: +1/2 or −1/2 only.
+TOPIC: ALLOWED SETS
+Every rule must be satisfied.
+n = 2, l = 2 is impossible because l can only be 0 or 1.
+l = 1, ml = 2 is impossible because ml must be −1, 0, or +1.
+ms = 0 is impossible.
+For l = 3, ml can be −3, −2, −1, 0, +1, +2, +3.
+TOPIC: SHELL, SUBSHELL, ORBITAL
+Shell: same n.
+Subshell: same n and l.
+Orbital: one spatial state specified by n, l, and ml.
+Each orbital holds up to two electrons with opposite spins.
+Orbitals in a subshell = 2l+1. Maximum electrons in a subshell = 2(2l+1).
+s: 1 orbital, 2 electrons. p: 3 orbitals, 6 electrons. d: 5 orbitals, 10 electrons. f: 7 orbitals, 14 electrons.
+Orbitals in a shell = n squared. Maximum electrons in a shell = 2n squared.
+n = 1: 1 orbital, 2 electrons. n = 2: 4 orbitals, 8 electrons. n = 3: 9 orbitals, 18 electrons. n = 4: 16 orbitals, 32 electrons.
+TOPIC: FIRST POSSIBLE SUBSHELL
+s first occurs at n = 1. p first occurs at n = 2. d first occurs at n = 3. f first occurs at n = 4.
+There is no 1p, 2d, or 3f subshell.
+TOPIC: SHAPES AND PROBABILITY
+s orbitals are spherical.
+p orbitals have two lobes.
+Most d orbitals have four lobes. The dz2 orbital has two lobes and a ring.
+Orbital colors or plus/minus labels represent wavefunction phase, not positive and negative electric charge.
+An orbital is not a fixed circular electron path.
+|ψ| squared gives probability density.
+Orbital drawings often enclose about 90% of the electron’s probability. That drawn boundary is not a hard wall.
+TOPIC: NODES
+A node has zero electron probability density.
+Total nodes = n−1. Angular nodes = l. Radial nodes = n−l−1.
+Angular nodes are not always flat planes. Some are conical.
+To identify an orbital from nodes: Add angular and radial nodes. n = total nodes+1. l = angular nodes. Convert l to s, p, d, or f.
+Examples: 3p: 2 total, 1 angular, 1 radial. 5p: 4 total, 1 angular, 3 radial. 5d: 4 total, 2 angular, 2 radial.
+TOPIC: DEGENERACY
+Degenerate means equal energy.
+In the basic hydrogen model, orbitals with the same n have the same energy. Hydrogen 2s and 2p are degenerate.
+In many-electron atoms, orbitals within the same subshell are degenerate in the usual isolated-atom model.
+Many-electron 2s and 2p have different energies.
+CATEGORY 3: PERIODIC TRENDS AND EXCEPTIONS
+TOPIC: EFFECTIVE NUCLEAR CHARGE
+Zeff is the effective positive nuclear charge felt by an electron.
+The nucleus attracts electrons. Other electrons provide shielding.
+A simple estimate subtracts shielding from nuclear charge. Using the number of core electrons as shielding is an approximation.
+Across a period, Zeff generally increases.
+Core electrons shield more effectively than electrons in the same shell.
+Stronger effective attraction tends to pull electrons closer and make removal harder.
+TOPIC: ATOMIC SIZE
+Atomic radius generally increases down a group because additional shells are occupied.
+Atomic radius generally decreases from left to right because effective nuclear attraction increases.
+Largest atoms are generally toward the bottom left.
+Do not assume a simple trend resolves every comparison between unrelated positions.
+TOPIC: ION SIZE
+Cations are smaller than their neutral parent atoms.
+Anions are larger than their neutral parent atoms.
+Losing an entire outer shell can produce a large size decrease.
+Adding electrons increases electron-electron repulsion.
+TOPIC: ISOELECTRONIC SERIES
+Isoelectronic species have the same electron count.
+Within an isoelectronic series: More protons means stronger attraction and smaller radius.
+Largest to smallest: O2−, F−, Ne, Na+, Mg2+.
+All five have 10 electrons. Their proton counts increase from 8 to 12.
+TOPIC: IONIZATION ENERGY
+Ionization energy is the energy needed to remove an electron from a gaseous atom or ion.
+Removal requires energy. Ionization energy is positive and endothermic.
+It generally increases up and to the right.
+It generally decreases down and to the left.
+TOPIC: IONIZATION EXCEPTIONS
+B has lower first ionization energy than Be. Al has lower first ionization energy than Mg.
+Reason: removing the first p electron is easier than removing an electron from the filled s subshell.
+O has lower first ionization energy than N. S has lower first ionization energy than P.
+Reason: paired-electron repulsion makes an electron easier to remove than from the half-filled p arrangement.
+TOPIC: SUCCESSIVE IONIZATION
+Successive ionization energies increase.
+After all valence electrons are removed, the next removal takes a much larger amount of energy.
+A large jump between the second and third ionization energies suggests two valence electrons for a main-group atom.
+TOPIC: ELECTRON AFFINITY
+Use the course’s energy-change convention: A gaseous atom gains an electron to form a gaseous negative ion.
+Negative electron affinity means energy is released.
+More negative means more energy released.
+Positive electron affinity means energy is required.
+Do not confuse “more negative electron affinity” with “larger positive ionization energy.”
+Ionization energy removes an electron. Electron affinity describes adding one.
+TOPIC: ELECTRON-AFFINITY EXCEPTIONS
+Electron addition generally becomes more favorable toward the upper right, but this has important exceptions.
+Halogens have strongly negative electron affinities.
+Noble gases have unfavorable electron addition.
+Group 2 atoms have filled s subshells, making addition relatively unfavorable.
+Group 15 atoms have half-filled p subshells, making addition less favorable than a simple trend predicts.
+Chlorine has a more negative electron affinity than fluorine.
+Fluorine’s small orbital causes greater electron-electron repulsion.
+A single periodic-table arrow cannot correctly rank every electron-affinity comparison.
+TOPIC: METALLIC CHARACTER
+Metals tend to lose electrons.
+Metallic character generally increases down and to the left.
+Nonmetallic character generally increases up and to the right.
+CATEGORY 4: LIGHT AND PHOTOELECTRIC EFFECT
+TOPIC: LIGHT VOCABULARY
+λ means wavelength: distance between corresponding points on neighboring waves.
+ν means frequency: cycles per second.
+Frequency units are Hz, meaning per second.
+v means particle speed, not frequency.
+Amplitude is wave height.
+A photon is a discrete packet of electromagnetic energy.
+TOPIC: ELECTROMAGNETIC ORDER
+From lowest frequency and photon energy to highest:
+Radio. Microwave. Infrared. Visible. Ultraviolet. X-ray. Gamma.
+Wavelength decreases in that order.
+The course guide says to memorize the order, not numerical boundaries.
+TOPIC: VISIBLE COLORS
+From lowest photon energy to highest: Red, orange, yellow, green, blue, violet.
+Red has the longest visible wavelength and lowest visible frequency and photon energy.
+Violet has the shortest visible wavelength and highest visible frequency and photon energy.
+Infrared is beyond red at longer wavelengths.
+Ultraviolet is beyond violet at shorter wavelengths.
+TOPIC: RELATIONSHIPS
+Longer wavelength means lower frequency and photon energy.
+Shorter wavelength means higher frequency and photon energy.
+At fixed frequency, higher intensity does not increase energy per photon.
+For monochromatic light, higher intensity means more photons arriving per unit area per unit time.
+Use the wavelength-frequency and photon-energy equations on the equation sheet.
+TOPIC: BLACKBODY RADIATION
+Heated objects emit electromagnetic radiation.
+As temperature rises, peak emission shifts toward shorter wavelengths.
+Planck explained this behavior using quantized energy exchanges.
+TOPIC: PHOTOELECTRIC THRESHOLD
+Φ is the work function: minimum energy needed to remove an electron from the material.
+Photon energy below Φ: no electron is emitted in the ordinary single-photon process.
+Photon energy equal to Φ: threshold; maximum emitted kinetic energy is zero.
+Photon energy above Φ: the extra energy becomes electron kinetic energy.
+Threshold frequency is the minimum frequency that can produce emission.
+Threshold wavelength is the maximum wavelength that can produce emission.
+Higher frequency means shorter wavelength.
+TOPIC: FREQUENCY VERSUS INTENSITY
+Increasing frequency above threshold increases maximum electron kinetic energy.
+Increasing intensity at fixed frequency above threshold increases the number of emitted electrons, not their maximum kinetic energy.
+Below threshold, increasing intensity does not produce ordinary single-photon emission.
+TOPIC: CALCULATION CLUES
+For emitted electron speed: Find photon energy. Subtract the work function to find maximum kinetic energy. Use the kinetic-energy equation to solve for speed.
+A negative calculated kinetic energy means the photon is below threshold; no emission occurs.
+Use meters for wavelength. Use Hz for frequency. Use joules for energy. Use kilograms for mass.
+If energy is given in electron volts, convert to joules before using SI equations.
+Use constants provided on the equation sheet. If absent, the electron-volt conversion is 1 eV = 1.602E−19 J.
+CATEGORY 5: BOHR MODEL AND ATOMIC SPECTRA
+TOPIC: SPECTRUM TYPES
+Continuous spectrum: a continuous range of wavelengths.
+Emission spectrum: bright lines at wavelengths emitted by atoms.
+Absorption spectrum: dark lines where particular wavelengths were absorbed.
+Each element has a characteristic spectral pattern.
+An element absorbs and emits corresponding transition wavelengths.
+TOPIC: ENERGY LEVELS
+Ground state is the lowest allowed energy state.
+Excited states have higher allowed energies.
+Absorption moves an electron to a higher energy level.
+Emission moves an electron to a lower energy level.
+The absorbed or emitted photon matches the energy gap.
+TOPIC: ENERGY SIGNS
+Atomic energy change means final energy minus initial energy.
+Absorption: positive atomic energy change.
+Emission: negative atomic energy change.
+Photon energy is always positive.
+Use the magnitude of the atomic energy change when calculating photon wavelength or frequency.
+Never report a negative photon wavelength.
+TOPIC: INITIAL AND FINAL LEVELS
+ni is the initial level. nf is the final level.
+Emission: nf is lower than ni.
+Absorption: nf is higher than ni.
+Check the stated transition before substituting into an equation.
+A larger energy gap gives higher-frequency, shorter-wavelength light.
+A smaller gap gives lower-frequency, longer-wavelength light.
+TOPIC: BOUND ENERGY AND IONIZATION
+Bound-state energies are negative relative to a separated electron and nucleus.
+Higher n corresponds to energy closer to zero.
+Ionization takes the electron out of the bound atom.
+For ionization, final n approaches infinity, so its inverse-square term becomes zero.
+An electron starting at higher n requires less ionization energy.
+TOPIC: HYDROGEN SERIES
+Emission ending at n = 1: Lyman series; ultraviolet.
+Emission ending at n = 2: Balmer series; visible and near-ultraviolet.
+Emission ending at n = 3: Paschen series; infrared.
+TOPIC: MODEL LIMITS
+Bohr’s model works for hydrogen and other one-electron species, such as He+ and Li2+.
+It does not correctly describe general many-electron atoms.
+Use the nuclear-charge factor when the equation sheet calls for a one-electron ion rather than hydrogen.
+@SIGNNOTE
+TOPIC: OBSERVED COLOR
+Emission can produce the color of a glowing source or atomic emission line.
+Ordinary objects can also appear colored because they reflect or transmit some wavelengths and absorb others.
+Do not claim every observed color is emitted light.
+CATEGORY 6: MATTER WAVES AND UNCERTAINTY
+TOPIC: MATTER WAVES
+Moving matter has wave properties.
+Use the de Broglie equation on the equation sheet.
+Wavelength decreases as momentum increases.
+At fixed speed, greater mass gives shorter wavelength.
+At fixed mass, greater speed gives shorter wavelength.
+A large everyday object has an extremely short wavelength, making its wave behavior difficult to notice.
+Use kilograms and meters per second.
+TOPIC: UNCERTAINTY
+Position uncertainty describes how precisely position is specified.
+Momentum uncertainty describes how precisely momentum is specified.
+Smaller position uncertainty requires larger momentum uncertainty.
+The uncertainty principle is a fundamental limit, not merely a consequence of bad equipment.
+For fixed mass, momentum uncertainty can be related to speed uncertainty.
+Use the uncertainty equation on the equation sheet.
+If asked for the minimum uncertainty, use equality at the limit.
+CATEGORY 7: SCIENTISTS AND EXPERIMENTS
+TOPIC: GREEK ATOMISTS
+METHOD: Philosophical reasoning about matter.
+PROPOSED: Matter consists of atoms.
+LEARNED: An early atomic idea, not an experimental discovery.
+Many other Greeks favored earth, air, fire, and water as the basic constituents.
+TOPIC: BOYLE
+METHOD: Chemical observations and experiments challenged traditional explanations.
+OBSERVED: The four-element idea did not adequately explain chemical behavior.
+LEARNED: Helped develop the modern idea of elements; explanations should be tested by observation and experiment.
+TOPIC: LAVOISIER
+METHOD: Used accurate balances and sealed containers to study combustion.
+OBSERVED: Burning metal gained mass by combining with oxygen; total sealed-system mass remained constant.
+LEARNED: Oxygen participates in combustion; mass is conserved.
+Mass before a chemical reaction equals mass after, for a closed system.
+TOPIC: PROUST
+METHOD: Compared the composition of compound samples.
+OBSERVED: A pure compound contained the same elements in fixed mass proportions.
+LEARNED: Law of definite proportions.
+TOPIC: DALTON
+METHOD: Compared different compounds containing the same two elements.
+OBSERVED: For a fixed mass of one element, masses of the other occurred in small whole-number ratios.
+EXAMPLE: Oxygen masses in CO and CO2 have a 1:2 ratio for the same carbon mass.
+LEARNED: Law of multiple proportions supports atomic theory.
+DALTON’S THEORY: Matter consists of atoms. Different elements have different atoms. Compounds contain atoms in whole-number ratios. Chemical reactions rearrange atoms.
+Later discoveries revised the claims that atoms are indivisible and that every atom of one element has identical mass.
+TOPIC: THOMSON
+METHOD: Studied cathode rays and their deflection by electric and magnetic fields.
+OBSERVED: The beam bent toward a positive plate.
+LEARNED: The beam contained negative particles, electrons.
+Measured electron charge-to-mass ratio.
+Electrons occurred in different materials, showing atoms contain smaller particles.
+Proposed plum-pudding model: electrons embedded in diffuse positive matter.
+TOPIC: MILLIKAN AND FLETCHER
+METHOD: Observed charged oil droplets in an electric field that opposed gravity.
+OBSERVED: Droplet charges were multiples of one basic charge.
+LEARNED: Measured electron charge.
+Electron mass was calculated by combining this charge with Thomson’s charge-to-mass ratio.
+Do not say the oil-drop experiment independently measured electron mass.
+TOPIC: CURIE
+METHOD: Studied radiation from radioactive materials.
+OBSERVED: Radioactivity was associated with atomic properties; identified polonium and radium with Pierre Curie.
+LEARNED: Atoms can undergo changes beyond ordinary chemical reactions.
+Do not credit Curie with discovering the proton or every radiation type.
+TOPIC: RUTHERFORD
+METHOD: Directed positive alpha particles at thin gold foil.
+OBSERVED: Most passed through; some deflected; very few turned back.
+LEARNED: Atoms are mostly empty space with a tiny, dense, positive nucleus containing most atomic mass.
+Disproved the diffuse positive-charge plum-pudding model.
+Alpha particles are helium nuclei, not single protons.
+TOPIC: CHADWICK
+METHOD: Bombarded beryllium with alpha particles; examined neutral radiation that knocked protons out of paraffin.
+OBSERVED: Collision behavior indicated neutral particles with approximately proton mass.
+LEARNED: Discovered the neutron.
+Neutrons explain much of atomic mass and isotope mass differences.
+Isotopes were known before Chadwick’s discovery.
+TOPIC: PLANCK
+METHOD: Theoretical explanation of blackbody radiation.
+EXPLAINED: Energy exchanges occur in discrete amounts.
+LEARNED: Energy is quantized; packet energy depends on frequency.
+TOPIC: EINSTEIN
+METHOD: Theoretical explanation of the photoelectric effect.
+EXPLAINED: One photon transfers energy to one electron; emission requires sufficient photon energy.
+LEARNED: Light has particle behavior. Excess photon energy becomes electron kinetic energy.
+TOPIC: FRAUNHOFER
+METHOD: Examined the solar spectrum.
+OBSERVED: Dark lines at particular wavelengths.
+LEARNED: Some wavelengths are missing from sunlight reaching us.
+TOPIC: BUNSEN AND KIRCHHOFF
+METHOD: Examined spectra of heated elements and compared emission and absorption.
+OBSERVED: Elements had characteristic spectral lines; corresponding wavelengths could be emitted and absorbed.
+LEARNED: Spectra identify elements and explain missing wavelengths caused by absorption.
+TOPIC: BALMER AND RYDBERG
+METHOD: Analyzed hydrogen spectral wavelengths mathematically.
+OBSERVED: Wavelength patterns followed relationships involving whole numbers.
+LEARNED: Hydrogen spectral lines could be predicted.
+TOPIC: BOHR
+METHOD: Proposed quantized electron energy levels to explain hydrogen spectra.
+EXPLAINED: Electrons absorb or emit photons when changing allowed levels.
+LEARNED: Discrete levels explain hydrogen’s line spectrum.
+TOPIC: DE BROGLIE
+METHOD: Theoretical proposal extending wave-particle behavior to matter.
+PROPOSED: Moving particles have a wavelength related to momentum.
+LEARNED: Matter has wave properties; later diffraction experiments supported this.
+TOPIC: HEISENBERG
+METHOD: Developed quantum-mechanical uncertainty relationships.
+ESTABLISHED: Exact position and momentum cannot both be specified simultaneously.
+LEARNED: A fundamental limit applies to their combined precision.
+TOPIC: SCHRODINGER
+METHOD: Developed a wave equation for electron states.
+ESTABLISHED: Solutions describe allowed energies and spatial wavefunctions.
+LEARNED: Probability density replaces fixed electron paths in the orbital description.
+TOPIC: ALPHA, BETA, GAMMA
+Alpha: helium nucleus; +2 charge; relatively low penetrating power.
+Beta-minus: emitted electron; −1 charge; generally more penetrating than alpha.
+Gamma: high-energy photon; no charge; highly penetrating.
+Radioactive decay does not always split an atom into two large pieces.
+CATEGORY 8: MOLES, MASSES, AND ISOTOPES
+TOPIC: THREE MASS TERMS
+Mass number: whole-number count of protons plus neutrons.
+Atomic mass: isotope mass or isotope-weighted average, depending on context.
+Periodic-table atomic mass: average over naturally occurring isotopes.
+Molar mass: mass per mole, in grams per mole.
+An element’s atomic mass in amu and molar mass in grams per mole have numerically corresponding values at this course’s precision.
+One amu is one-twelfth the mass of a carbon-12 atom.
+TOPIC: ISOTOPE AVERAGES
+Multiply each isotope’s mass by its fractional abundance, then add.
+Convert percent abundance to a decimal first.
+All fractional abundances sum to 1. All percentages sum to 100%.
+The average lies between the isotope masses.
+For two isotopes, if one fraction is x, the other is 1−x.
+A more abundant isotope pulls the average closer to its mass.
+TOPIC: MASS SPECTROMETRY
+Mass spectrometry separates ions according to mass-to-charge ratio.
+It helps determine isotope masses and relative abundances.
+Do not describe it as measuring mass alone without considering charge.
+TOPIC: MOLES
+A mole is a particle-counting unit, like a very large dozen.
+One mole contains approximately 6.022E23 specified particles.
+Specify whether the particles are atoms, molecules, or formula units.
+Use the Avogadro constant supplied on the exam.
+TOPIC: CONVERSION WORKFLOW
+Grams to moles: divide by molar mass.
+Moles to grams: multiply by molar mass.
+Moles to particles: multiply by Avogadro’s constant.
+Particles to moles: divide by Avogadro’s constant.
+For grams to particles, go through moles.
+For compound molar mass, multiply each element’s atomic mass by its subscript, then add.
+TOPIC: COUNTING ATOMS IN COMPOUNDS
+One mole of H2O molecules contains: Two moles of hydrogen atoms. One mole of oxygen atoms. Three moles of atoms total.
+Subscripts count atoms per molecule; they do not change the number of molecules.
+Use parentheses correctly when a subscript multiplies an entire group.
+TOPIC: MASS PERCENT
+Mass percent means component mass divided by total mass, times 100.
+For an element in a compound, compare that element’s contribution to the compound’s molar mass with the total molar mass.
+Mass percent is not the same as atom-count percent.
+CATEGORY 9: ATOMS, IONS, AND CHARGES
+TOPIC: SUBATOMIC PARTICLES
+Proton: positive charge; nucleus; approximately 1 amu.
+Neutron: no charge; nucleus; approximately 1 amu.
+Electron: negative charge; outside nucleus; much smaller mass, approximately 1/1836 of proton mass.
+Most atomic mass is in the nucleus.
+TOPIC: PARTICLE COUNTS
+Atomic number Z = number of protons.
+The proton count determines the element.
+Mass number A = protons plus neutrons.
+Neutrons = A−Z.
+Neutral atom: electrons equal protons.
+Positive ion: fewer electrons than protons.
+Negative ion: more electrons than protons.
+Signed charge = protons minus electrons.
+TOPIC: EXAMPLES
+Ca has 20 protons. Ca2+ has 18 electrons.
+Cl has 17 protons. Cl− has 18 electrons.
+Changing electrons changes charge, not element identity.
+Changing protons changes the element.
+Changing neutrons changes the isotope.
+TOPIC: ISOTOPES VERSUS IONS
+Isotopes of one element have the same protons and different neutrons.
+Ions have a net charge because proton and electron counts differ.
+A species is not an ion merely because it appears in an isoelectronic list.
+Neutral Ar has no net charge.
+TOPIC: ELECTROSTATIC INTERACTIONS
+Like charges repel.
+Opposite charges attract.
+Larger charge magnitudes increase force magnitude.
+Greater separation decreases force magnitude.
+Coulomb force follows an inverse-square distance relationship.
+CATEGORY 10: MEASUREMENT AND BASIC MATTER
+TOPIC: SCIENTIFIC NOTATION
+Scientific notation uses a coefficient with magnitude at least 1 and less than 10, multiplied by a power of ten.
+Multiplication: multiply coefficients and add exponents.
+Division: divide coefficients and subtract exponents.
+A negative exponent indicates a small magnitude, not a negative value.
+Calculator E notation represents a power of ten.
+TOPIC: SIGNIFICANT FIGURES
+Nonzero digits count.
+Zeros between nonzero digits count.
+Leading zeros do not count.
+Trailing zeros after a decimal point count.
+Trailing zeros in whole numbers without a decimal can be ambiguous. Scientific notation clarifies precision.
+Examples: 0.00450 has 3 significant figures. 4.502 has 4. 3.900 has 4. 620. has 3. 6.20E2 has 3.
+TOPIC: ROUNDING RULES
+Multiply or divide: answer has the fewest significant figures among measured inputs.
+Add or subtract: answer ends at the least precise decimal place.
+Exact counts and defined conversion factors do not limit precision.
+Keep extra digits during calculations. Round at the end.
+A measured value contains certain digits plus one estimated digit.
+TOPIC: METRIC PREFIXES
+Each entry gives the number of base units in one prefixed unit.
+exa, E: 10^18. peta, P: 10^15. tera, T: 10^12. giga, G: 10^9. mega, M: 10^6. kilo, k: 10^3. hecto, h: 10^2. deka, da: 10^1. base unit: 10^0. deci, d: 10^−1. centi, c: 10^−2. milli, m: 10^−3. micro, μ: 10^−6. nano, n: 10^−9. pico, p: 10^−12. femto, f: 10^−15. atto, a: 10^−18.
+Capitalization matters: M is mega; m is milli.
+TOPIC: COMMON CONVERSION TRAPS
+1 nm = 1E−9 m. 1 MHz = 1E6 Hz. 1 ms = 1E−3 s. 1 g = 1E−3 kg. 1 cm3 = 1 mL. 1 L = 1000 mL.
+Hz means per second. ms means milliseconds.
+Cancel unwanted units using conversion factors.
+Square conversion factors for area. Cube conversion factors for volume.
+Use density to connect mass and volume.
+Kelvin temperature is Celsius temperature plus 273.15.
+TOPIC: MATTER CLASSES
+Matter has mass and occupies space.
+Element: one type of atom.
+Compound: different elements chemically combined in fixed proportions.
+Molecule: two or more chemically bonded atoms.
+Not every compound consists of separate molecules.
+Pure substance: element or compound with fixed composition.
+Mixture: substances physically combined in variable proportions.
+Homogeneous mixture: uniform throughout.
+Heterogeneous mixture: not uniform throughout.
+Mixtures can be separated physically. Separating a compound into its elements requires chemical change.
+TOPIC: PROPERTIES AND CHANGES
+Physical property: observed without changing chemical identity. Examples: density, color, melting point, conductivity.
+Chemical property: ability to undergo chemical change. Examples: flammability, reaction with acid.
+Physical change: chemical identity stays the same. Examples: melting, boiling, cutting.
+Chemical change: new substances form. Examples: burning, rusting.
+Intensive property: independent of sample amount. Examples: density, temperature.
+Extensive property: depends on sample amount. Examples: mass, volume, total energy.
+TOPIC: STATES OF MATTER
+Solid: fixed shape and volume.
+Liquid: fixed volume; takes container shape.
+Gas: takes container shape and volume.
+TOPIC: PHASE CHANGES
+Melting: solid to liquid. Freezing: liquid to solid. Vaporization: liquid to gas. Condensation: gas to liquid. Sublimation: solid to gas. Deposition: gas to solid.
+Melting, vaporization, and sublimation absorb energy.
+Freezing, condensation, and deposition release energy.
+Phase changes are physical changes.
+TOPIC: ENERGY
+Kinetic energy: energy of motion.
+Potential energy: energy associated with position or arrangement.
+Radiant energy: energy carried by electromagnetic radiation.
