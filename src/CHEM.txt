@@ -1,24 +1,415 @@
-ClrHome
 Lbl 0
-Menu("CHEM 105","UNITS ×10^x k μ n",1,"MATTER ρ=m/V n=m/M",2,"LIGHT E=hv c=λv Φ",3,"ATOM λ=h/mv Δx n l",4,"MY NOTES",5,"EQUATION SHEET",6,"MORE/SI TABLE/QUIT",7)
-Lbl 1
-prgmCHUNIT
+Menu("CHEM 105 NOTES","PREFIXES 10^x k μ n",A,"QUANTUM #S & NODES",B,"e⁻ RULES/PRINCIPLES",C,"PERIODIC TRENDS",D,"EXPERIMENTS",E,"MORE ►",M,"QUIT",Q)
+Lbl M
+Menu("MORE NOTES","LAWS LIST A-F",F,"LIGHT RELATIONSHIPS",G,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"ACCURATE VS PRECISE",I,"◄ BACK",0)
+Lbl Q
+ClrHome
+Stop
+Lbl H
+1→Y
+Goto S0
+Lbl J
+2→Y
+Lbl S0
+"H HELIBEB C N O F NENAMGALSIP S CLARK CASCTIV CRMNFECONICUZNGAGEASSEBRKRRBSRY ZRNBMOTCRURHPDAGCDINSNSBTEI XECSBALACEPRNDPMSMEUGDTBDYHOERTMYBLUHFTAW REOSIRPTAUHGTLPBBIPOATRNFRRAACTHPAU NPPUAMCMBKCFESFMMDNOLRRFDBSGBHHSMTDSRGCNNHFLMCLVTSOG"→Str9
+"H HeLiBeB C N O F NeNaMgAlSiP S ClArK CaScTiV CrMnFeCoNiCuZnGaGeAsSeBrKrRbSrY ZrNbMoTcRuRhPdAgCdInSnSbTeI XeCsBaLaCePrNdPmSmEuGdTbDyHoErTmYbLuHfTaW ReOsIrPtAuHgTlPbBiPoAtRnFrRaAcThPaU NpPuAmCmBkCfEsFmMdNoLrRfDbSgBhHsMtDsRgCnNhFlMcLvTsOg"→Str8
+"5-4-3-2--   + 2+3+4+5+"→Str7
+ClrHome
+If Y=1
+Disp "ISOELECTRONIC LIST"
+If Y=2
+Disp "ELECTRON CONFIG"
+Disp "TYPE SYMBOL (NA OR Na)"
+Input "SYMBOL:",Str1
+If length(Str1)=1
+Str1+" "→Str1
+0→Z
+For(J,1,118)
+If sub(Str9,2J-1,2)=Str1 or sub(Str8,2J-1,2)=Str1
+J→Z
+End
+If not(Z)
+Goto H8
+Disp "CHARGE: 0 IF NEUTRAL","USE (-) KEY FOR NEG"
+Input "CHARGE:",C
+Z-C→N
+If N<1
+Goto H9
+If Y=2
+Goto J0
+ClrHome
+Disp "SAME # OF e⁻:","(CHARGES -5 TO +5)"
+Output(1,15,N)
+0→R
+For(K,N-5,N+5)
+If K≥1 and K≤118
+Then
+sub(Str8,2K-1,2)→Str2
+If sub(Str2,2,1)=" "
+sub(Str2,1,1)→Str2
+Str2+sub(Str7,2(K-N)+11,2)→Str2
+If K=Z
+Str2+" ◄"→Str2
+R+1→R
+If R≤6
+Output(2+R,2,Str2)
+If R>6
+Output(R-4,14,Str2)
+End
+End
+Output(10,17,"ENTER=BACK")
+Pause 
+Goto M
+Lbl H8
+Disp "SYMBOL NOT FOUND"
+Pause 
+Goto S0
+Lbl H9
+Disp "THAT LEAVES 0 e⁻"
+Pause 
+Goto S0
+Lbl J0
+{2,2,6,2,6,2,10,6,2,10,6,2,14,10,6,2,14,10,6}→ʟCAP
+{10,20,21,30,31,40,32,41,50,42,51,60,43,52,61,70,53,62,71}→ʟSC
+"1s2s2p3s3p4s3d4p5s4d5p6s4f5d6p7s5f6d7p"→Str6
+"1 2 3 4 5 6 7 8 9 1011121314"→Str5
+"HeNeArKrXeRn"→Str4
+{2,10,18,36,54,86}→ʟCE
+{1,3,5,8,11,15}→ʟCI
+N→R
+If C>0
+Z→R
+19→dim(ʟEC)
+Fill(0,ʟEC)
+For(I,1,19)
+min(R,ʟCAP(I))→ʟEC(I)
+R-ʟEC(I)→R
+End
+0→X
+If C≥0 and Z=24
+Then
+ʟEC(6)-1→ʟEC(6)
+ʟEC(7)+1→ʟEC(7)
+1→X
+End
+If C≥0 and Z=29
+Then
+ʟEC(6)-1→ʟEC(6)
+ʟEC(7)+1→ʟEC(7)
+1→X
+End
+If C≥0 and Z=42
+Then
+ʟEC(9)-1→ʟEC(9)
+ʟEC(10)+1→ʟEC(10)
+1→X
+End
+If C≥0 and Z=47
+Then
+ʟEC(9)-1→ʟEC(9)
+ʟEC(10)+1→ʟEC(10)
+1→X
+End
+If C≥0 and Z=79
+Then
+ʟEC(12)-1→ʟEC(12)
+ʟEC(14)+1→ʟEC(14)
+1→X
+End
+If C>0
+Then
+For(J,1,C)
+0→B
+0→D
+For(I,1,19)
+If ʟEC(I)>0 and ʟSC(I)>B
+Then
+ʟSC(I)→B
+I→D
+End
+End
+ʟEC(D)-1→ʟEC(D)
+End
+End
+0→P
+For(K,1,6)
+1→F
+For(I,1,ʟCI(K))
+If ʟEC(I)≠ʟCAP(I)
+0→F
+End
+If F and (ʟCE(K)<N or (C≠0 and ʟCE(K)≤N))
+K→P
+End
+ClrHome
+sub(Str8,2Z-1,2)→Str2
+Disp Str2+" CHARGE:"
+Output(1,12,C)
+Disp "e⁻ COUNT:"
+Output(2,11,N)
+2→V
+If X and C=0
+Then
+Disp "(EXCEPTION: ns TO d)"
+V+1→V
+End
+Disp "FULL:"
+V+1→V
+""→Str2
+For(I,1,19)
+If ʟEC(I)>0
+Then
+sub(Str6,2I-1,2)+sub(Str5,2ʟEC(I)-1,2)→Str3
+If sub(Str3,4,1)=" "
+sub(Str3,1,3)→Str3
+If length(Str2)+length(Str3)≥26
+Then
+If V≥8
+Then
+Output(10,15,"ENTER=MORE")
+Pause 
+ClrHome
+0→V
+End
+Disp Str2
+V+1→V
+Str3→Str2
+Else
+If length(Str2)
+Str2+" "→Str2
+Str2+Str3→Str2
+End
+End
+End
+If length(Str2)
+Then
+If V≥8
+Then
+Output(10,15,"ENTER=MORE")
+Pause 
+ClrHome
+0→V
+End
+Disp Str2
+V+1→V
+End
+If V≥8
+Then
+Output(10,15,"ENTER=MORE")
+Pause 
+ClrHome
+0→V
+End
+Disp "CONDENSED:"
+V+1→V
+If P
+Then
+"["+sub(Str4,2P-1,2)+"]"→Str2
+For(I,ʟCI(P)+1,19)
+If ʟEC(I)>0
+Then
+sub(Str6,2I-1,2)+sub(Str5,2ʟEC(I)-1,2)→Str3
+If sub(Str3,4,1)=" "
+sub(Str3,1,3)→Str3
+If length(Str2)+length(Str3)≥26
+Then
+If V≥8
+Then
+Output(10,15,"ENTER=MORE")
+Pause 
+ClrHome
+0→V
+End
+Disp Str2
+V+1→V
+Str3→Str2
+Else
+If length(Str2)
+Str2+" "→Str2
+Str2+Str3→Str2
+End
+End
+End
+If length(Str2)
+Then
+If V≥8
+Then
+Output(10,15,"ENTER=MORE")
+Pause 
+ClrHome
+0→V
+End
+Disp Str2
+V+1→V
+End
+Else
+If V≥8
+Then
+Output(10,15,"ENTER=MORE")
+Pause 
+ClrHome
+0→V
+End
+Disp "(SAME AS FULL)"
+End
+Output(10,15,"ENTER=BACK")
+Pause 
+Goto M
+Lbl A
+ClrHome
+Disp "SI PREFIXES (10^x)","E  exa     10^18","P  peta    10^15"
+Disp "T  tera    10^12","G  giga    10^9","M  mega    10^6"
+Disp "k  kilo    10^3","h  hecto   10^2","da deca    10^1"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "b  BASE    10^0","d  deci    10^⁻1","c  centi   10^⁻2"
+Disp "m  milli   10^⁻3","μ  micro   10^⁻6","n  nano    10^⁻9"
+Disp "p  pico    10^⁻12","f  femto   10^⁻15","a  atto    10^⁻18"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "b = base unit (m, g, L, s)","","CONVERTING:"
+Disp "multiply by 10^(FROM-TO)"," ex: 5 km to m:","     5×10^(3-0) = 5000 m"
+Disp " ex: 450 nm to m:","     450×10^⁻9 m"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
 Goto 0
-Lbl 2
-prgmCHMATTR
+Lbl B
+ClrHome
+Disp "N = PRINCIPAL QUANTUM #","n ≥ 1","principal energy level,"
+Disp " distance from nucleus,"," orbital size",""
+Disp "L = ANGULAR MOMENTUM QN","l can only be 0 to n-1","sublevel, orbital type,"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp " and orbital shape","","ML = MAGNETIC QN"
+Disp "ml = -l to +l","orientation in space",""
+Disp "NODES","total nodes = n-1","planar nodes = l"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp " - flat 2D slice through"," atomic orbital","radial nodes = total - l"
+Disp " - hollow spherical gap in"," between orbitals"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
 Goto 0
-Lbl 3
-prgmCHLIGHT
+Lbl C
+ClrHome
+Disp "I. AUFBAU PRINCIPLE","Electrons are placed in"," lowest energy orbitals"
+Disp " first.","","II. PAULI EXCLUSION"
+Disp "Only 2 electrons can be"," placed in each orbital.",""
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "III. HUNDS RULE","Electrons fill all"," orbitals of equal energy"
+Disp " (degenerate orbitals)"," singly before pairing up"," so all unpaired e⁻ have"
+Disp " the same spin. It costs"," energy to put two"," electrons in the same"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp " orbital because they"," repel each other.",""
+Disp "IV. OCTET RULE","  (ADD NOTES LATER)",""
+Disp "V. LE CHATELIERS PRINCIPLE","  (ADD NOTES LATER)"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
 Goto 0
-Lbl 4
-prgmCHATOM
+Lbl D
+ClrHome
+Disp "GENERAL","Metallic character and"," atomic radius increase to"
+Disp " the LEFT and DOWN","Nonmetallic character,"," electron affinity and"
+Disp " ionization energy"," increase RIGHT and UP",""
+Output(10,13,"ENTER=NEXT 1/7")
+Pause 
+ClrHome
+Disp "ATOMIC RADIUS","- Going up and right: the"," increased nuclear charge"
+Disp " from an increasing number"," of protons pulls the e⁻"," more tightly = smaller"
+Disp " radius.","- Going down: each new"," period adds a new e⁻"
+Output(10,13,"ENTER=NEXT 2/7")
+Pause 
+ClrHome
+Disp " shell, which increases"," the overall size of the"," atom."
+Disp "- Cations (take e⁻) are"," smaller than their"," neutral atom: increased"
+Disp " Zeff.","- Anions (give e⁻) are"," larger than their neutral"
+Output(10,13,"ENTER=NEXT 3/7")
+Pause 
+ClrHome
+Disp " atom: same # of protons"," but more e⁻ to repel one"," another. The increased"
+Disp " repulsion makes the e⁻"," cloud expand = bigger"," ion."
+Disp "","IONIZATION ENERGY","- In general IE increases"
+Output(10,13,"ENTER=NEXT 4/7")
+Pause 
+ClrHome
+Disp " across a period because"," Zeff increases left to"," right. More protons ="
+Disp " valence e⁻ feel greater"," nuclear attraction,"," despite adding e⁻ to the"
+Disp " same energy level.","- EXCEPTIONS: N and O. N"," 1st IE is unusually high"
+Output(10,13,"ENTER=NEXT 5/7")
+Pause 
+ClrHome
+Disp " because it requires"," breaking a stable"," half-filled p subshell. O"
+Disp " 2nd IE increases less"," than expected because it"," results in a stable"
+Disp " half-filled p subshell."," e⁻ configuration can"," sometimes override the"
+Output(10,13,"ENTER=NEXT 6/7")
+Pause 
+ClrHome
+Disp " trend.","- As each e⁻ is removed,"," the Zeff felt by the"
+Disp " remaining e⁻ increases."
+Output(10,13,"ENTER=BACK 7/7")
+Pause 
 Goto 0
-Lbl 5
-prgmCHNOTES
+Lbl E
+ClrHome
+Disp "CATHODE RAY","e⁻ exist and have a charge","OIL DROP"
+Disp "what the charge of e⁻ is","RADIOACTIVE EMISSIONS","atoms have +/-"
+Disp " subparticles","GOLD FOIL","there is something in the"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp " middle (nucleus)","CHADWICK","discovered neutron, atomic"
+Disp " mass did not match count"
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
 Goto 0
-Lbl 6
-prgmCHEQN
-Goto 0
-Lbl 7
-prgmCHREF
-Goto 0
+Lbl F
+ClrHome
+Disp "LAWS & PRINCIPLES LIST","A. Law of Conservation of"," Mass"
+Disp "B. Newtons Second Law of"," Motion","C. Law of Conservation of"
+Disp " Energy","D. Law of Definite"," Proportions"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "E. Archimedes Principle","F. Bernoullis Principle"
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto M
+Lbl G
+ClrHome
+Disp "LIGHT RELATIONSHIPS","+ both go up together","- one up, other goes down"
+Disp "0 no effect","(freq = frequency v,"," vel = velocity)"
+Disp "","c=λv  E=hv=hc/λ"," freq & E          +"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp " λ & freq          -"," λ & E             -","λ=h/mv (DE BROGLIE)"
+Disp " λ & m             -"," λ & vel           -","KE=1/2mv²"
+Disp " KE & m            +"," KE & vel          +","KE=hv-Φ (PHOTOELECTRIC)"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp " KE & freq         +"," KE & E of photon  +"," KE & Φ            -"
+Disp " Φ & threshold freq +","INTENSITY (BRIGHTNESS)"," intensity & # photons +"
+Disp " intensity & # e⁻ out  +"," intensity & KE of e⁻  0"," intensity & E/photon  0"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp " # photons & total E   +","BELOW THRESHOLD FREQ:"," no e⁻ out, even if"
+Disp " brighter"
+Output(10,13,"ENTER=BACK 4/4")
+Pause 
+Goto M
+Lbl I
+ClrHome
+Disp "ACCURATE VS PRECISE","  (ADD NOTES LATER)"
+Output(10,13,"ENTER=BACK 1/1")
+Pause 
+Goto M

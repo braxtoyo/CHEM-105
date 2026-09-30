@@ -31,7 +31,10 @@ def prep(src):
                 parts[i] = parts[i].replace("π", "|π")
             else:
                 parts[i] = parts[i].replace("π", "pi")
-        out.append('"'.join(parts))
+        ln = '"'.join(parts)
+        if ln.strip() == "Pause":  # token is "Pause " (with space)
+            ln = "Pause "
+        out.append(ln)
     return "\n".join(out)
 
 
@@ -89,6 +92,34 @@ def check(name, src):
     return probs
 
 
+def letter_runs(p):
+    """Flag commands that got spelled out as letters instead of tokens."""
+    d = bytes(p.data)
+    toks, i = [], 0
+    while i < len(d):
+        n = 2 if d[i] in TWO_BYTE else 1
+        toks.append((d[i:i + n], TOK[d[i:i + n]].langs["en"].display))
+        i += n
+    probs, inq, run, ln, prev = [], False, "", 1, ""
+    for b, t in toks + [(b"\x3f", "\n")]:
+        if not run:
+            before = prev
+        prev = t
+        if b == b"\x3f":
+            inq = False
+        if t == '"':
+            inq = not inq
+        if not inq and len(t) == 1 and t.isalpha():
+            run += t
+            continue
+        if len(run) >= 3 and before != "prgm" and not run.startswith("ʟ"):
+            probs.append((ln, "command spelled as letters", run))
+        run = ""
+        if b == b"\x3f":
+            ln += 1
+    return probs
+
+
 def main():
     os.makedirs(OUT8, exist_ok=True)
     os.makedirs(OUTT, exist_ok=True)
@@ -100,7 +131,7 @@ def main():
         p.save(os.path.join(OUT8, name + ".8xp"))
         with open(os.path.join(OUTT, name + ".txt"), "w", encoding="utf-8") as f:
             f.write(p.string() + "\n")
-        probs = check(name, body)
+        probs = check(name, body) + letter_runs(p)
         print("%-8s %6d bytes  %4d lines  %d issues" % (name, len(p.data), body.count("\n") + 1, len(probs)))
         for pr in probs:
             bad = True
