@@ -1,9 +1,12 @@
 6.022141ᴇ23→N
 Lbl 0
-Menu("MATTER & MOLES","SIG FIGS  4.50►3 SF",S,"DENSITY ρ=m/V",D,"MOLES n=m/M #=n×NA",M,"ISOTOPE AVG Σ(m×%)",I,"BACK",Z)
+Menu("MATTER & MOLES","SIG FIGS  4.50►3 SF",S,"DENSITY ρ=m/V",D,"MOLES n=m/M #=n×NA",M,"ISOTOPE AVG Σ(m×%)",I,"SAME # e⁻/p+ Mg►Ca",J,"BACK",Z)
 Lbl Z
 ClrHome
 Return
+Lbl J
+prgmCHION
+Goto 0
 Lbl S
 Menu("SIG FIGS","COUNT SIG FIGS",S1,"ROUND TO N SIG FIGS",S2,"CALC +- PLACE ×/ SF",S3,"RULES",S4,"BACK",0)
 Lbl S1

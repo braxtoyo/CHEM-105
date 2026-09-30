@@ -287,10 +287,13 @@ P+W→P
 PROGRAMS["CHMATTR"] = r'''
 6.022141ᴇ23→N
 Lbl 0
-Menu("MATTER & MOLES","SIG FIGS  4.50►3 SF",S,"DENSITY ρ=m/V",D,"MOLES n=m/M #=n×NA",M,"ISOTOPE AVG Σ(m×%)",I,"BACK",Z)
+Menu("MATTER & MOLES","SIG FIGS  4.50►3 SF",S,"DENSITY ρ=m/V",D,"MOLES n=m/M #=n×NA",M,"ISOTOPE AVG Σ(m×%)",I,"SAME # e⁻/p+ Mg►Ca",J,"BACK",Z)
 Lbl Z
 ClrHome
 Return
+Lbl J
+prgmCHION
+Goto 0
 Lbl S
 Menu("SIG FIGS","COUNT SIG FIGS",S1,"ROUND TO N SIG FIGS",S2,"CALC +- PLACE ×/ SF",S3,"RULES",S4,"BACK",0)
 Lbl S1
@@ -1308,3 +1311,166 @@ Lbl A
 ''' + pages(REF_SI, "0") + "\nLbl B\n" + pages(REF_TA, "0") + \
     "\nLbl C\n" + pages(REF_EM, "0") + "\nLbl D\n" + pages(REF_H, "0") + \
     "\nLbl E\n" + pages(REF_HIST, "0") + "\n"
+
+
+# ---------------------------------------------------------------- IONS / SAME # OF ELECTRONS
+# Symbols, molar masses (g/mol) and common ion charges for Z = 1..86.
+# Charge 99 = no single common ion, so the program asks.
+_EL = """H 1.008 1|HE 4.003 0|LI 6.94 1|BE 9.012 2|B 10.81 3|C 12.01 99|N 14.01 -3|O 16.00 -2|F 19.00 -1|NE 20.18 0|
+NA 22.99 1|MG 24.31 2|AL 26.98 3|SI 28.09 99|P 30.97 -3|S 32.07 -2|CL 35.45 -1|AR 39.95 0|K 39.10 1|CA 40.08 2|
+SC 44.96 3|TI 47.87 99|V 50.94 99|CR 52.00 99|MN 54.94 99|FE 55.85 99|CO 58.93 99|NI 58.69 99|CU 63.55 99|ZN 65.38 2|
+GA 69.72 3|GE 72.63 99|AS 74.92 -3|SE 78.97 -2|BR 79.90 -1|KR 83.80 0|RB 85.47 1|SR 87.62 2|Y 88.91 3|ZR 91.22 99|
+NB 92.91 99|MO 95.95 99|TC 98 99|RU 101.07 99|RH 102.91 99|PD 106.42 99|AG 107.87 1|CD 112.41 2|IN 114.82 3|SN 118.71 99|
+SB 121.76 99|TE 127.60 -2|I 126.90 -1|XE 131.29 0|CS 132.91 1|BA 137.33 2|LA 138.91 3|CE 140.12 99|PR 140.91 99|ND 144.24 99|
+PM 145 99|SM 150.36 99|EU 151.96 99|GD 157.25 99|TB 158.93 99|DY 162.50 99|HO 164.93 99|ER 167.26 99|TM 168.93 99|YB 173.05 99|
+LU 174.97 99|HF 178.49 99|TA 180.95 99|W 183.84 99|RE 186.21 99|OS 190.23 99|IR 192.22 99|PT 195.08 99|AU 196.97 99|HG 200.59 99|
+TL 204.38 99|PB 207.2 99|BI 208.98 99|PO 209 99|AT 210 -1|RN 222 0"""
+ELEMENTS = [e.split() for e in _EL.replace("\n", "").split("|")]
+assert len(ELEMENTS) == 86
+_SYM = "".join(s.ljust(2) for s, _, _ in ELEMENTS)
+_MM = "{" + ",".join(m for _, m, _ in ELEMENTS) + "}"
+_CHG = "{" + ",".join(c.replace("-", "⁻") for _, _, c in ELEMENTS) + "}"
+
+# rounding helper: rounds θ to N sig figs (uses E)
+PROGRAMS["CHRND"] = r"""
+If θ≠0
+Then
+int(log(abs(θ)))→E
+If abs(θ)/10^E≥10
+E+1→E
+If abs(θ)/10^E<1
+E-1→E
+round(θ/10^(E-N+1),0)*10^(E-N+1)→θ
+End
+"""
+
+PROGRAMS["CHION"] = _MM + "→ʟMM\n" + _CHG + "→ʟCHG\n" + '"' + _SYM + '"→Str9\n' + r"""
+Menu("SAME NUMBER OF...","ELECTRONS e⁻",A1,"PROTONS p+",A2,"IONS / ATOMS",A3,"BACK",Z)
+Lbl Z
+ClrHome
+Return
+Lbl A1
+1→T
+Menu("ELECTRONS IN...","IONS (Mg²+, Cl⁻...)",B1,"NEUTRAL ATOMS",B2)
+Lbl A2
+2→T
+Goto B2
+Lbl A3
+3→T
+Lbl B2
+0→A
+Goto C0
+Lbl B1
+1→A
+Lbl C0
+ClrHome
+Disp "ELEMENT: TYPE SYMBOL","IN CAPS (MG, CA, CL)","OR ATOMIC NUMBER"
+Input "GIVEN ELEMENT:",Str1
+1→Y
+Lbl E0
+0→Z
+If inString("0123456789",sub(Str1,1,1))
+expr(Str1)→Z
+If length(Str1)=1
+Str1+" "→Str1
+If not(Z)
+Then
+For(J,1,86)
+If sub(Str9,2J-1,2)=Str1
+J→Z
+End
+End
+If Z<1 or Z>86 or fPart(Z)
+Goto E8
+ʟCHG(Z)→C
+If not(A)
+0→C
+If C=99
+Then
+Disp sub(Str9,2Z-1,2)+" ION CHARGE?"
+Input "(E.G. 2 OR -3):",C
+End
+If Y=2
+Goto G0
+Z→B
+C→U
+Menu("GIVEN AMOUNT IS IN","MOLES",F1,"GRAMS",F2,"# OF IONS / ATOMS",F3)
+Lbl F1
+1→I
+Goto F4
+Lbl F2
+2→I
+Goto F4
+Lbl F3
+3→I
+Lbl F4
+ClrHome
+Disp "TYPE IT EXACTLY AS","WRITTEN (KEEP ZEROS,","E.G. 0.750)"
+Input "AMOUNT:",Str3
+expr(Str3)→X
+prgmCHSFN
+S→N
+If I=2
+X/ʟMM(B)→X
+If I=3
+X/6.022141ᴇ23→X
+ClrHome
+Disp "NEW ELEMENT: SYMBOL","IN CAPS OR ATOMIC #"
+Input "NEW ELEMENT:",Str1
+2→Y
+Goto E0
+Lbl E8
+Disp "UNKNOWN ELEMENT.","USE CAPS: MG NOT Mg"
+Pause
+Goto C0
+Lbl G0
+Z→H
+C→V
+1→O
+1→Q
+If T=1
+B-U→O
+If T=1
+H-V→Q
+If T=2
+B→O
+If T=2
+H→Q
+If Q≤0
+Goto G8
+X*O/Q→M
+ClrHome
+Output(1,1,sub(Str9,2B-1,2)+" EACH:")
+Output(1,11,O)
+Output(2,1,sub(Str9,2H-1,2)+" EACH:")
+Output(2,11,Q)
+If T=1
+Output(3,1,"(e⁻ = Z - CHARGE)")
+If T=2
+Output(3,1,"(p+ = Z)")
+Output(4,1,"ANSWER, SIG FIGS:")
+Output(4,19,N)
+M*ʟMM(H)→θ
+prgmCHRND
+Output(5,1,"GRAMS:")
+Output(5,11,θ)
+M→θ
+prgmCHRND
+Output(6,1,"MOLES:")
+Output(6,11,θ)
+M*6.022141ᴇ23→θ
+prgmCHRND
+Output(7,1,"PARTICLES:")
+Output(7,11,θ)
+Output(9,1,"MOLAR MASS USED:")
+Output(9,18,ʟMM(H))
+Pause
+ClrHome
+Return
+Lbl G8
+ClrHome
+Disp "NEW ION HAS 0 e⁻","(CHECK THE CHARGE)"
+Pause
+ClrHome
+Return
+"""

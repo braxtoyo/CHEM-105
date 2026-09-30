@@ -1,0 +1,9 @@
+If θ≠0
+Then
+int(log(abs(θ)))→E
+If abs(θ)/10^E≥10
+E+1→E
+If abs(θ)/10^E<1
+E-1→E
+round(θ/10^(E-N+1),0)*10^(E-N+1)→θ
+End
