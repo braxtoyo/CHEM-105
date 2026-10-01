@@ -1,0 +1,119 @@
+Lbl 0
+Menu("EXAM PROBLEM SETUP","1:LIGHT/PHOTONS",A,"2:PHOTOELECTRIC",B,"3:DE BROGLIE",C,"4:BOHR MODEL",D,"5:MOLES/ISOTOPES",E,"6:QUANTUM NUMBERS",F,"BACK",Z)
+Lbl A
+ClrHome
+Disp "LIGHT & PHOTONS","TRIGGERS:","wavelength, frequency"
+Disp "photon energy, nm","radio broadcast","EQUATIONS:"
+Disp "c = lambda*nu","E = h*nu","REARRANGEMENTS:"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "nu = c/lambda","E = hc/lambda","h*nu = photon energy"
+Disp "UNIT TRAPS:","lambda MUST be in m","1 nm = 1E-9 m"
+Disp "nu must be in Hz","c = 2.998E8 m/s","h = 6.626E-34 J*s"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "WORKFLOW:","1. Note what is given","  and what to find"
+Disp "2. Convert to SI first","  lam: nm to m (*1E-9)","  nu: MHz to Hz (*1E6)"
+Disp "3. c=lam*nu to get nu","4. E=h*nu to get E","5. Rearrange as needed"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl B
+ClrHome
+Disp "PHOTOELECTRIC EFFECT","TRIGGERS:","work function phi"
+Disp "strikes metal","ejected electron, KE","electron speed v"
+Disp "EQUATIONS:","phi = h*nu - KE","KE = (1/2)*m*v^2"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "REARRANGEMENTS:","KE = h*nu - phi","v = sqrt(2*KE/me)"
+Disp "UNIT TRAPS:","me = 9.109E-31 kg","use electron mass only"
+Disp "not atomic mass unit","1 eV = 1.602E-19 J","convert eV to J first"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "WORKFLOW:","1. Find photon E: hc/lam","  or h*nu"
+Disp "2. Is h*nu > phi?","  No: no e- ejected.","  Yes: continue."
+Disp "3. KE = h*nu - phi","4. v=sqrt(2*KE/me)","5. eV to J: *1.602E-19"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl C
+ClrHome
+Disp "DE BROGLIE WAVES","TRIGGERS:","wavelength of a moving"
+Disp "  particle or electron","matter wave","EQUATION:"
+Disp "lambda = h / (m*v)","UNIT REQUIREMENTS:","m MUST be in kg"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "v MUST be in m/s","WHY IT WORKS:","1 J = 1 kg*m^2/s^2"
+Disp "units cancel with h","h = 6.626E-34 J*s","WORKFLOW:"
+Disp "1. Convert mass to kg","  1 amu = 1.66E-27 kg","  1 g = 1E-3 kg"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "2. v must be in m/s","3. lam = h/(m*v)","  h = 6.626E-34 J*s"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl D
+ClrHome
+Disp "BOHR / HYDROGEN MODEL","TRIGGERS:","H atom spectral line"
+Disp "electron transition","emits/absorbs photon","EQUATIONS:"
+Disp "En=-Z^2*RH*hc/n^2","1/lam=RH*(1/n1^2","  - 1/n2^2)"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "KEY CONCEPT:","dE = Ef - Ei = h*nu","ABSORPTION:"
+Disp "e- moves low to high n","dE > 0","EMISSION:"
+Disp "e- drops high to low n","dE < 0 (photon E > 0)","WORKFLOW:"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "1. ID ni and nf","  emission: ni>nf","  absorption: ni<nf"
+Disp "2. dE = Ef - Ei","3. Photon E = magn of dE","4. For lam: Rydberg eq"
+Disp "  n1=smaller, n2=larger","5. dE < 0 for emission"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl E
+ClrHome
+Disp "MOLES & ISOTOPES","TRIGGERS:","grams, molar mass"
+Disp "atoms or molecules","avg atomic mass","percent abundance"
+Disp "MOLE EQUATIONS:","mol = g / MM","g = mol * MM"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "particles=mol*6.022E23","ISOTOPE EQUATIONS:","Avg=M1*x+M2*(1-x)"
+Disp "x=(Avg-M2)/(M1-M2)","x*100 = pct abundance","WORKFLOW:"
+Disp "1. g to mol: g/MM","2. mol to g: mol*MM","3. parts: mol*6.022E23"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "4. MM: sum(mass*subscript)","5. Isotopes: solve for x","6. Sanity: avg nearest"
+Disp "  most abundant isotope"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl F
+ClrHome
+Disp "QUANTUM NUMBERS","TRIGGERS:","four quantum numbers"
+Disp "last electron","allowed values of ml","RULES:"
+Disp "n: 1, 2, 3… (level)","l: 0 to n-1","  s=0, p=1, d=2, f=3"
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "ml: -l to +l","ms: +1/2 or -1/2","WORKFLOW:"
+Disp "1. Write e- config","2. Find last subshell","3. n = number before"
+Disp "  the subshell letter","4. l from s/p/d/f","5. Hund: fill boxes low"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "  to high ml singly","6. 1st e- in box: +1/2","  2nd e- in box: -1/2"
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl Z
+Return

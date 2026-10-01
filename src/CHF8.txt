@@ -1,7 +1,7 @@
 Lbl 0
-Menu("MOLES, MASS, ISOTOPES","THREE MASS TERMS",A1,"ISOTOPE AVERAGES",A2,"MASS SPECTROMETRY",A3,"MOLES",A4,"CONVERSION WORKFLOW",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Menu("MOLES, MASS, ISOTOPES","THREE MASS TERMS",A1,"ISOTOPE AVERAGES",A2,"NATURAL ABUNDANCE",A3,"MASS SPECTROMETRY",A4,"MOLES",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
 Lbl A0
-Menu("MOLES, MASS, ISOTOPES","COUNT ATOMS/COMPOUNDS",A6,"MASS PERCENT",A7,"◄ BACK",0)
+Menu("MOLES, MASS, ISOTOPES","CONVERSION WORKFLOW",A6,"COUNT ATOMS/COMPOUNDS",A7,"MASS PERCENT",A8,"LAWS OF COMPOSITION",A9,"◄ BACK",0)
 Lbl Z
 Return
 Lbl A1
@@ -39,6 +39,19 @@ Pause
 Goto 0
 Lbl A3
 ClrHome
+Disp "NATURAL ABUNDANCE","Two-isotope formula:","Avg = (M1*x) + (M2*(1-x))"
+Disp "x = fraction of isotope 1.","x*100 = percent of isotope","  1."
+Disp "1-x = fraction of isotope","  2.","Direct solve for x:"
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "x = (Avg - M2) / (M1 - M2)","Sanity check:","Avg is always closest to"
+Disp "  the mass of the most","  abundant isotope."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A4
+ClrHome
 Disp "MASS SPECTROMETRY","Mass spectrometry","  separates ions according"
 Disp "  to mass-to-charge ratio.","It helps determine isotope","  masses and relative"
 Disp "  abundances.","Do not describe it as","  measuring mass alone"
@@ -49,7 +62,7 @@ Disp "  without considering","  charge."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto 0
-Lbl A4
+Lbl A5
 ClrHome
 Disp "MOLES","A mole is a","  particle-counting unit,"
 Disp "  like a very large dozen.","One mole contains","  approximately 6.022E23"
@@ -62,7 +75,7 @@ Disp "  supplied on the exam."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto 0
-Lbl A5
+Lbl A6
 ClrHome
 Disp "CONVERSION WORKFLOW","Grams to moles: divide by","  molar mass."
 Disp "Moles to grams: multiply","  by molar mass.","Moles to particles:"
@@ -75,8 +88,8 @@ Disp "For compound molar mass,","  multiply each elements","  atomic mass by its
 Disp "  subscript, then add."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
-Goto 0
-Lbl A6
+Goto A0
+Lbl A7
 ClrHome
 Disp "COUNTING ATOMS IN"," COMPOUNDS","One mole of H2O molecules"
 Disp "  contains:","Two moles of hydrogen","  atoms."
@@ -90,7 +103,7 @@ Disp "  multiplies an entire","  group."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A0
-Lbl A7
+Lbl A8
 ClrHome
 Disp "MASS PERCENT","Mass percent means","  component mass divided"
 Disp "  by total mass, times","  100.","For an element in a"
@@ -101,5 +114,29 @@ ClrHome
 Disp "  with the total molar","  mass.","Mass percent is not the"
 Disp "  same as atom-count","  percent."
 Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto A0
+Lbl A9
+ClrHome
+Disp "LAWS OF COMPOSITION","Law of definite","  proportions:"
+Disp "A compound always contains","  the same elements in the","  same mass ratio."
+Disp "Water always has about 8","  grams of oxygen for","  every 1 gram of"
+Output(10,13,"ENTER=NEXT 1/4")
+Pause 
+ClrHome
+Disp "  hydrogen.","Law of multiple","  proportions:"
+Disp "When two elements form","  different compounds, the","  masses of one element"
+Disp "  that combine with a","  fixed mass of the other","  have a small"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "  whole-number ratio.","In CO and CO2, 12 grams of","  carbon combines with 16"
+Disp "  or 32 grams of oxygen.","That oxygen ratio is 1:2.","A related law is"
+Disp "  conservation of mass:","In a chemical reaction,","  matter is rearranged."
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "Total mass before the","  reaction equals total","  mass afterward."
+Output(10,13,"ENTER=BACK 4/4")
 Pause 
 Goto A0

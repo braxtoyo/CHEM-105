@@ -246,8 +246,8 @@ ACCURACY = lines(
 SUBSHELLS = "1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p 6s 4f 5d 6p 7s 5f 6d 7p".split()
 CAPS = [{"s": 2, "p": 6, "d": 10, "f": 14}[s[1]] for s in SUBSHELLS]
 SCORE = [10 * int(s[0]) + "spdf".index(s[1]) for s in SUBSHELLS]
-# Display order: by n, then l (s, p, d, f)
-ORDER = sorted(range(1, 20), key=lambda i: SCORE[i - 1])
+# Display order: Aufbau (filling) order so 4s shows before 3d, 5s before 4d, etc.
+ORDER = list(range(1, 20))
 # Noble-gas cores: (symbol, electrons, last Aufbau index)
 CORES = [("He", 2, 1), ("Ne", 10, 3), ("Ar", 18, 5), ("Kr", 36, 8), ("Xe", 54, 11), ("Rn", 86, 15)]
 # ALL measured ground-state exceptions to Aufbau for Z <= 103:
@@ -485,9 +485,15 @@ ISO_CODE = "\n".join([
 PROGRAMS = {}
 PROGRAMS["CHEM"] = r"""
 Lbl 0
-Menu("CHEM 105 NOTES","FULL NOTES ►",N,"PREFIXES 10^x k μ n",A,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"QUIT",Q)
+Menu("CHEM 105 NOTES","FULL NOTES ►",N,"EXAM SETUP ►",P,"UNIT CONVERT ►",C,"PREFIXES 10^x k μ n",A,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"QUIT",Q)
 Lbl N
 prgmCHFULL
+Goto 0
+Lbl P
+prgmCHPS
+Goto 0
+Lbl C
+prgmCHCV
 Goto 0
 Lbl Q
 ClrHome
@@ -703,3 +709,331 @@ PROGRAMS["CHFULL"] = "\n".join([
     "ClrHome",
     "Return",
 ] + sum([["Lbl C%d" % (n % 10), "prgmCHF%d" % n, "Goto %s" % ("0" if n <= 5 else "P")] for n in range(1, 11)], []))
+
+# ======================================================== EXAM PROBLEM SETUP
+# Accessible from the CHEM main menu as "EXAM SETUP ►" (label P -> prgmCHPS).
+# Each section: triggers, equations, unit traps, step-by-step workflow.
+
+_LIGHT_PHOTONS = [
+    "LIGHT & PHOTONS",
+    "TRIGGERS:",
+    "wavelength, frequency",
+    "photon energy, nm",
+    "radio broadcast",
+    "EQUATIONS:",
+    "c = lambda*nu",
+    "E = h*nu",
+    "REARRANGEMENTS:",
+    "nu = c/lambda",
+    "E = hc/lambda",
+    "h*nu = photon energy",
+    "UNIT TRAPS:",
+    "lambda MUST be in m",
+    "1 nm = 1E-9 m",
+    "nu must be in Hz",
+    "c = 2.998E8 m/s",
+    "h = 6.626E-34 J*s",
+    "WORKFLOW:",
+    "1. Note what is given",
+    "  and what to find",
+    "2. Convert to SI first",
+    "  lam: nm to m (*1E-9)",
+    "  nu: MHz to Hz (*1E6)",
+    "3. c=lam*nu to get nu",
+    "4. E=h*nu to get E",
+    "5. Rearrange as needed",
+]
+
+_PHOTOELECTRIC = [
+    "PHOTOELECTRIC EFFECT",
+    "TRIGGERS:",
+    "work function phi",
+    "strikes metal",
+    "ejected electron, KE",
+    "electron speed v",
+    "EQUATIONS:",
+    "phi = h*nu - KE",
+    "KE = (1/2)*m*v^2",
+    "REARRANGEMENTS:",
+    "KE = h*nu - phi",
+    "v = sqrt(2*KE/me)",
+    "UNIT TRAPS:",
+    "me = 9.109E-31 kg",
+    "use electron mass only",
+    "not atomic mass unit",
+    "1 eV = 1.602E-19 J",
+    "convert eV to J first",
+    "WORKFLOW:",
+    "1. Find photon E: hc/lam",
+    "  or h*nu",
+    "2. Is h*nu > phi?",
+    "  No: no e- ejected.",
+    "  Yes: continue.",
+    "3. KE = h*nu - phi",
+    "4. v=sqrt(2*KE/me)",
+    "5. eV to J: *1.602E-19",
+]
+
+_DEBROGLIE = [
+    "DE BROGLIE WAVES",
+    "TRIGGERS:",
+    "wavelength of a moving",
+    "  particle or electron",
+    "matter wave",
+    "EQUATION:",
+    "lambda = h / (m*v)",
+    "UNIT REQUIREMENTS:",
+    "m MUST be in kg",
+    "v MUST be in m/s",
+    "WHY IT WORKS:",
+    "1 J = 1 kg*m^2/s^2",
+    "units cancel with h",
+    "h = 6.626E-34 J*s",
+    "WORKFLOW:",
+    "1. Convert mass to kg",
+    "  1 amu = 1.66E-27 kg",
+    "  1 g = 1E-3 kg",
+    "2. v must be in m/s",
+    "3. lam = h/(m*v)",
+    "  h = 6.626E-34 J*s",
+]
+
+_BOHR = [
+    "BOHR / HYDROGEN MODEL",
+    "TRIGGERS:",
+    "H atom spectral line",
+    "electron transition",
+    "emits/absorbs photon",
+    "EQUATIONS:",
+    "En=-Z^2*RH*hc/n^2",
+    "1/lam=RH*(1/n1^2",
+    "  - 1/n2^2)",
+    "KEY CONCEPT:",
+    "dE = Ef - Ei = h*nu",
+    "ABSORPTION:",
+    "e- moves low to high n",
+    "dE > 0",
+    "EMISSION:",
+    "e- drops high to low n",
+    "dE < 0 (photon E > 0)",
+    "WORKFLOW:",
+    "1. ID ni and nf",
+    "  emission: ni>nf",
+    "  absorption: ni<nf",
+    "2. dE = Ef - Ei",
+    "3. Photon E = magn of dE",
+    "4. For lam: Rydberg eq",
+    "  n1=smaller, n2=larger",
+    "5. dE < 0 for emission",
+]
+
+_MOLES_ISOTOPES = [
+    "MOLES & ISOTOPES",
+    "TRIGGERS:",
+    "grams, molar mass",
+    "atoms or molecules",
+    "avg atomic mass",
+    "percent abundance",
+    "MOLE EQUATIONS:",
+    "mol = g / MM",
+    "g = mol * MM",
+    "particles=mol*6.022E23",
+    "ISOTOPE EQUATIONS:",
+    "Avg=M1*x+M2*(1-x)",
+    "x=(Avg-M2)/(M1-M2)",
+    "x*100 = pct abundance",
+    "WORKFLOW:",
+    "1. g to mol: g/MM",
+    "2. mol to g: mol*MM",
+    "3. parts: mol*6.022E23",
+    "4. MM: sum(mass*subscript)",
+    "5. Isotopes: solve for x",
+    "6. Sanity: avg nearest",
+    "  most abundant isotope",
+]
+
+_QUANTUM_NOS = [
+    "QUANTUM NUMBERS",
+    "TRIGGERS:",
+    "four quantum numbers",
+    "last electron",
+    "allowed values of ml",
+    "RULES:",
+    "n: 1, 2, 3... (level)",
+    "l: 0 to n-1",
+    "  s=0, p=1, d=2, f=3",
+    "ml: -l to +l",
+    "ms: +1/2 or -1/2",
+    "WORKFLOW:",
+    "1. Write e- config",
+    "2. Find last subshell",
+    "3. n = number before",
+    "  the subshell letter",
+    "4. l from s/p/d/f",
+    "5. Hund: fill boxes low",
+    "  to high ml singly",
+    "6. 1st e- in box: +1/2",
+    "  2nd e- in box: -1/2",
+]
+
+PROGRAMS["CHPS"] = "\n".join([
+    "Lbl 0",
+    'Menu("EXAM PROBLEM SETUP","1:LIGHT/PHOTONS",A,"2:PHOTOELECTRIC",B,"3:DE BROGLIE",C,"4:BOHR MODEL",D,"5:MOLES/ISOTOPES",E,"6:QUANTUM NUMBERS",F,"BACK",Z)',
+    "Lbl A",
+    pages(_LIGHT_PHOTONS, "0"),
+    "Lbl B",
+    pages(_PHOTOELECTRIC, "0"),
+    "Lbl C",
+    pages(_DEBROGLIE, "0"),
+    "Lbl D",
+    pages(_BOHR, "0"),
+    "Lbl E",
+    pages(_MOLES_ISOTOPES, "0"),
+    "Lbl F",
+    pages(_QUANTUM_NOS, "0"),
+    "Lbl Z",
+    "Return",
+])
+
+
+# ======================================================== UNIT CONVERTER
+
+_PX_NAMES   = ["none", "kilo", "milli", "micro", "nano", "mega", "centi"]
+_PX_FACTORS = ["1", "1000", ".001", "1E-6", "1E-9", "1000000", ".01"]
+
+def _ucv_block(units, f_lbls, f_done, t_lbls, t_done, px_lbls, px_done):
+    """Generate TI-BASIC ratio-conversion code for one unit category.
+    Flow: enter value → pick SI prefix → pick FROM unit → pick TO unit → display result.
+    units    : list of (display_name, factor_string); factor = base units per 1 of this unit
+    f_lbls   : 2-char label strings for FROM menu items
+    f_done   : label after FROM selection
+    t_lbls   : 2-char label strings for TO menu items
+    t_done   : label after TO selection
+    px_lbls  : 7 label strings for prefix menu items
+    px_done  : label after prefix selection
+    """
+    names   = [u[0] for u in units]
+    factors = [u[1] for u in units]
+    rows = []
+    rows.append('Input "VALUE? ",X')
+    # SI PREFIX menu (none / kilo / milli / micro / nano / mega / centi)
+    items = ",".join(f'"{n}",{l}' for n, l in zip(_PX_NAMES, px_lbls))
+    rows.append(f'Menu("SI PREFIX:",{items})')
+    for fac, lbl in zip(_PX_FACTORS, px_lbls):
+        rows += [f"Lbl {lbl}", f"{fac}→K", f"Goto {px_done}"]
+    rows += [f"Lbl {px_done}", "X*K→X"]
+    # FROM menu
+    items = ",".join(f'"{n}",{l}' for n, l in zip(names, f_lbls))
+    rows.append(f'Menu("FROM UNIT:",{items})')
+    for fac, lbl in zip(factors, f_lbls):
+        rows += [f"Lbl {lbl}", f"{fac}→F", f"Goto {f_done}"]
+    rows.append(f"Lbl {f_done}")
+    # TO menu
+    items = ",".join(f'"{n}",{l}' for n, l in zip(names, t_lbls))
+    rows.append(f'Menu("TO UNIT:",{items})')
+    for fac, lbl in zip(factors, t_lbls):
+        rows += [f"Lbl {lbl}", f"{fac}→T", f"Goto {t_done}"]
+    rows.append(f"Lbl {t_done}")
+    # Calculate and display
+    rows += ["ClrHome", "X*F/T→R", 'Disp "RESULT:"', "Disp R",
+             'Output(10,1,"ENTER=BACK")', "Pause ", "Goto 0"]
+    return "\n".join(rows)
+
+
+# Unit data: (display name, factor as string)
+# Factor = number of BASE UNITS per 1 of this unit.
+_CVOL = [  # base: mL
+    ("mL",    "1"),
+    ("L",     "1000"),
+    ("cm3",   "1"),
+    ("fl oz", "29.5735"),
+    ("qt",    "946.353"),
+    ("gal",   "3785.41"),
+    ("in3",   "16.3871"),
+]
+_CMAS = [  # base: g
+    ("g",   "1"),
+    ("kg",  "1000"),
+    ("mg",  ".001"),
+    ("μg",  "1E-6"),
+    ("lb",  "453.592"),
+    ("oz",  "28.3495"),
+    ("ng",  "1E-9"),
+]
+_CLEN = [  # base: m
+    ("m",  "1"),
+    ("cm", ".01"),
+    ("mm", ".001"),
+    ("nm", "1E-9"),
+    ("km", "1000"),
+    ("in", ".0254"),
+    ("ft", ".3048"),
+]
+_CENR = [  # base: J
+    ("J",    "1"),
+    ("kJ",   "1000"),
+    ("eV",   "1.60218E-19"),
+    ("cal",  "4.184"),
+    ("kcal", "4184"),
+]
+
+# Temperature: K <-> C (non-ratio, no prefix needed in gen chem)
+_TEMP = "\n".join([
+    'Input "VALUE? ",X',
+    'Menu("FROM UNIT:","K (Kelvin)",T0,"C (Celsius)",T1)',
+    "Lbl T0", "0→G", "Goto TF",
+    "Lbl T1", "1→G", "Goto TF",
+    "Lbl TF",
+    'Menu("TO UNIT:","K (Kelvin)",U0,"C (Celsius)",U1)',
+    "Lbl U0", "0→H", "Goto TT",
+    "Lbl U1", "1→H", "Goto TT",
+    "Lbl TT",
+    "ClrHome",
+    "X→R",
+    "If G=0",   # K to C
+    "If H=1",
+    "X-273.15→R",
+    "If G=1",   # C to K
+    "If H=0",
+    "X+273.15→R",
+    'Disp "RESULT:"',
+    "Disp R",
+    'Output(10,1,"ENTER=BACK")',
+    "Pause ",
+    "Goto 0",
+])
+
+PROGRAMS["CHCV"] = "\n".join([
+    "Lbl 0",
+    'Menu("UNIT CONVERTER","1:VOLUME",A,"2:MASS",B,"3:LENGTH",C,"4:ENERGY",D,"5:TEMP",E,"QUIT",Z)',
+    # VOLUME  prefix:X0-X6/XF  FROM:V0-V6/VF  TO:W0-W6/VT
+    "Lbl A",
+    _ucv_block(_CVOL,
+               ["V0","V1","V2","V3","V4","V5","V6"], "VF",
+               ["W0","W1","W2","W3","W4","W5","W6"], "VT",
+               ["X0","X1","X2","X3","X4","X5","X6"], "XF"),
+    # MASS    prefix:Y0-Y6/YF  FROM:M0-M6/MF  TO:N0-N6/MT
+    "Lbl B",
+    _ucv_block(_CMAS,
+               ["M0","M1","M2","M3","M4","M5","M6"], "MF",
+               ["N0","N1","N2","N3","N4","N5","N6"], "MT",
+               ["Y0","Y1","Y2","Y3","Y4","Y5","Y6"], "YF"),
+    # LENGTH  prefix:J0-J6/JF  FROM:P0-P6/PF  TO:Q0-Q6/PT
+    "Lbl C",
+    _ucv_block(_CLEN,
+               ["P0","P1","P2","P3","P4","P5","P6"], "PF",
+               ["Q0","Q1","Q2","Q3","Q4","Q5","Q6"], "PT",
+               ["J0","J1","J2","J3","J4","J5","J6"], "JF"),
+    # ENERGY  prefix:K0-K6/KF  FROM:R0-R4/RF  TO:S0-S4/ET
+    "Lbl D",
+    _ucv_block(_CENR,
+               ["R0","R1","R2","R3","R4"], "RF",
+               ["S0","S1","S2","S3","S4"], "ET",
+               ["K0","K1","K2","K3","K4","K5","K6"], "KF"),
+    # TEMPERATURE (no prefix step)
+    "Lbl E",
+    _TEMP,
+    # QUIT -> return to CHEM
+    "Lbl Z",
+    "Return",
+])

@@ -1,14 +1,35 @@
 Lbl 0
-Menu("SCIENTISTS/EXPERIMENTS","GREEK ATOMISTS",A3,"BOYLE",A4,"LAVOISIER",A5,"PROUST",A6,"DALTON",A7,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Menu("SCIENTISTS/EXPERIMENTS","EXPERIMENT TRIGGERS",A4,"GREEK ATOMISTS",A5,"BOYLE",A6,"LAVOISIER",A7,"PROUST",A8,"MORE TOPICS ►",A0,"◄ BACK",Z)
 Lbl A0
-Menu("SCIENTISTS/EXPERIMENTS","THOMSON",A8,"MILLIKAN & FLETCHER",A9,"CURIE",B0,"RUTHERFORD",B1,"CHADWICK",B2,"MORE TOPICS ►",A1,"◄ BACK",0)
+Menu("SCIENTISTS/EXPERIMENTS","DALTON",A9,"THOMSON",B0,"MILLIKAN & FLETCHER",B1,"CURIE",B2,"RUTHERFORD",B3,"MORE TOPICS ►",A1,"◄ BACK",0)
 Lbl A1
-Menu("SCIENTISTS/EXPERIMENTS","PLANCK",B3,"EINSTEIN",B4,"FRAUNHOFER",B5,"BUNSEN & KIRCHHOFF",B6,"BALMER & RYDBERG",B7,"MORE TOPICS ►",A2,"◄ BACK",A0)
+Menu("SCIENTISTS/EXPERIMENTS","CHADWICK",B4,"PLANCK",B5,"EINSTEIN",B6,"FRAUNHOFER",B7,"BUNSEN & KIRCHHOFF",B8,"MORE TOPICS ►",A2,"◄ BACK",A0)
 Lbl A2
-Menu("SCIENTISTS/EXPERIMENTS","BOHR",B8,"DE BROGLIE",B9,"HEISENBERG",C0,"SCHRODINGER",C1,"ALPHA, BETA, GAMMA",C2,"◄ BACK",A1)
+Menu("SCIENTISTS/EXPERIMENTS","BALMER & RYDBERG",B9,"BOHR",C0,"DE BROGLIE",C1,"HEISENBERG",C2,"SCHRODINGER",C3,"MORE TOPICS ►",A3,"◄ BACK",A1)
+Lbl A3
+Menu("SCIENTISTS/EXPERIMENTS","ALPHA, BETA, GAMMA",C4,"◄ BACK",A2)
 Lbl Z
 Return
-Lbl A3
+Lbl A4
+ClrHome
+Disp "EXPERIMENT TRIGGERS","Nucleus small, dense, +:","Rutherford (gold foil)."
+Disp "Negative particles, e-:","Thomson (cathode ray).","Oil drop, e- charge:"
+Disp "Millikan (oil drop).","Radioactivity, atoms emit:","Curie (radiation study)."
+Output(10,13,"ENTER=NEXT 1/3")
+Pause 
+ClrHome
+Disp "Neutral particle, mass=p:","Chadwick (neutron).","Blackbody, energy packets:"
+Disp "Planck (quantized E).","Photoelectric effect:","Einstein (photon theory)."
+Disp "Dark lines in sunlight:","Fraunhofer (solar spec.).","Spectral lines by element:"
+Output(10,13,"ENTER=NEXT 2/3")
+Pause 
+ClrHome
+Disp "Bunsen & Kirchhoff.","Fixed mass proportions:","Proust (definite prop.)."
+Disp "Whole-number mass ratios:","Dalton (multiple prop.)."
+Output(10,13,"ENTER=BACK 3/3")
+Pause 
+Goto 0
+Lbl A5
 ClrHome
 Disp "GREEK ATOMISTS","METHOD:","Philosophical reasoning"
 Disp "  about matter.","PROPOSED:","Matter consists of atoms."
@@ -21,7 +42,7 @@ Disp "  water as the basic","  constituents."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto 0
-Lbl A4
+Lbl A6
 ClrHome
 Disp "BOYLE","METHOD:","Chemical observations and"
 Disp "  experiments challenged","  traditional","  explanations."
@@ -35,7 +56,7 @@ Disp "  and experiment."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto 0
-Lbl A5
+Lbl A7
 ClrHome
 Disp "LAVOISIER","METHOD:","Used accurate balances and"
 Disp "  sealed containers to","  study combustion.","OBSERVED:"
@@ -53,7 +74,7 @@ Disp "  system."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto 0
-Lbl A6
+Lbl A8
 ClrHome
 Disp "PROUST","METHOD:","Compared the composition"
 Disp "  of compound samples.","OBSERVED:","A pure compound contained"
@@ -65,7 +86,7 @@ Disp "Law of definite","  proportions."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto 0
-Lbl A7
+Lbl A9
 ClrHome
 Disp "DALTON","METHOD:","Compared different"
 Disp "  compounds containing the","  same two elements.","OBSERVED:"
@@ -89,8 +110,8 @@ Disp "  the claims that atoms","  are indivisible and that","  every atom of one
 Disp "  element has identical","  mass."
 Output(10,13,"ENTER=BACK 4/4")
 Pause 
-Goto 0
-Lbl A8
+Goto A0
+Lbl B0
 ClrHome
 Disp "THOMSON","METHOD:","Studied cathode rays and"
 Disp "  their deflection by","  electric and magnetic","  fields."
@@ -109,7 +130,7 @@ Disp "  embedded in diffuse","  positive matter."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto A0
-Lbl A9
+Lbl B1
 ClrHome
 Disp "MILLIKAN AND FLETCHER","METHOD:","Observed charged oil"
 Disp "  droplets in an electric","  field that opposed","  gravity."
@@ -127,7 +148,7 @@ Disp "  experiment independently","  measured electron mass."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto A0
-Lbl B0
+Lbl B2
 ClrHome
 Disp "CURIE","METHOD:","Studied radiation from"
 Disp "  radioactive materials.","OBSERVED:","Radioactivity was"
@@ -141,7 +162,7 @@ Disp "  discovering the proton","  or every radiation type."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A0
-Lbl B1
+Lbl B3
 ClrHome
 Disp "RUTHERFORD","METHOD:","Directed positive alpha"
 Disp "  particles at thin gold","  foil.","OBSERVED:"
@@ -159,7 +180,7 @@ Disp "Alpha particles are helium","  nuclei, not single","  protons."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto A0
-Lbl B2
+Lbl B4
 ClrHome
 Disp "CHADWICK","METHOD:","Bombarded beryllium with"
 Disp "  alpha particles;","examined neutral radiation","  that knocked protons out"
@@ -176,8 +197,8 @@ ClrHome
 Disp "Isotopes were known before","  Chadwicks discovery."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
-Goto A0
-Lbl B3
+Goto A1
+Lbl B5
 ClrHome
 Disp "PLANCK","METHOD:","Theoretical explanation of"
 Disp "  blackbody radiation.","EXPLAINED:","Energy exchanges occur in"
@@ -189,7 +210,7 @@ Disp "  packet energy depends on","  frequency."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A1
-Lbl B4
+Lbl B6
 ClrHome
 Disp "EINSTEIN","METHOD:","Theoretical explanation of"
 Disp "  the photoelectric","  effect.","EXPLAINED:"
@@ -203,7 +224,7 @@ Disp "  becomes electron kinetic","  energy."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A1
-Lbl B5
+Lbl B7
 ClrHome
 Disp "FRAUNHOFER","METHOD:","Examined the solar"
 Disp "  spectrum.","OBSERVED:","Dark lines at particular"
@@ -215,7 +236,7 @@ Disp "  missing from sunlight","  reaching us."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A1
-Lbl B6
+Lbl B8
 ClrHome
 Disp "BUNSEN AND KIRCHHOFF","METHOD:","Examined spectra of heated"
 Disp "  elements and compared","  emission and absorption.","OBSERVED:"
@@ -229,7 +250,7 @@ Disp "  absorption."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A1
-Lbl B7
+Lbl B9
 ClrHome
 Disp "BALMER AND RYDBERG","METHOD:","Analyzed hydrogen spectral"
 Disp "  wavelengths","  mathematically.","OBSERVED:"
@@ -240,8 +261,8 @@ ClrHome
 Disp "LEARNED:","Hydrogen spectral lines","  could be predicted."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
-Goto A1
-Lbl B8
+Goto A2
+Lbl C0
 ClrHome
 Disp "BOHR","METHOD:","Proposed quantized"
 Disp "  electron energy levels","  to explain hydrogen","  spectra."
@@ -254,7 +275,7 @@ Disp "  hydrogens line spectrum."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A2
-Lbl B9
+Lbl C1
 ClrHome
 Disp "DE BROGLIE","METHOD:","Theoretical proposal"
 Disp "  extending wave-particle","  behavior to matter.","PROPOSED:"
@@ -267,7 +288,7 @@ Disp "  diffraction experiments","  supported this."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A2
-Lbl C0
+Lbl C2
 ClrHome
 Disp "HEISENBERG","METHOD:","Developed"
 Disp "  quantum-mechanical","  uncertainty","  relationships."
@@ -280,7 +301,7 @@ Disp "A fundamental limit","  applies to their","  combined precision."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A2
-Lbl C1
+Lbl C3
 ClrHome
 Disp "SCHRODINGER","METHOD:","Developed a wave equation"
 Disp "  for electron states.","ESTABLISHED:","Solutions describe allowed"
@@ -293,7 +314,7 @@ Disp "  description."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A2
-Lbl C2
+Lbl C4
 ClrHome
 Disp "ALPHA, BETA, GAMMA","Alpha: helium nucleus; +2","  charge; relatively low"
 Disp "  penetrating power.","Beta-minus: emitted","  electron; -1 charge;"
@@ -305,4 +326,4 @@ Disp "  no charge; highly","  penetrating.","Radioactive decay does not"
 Disp "  always split an atom","  into two large pieces."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
-Goto A2
+Goto A3

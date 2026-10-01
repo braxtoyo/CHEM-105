@@ -1,0 +1,339 @@
+Lbl 0
+Menu("UNIT CONVERTER","1:VOLUME",A,"2:MASS",B,"3:LENGTH",C,"4:ENERGY",D,"5:TEMP",E,"QUIT",Z)
+Lbl A
+Input "VALUE? ",X
+Menu("SI PREFIX:","none",X0,"kilo",X1,"milli",X2,"micro",X3,"nano",X4,"mega",X5,"centi",X6)
+Lbl X0
+1→K
+Goto XF
+Lbl X1
+1000→K
+Goto XF
+Lbl X2
+.001→K
+Goto XF
+Lbl X3
+1E-6→K
+Goto XF
+Lbl X4
+1E-9→K
+Goto XF
+Lbl X5
+1000000→K
+Goto XF
+Lbl X6
+.01→K
+Goto XF
+Lbl XF
+X*K→X
+Menu("FROM UNIT:","mL",V0,"L",V1,"cm3",V2,"fl oz",V3,"qt",V4,"gal",V5,"in3",V6)
+Lbl V0
+1→F
+Goto VF
+Lbl V1
+1000→F
+Goto VF
+Lbl V2
+1→F
+Goto VF
+Lbl V3
+29.5735→F
+Goto VF
+Lbl V4
+946.353→F
+Goto VF
+Lbl V5
+3785.41→F
+Goto VF
+Lbl V6
+16.3871→F
+Goto VF
+Lbl VF
+Menu("TO UNIT:","mL",W0,"L",W1,"cm3",W2,"fl oz",W3,"qt",W4,"gal",W5,"in3",W6)
+Lbl W0
+1→T
+Goto VT
+Lbl W1
+1000→T
+Goto VT
+Lbl W2
+1→T
+Goto VT
+Lbl W3
+29.5735→T
+Goto VT
+Lbl W4
+946.353→T
+Goto VT
+Lbl W5
+3785.41→T
+Goto VT
+Lbl W6
+16.3871→T
+Goto VT
+Lbl VT
+ClrHome
+X*F/T→R
+Disp "RESULT:"
+Disp R
+Output(10,1,"ENTER=BACK")
+Pause 
+Goto 0
+Lbl B
+Input "VALUE? ",X
+Menu("SI PREFIX:","none",Y0,"kilo",Y1,"milli",Y2,"micro",Y3,"nano",Y4,"mega",Y5,"centi",Y6)
+Lbl Y0
+1→K
+Goto YF
+Lbl Y1
+1000→K
+Goto YF
+Lbl Y2
+.001→K
+Goto YF
+Lbl Y3
+1E-6→K
+Goto YF
+Lbl Y4
+1E-9→K
+Goto YF
+Lbl Y5
+1000000→K
+Goto YF
+Lbl Y6
+.01→K
+Goto YF
+Lbl YF
+X*K→X
+Menu("FROM UNIT:","g",M0,"kg",M1,"mg",M2,"μg",M3,"lb",M4,"oz",M5,"ng",M6)
+Lbl M0
+1→F
+Goto MF
+Lbl M1
+1000→F
+Goto MF
+Lbl M2
+.001→F
+Goto MF
+Lbl M3
+1E-6→F
+Goto MF
+Lbl M4
+453.592→F
+Goto MF
+Lbl M5
+28.3495→F
+Goto MF
+Lbl M6
+1E-9→F
+Goto MF
+Lbl MF
+Menu("TO UNIT:","g",N0,"kg",N1,"mg",N2,"μg",N3,"lb",N4,"oz",N5,"ng",N6)
+Lbl N0
+1→T
+Goto MT
+Lbl N1
+1000→T
+Goto MT
+Lbl N2
+.001→T
+Goto MT
+Lbl N3
+1E-6→T
+Goto MT
+Lbl N4
+453.592→T
+Goto MT
+Lbl N5
+28.3495→T
+Goto MT
+Lbl N6
+1E-9→T
+Goto MT
+Lbl MT
+ClrHome
+X*F/T→R
+Disp "RESULT:"
+Disp R
+Output(10,1,"ENTER=BACK")
+Pause 
+Goto 0
+Lbl C
+Input "VALUE? ",X
+Menu("SI PREFIX:","none",J0,"kilo",J1,"milli",J2,"micro",J3,"nano",J4,"mega",J5,"centi",J6)
+Lbl J0
+1→K
+Goto JF
+Lbl J1
+1000→K
+Goto JF
+Lbl J2
+.001→K
+Goto JF
+Lbl J3
+1E-6→K
+Goto JF
+Lbl J4
+1E-9→K
+Goto JF
+Lbl J5
+1000000→K
+Goto JF
+Lbl J6
+.01→K
+Goto JF
+Lbl JF
+X*K→X
+Menu("FROM UNIT:","m",P0,"cm",P1,"mm",P2,"nm",P3,"km",P4,"in",P5,"ft",P6)
+Lbl P0
+1→F
+Goto PF
+Lbl P1
+.01→F
+Goto PF
+Lbl P2
+.001→F
+Goto PF
+Lbl P3
+1E-9→F
+Goto PF
+Lbl P4
+1000→F
+Goto PF
+Lbl P5
+.0254→F
+Goto PF
+Lbl P6
+.3048→F
+Goto PF
+Lbl PF
+Menu("TO UNIT:","m",Q0,"cm",Q1,"mm",Q2,"nm",Q3,"km",Q4,"in",Q5,"ft",Q6)
+Lbl Q0
+1→T
+Goto PT
+Lbl Q1
+.01→T
+Goto PT
+Lbl Q2
+.001→T
+Goto PT
+Lbl Q3
+1E-9→T
+Goto PT
+Lbl Q4
+1000→T
+Goto PT
+Lbl Q5
+.0254→T
+Goto PT
+Lbl Q6
+.3048→T
+Goto PT
+Lbl PT
+ClrHome
+X*F/T→R
+Disp "RESULT:"
+Disp R
+Output(10,1,"ENTER=BACK")
+Pause 
+Goto 0
+Lbl D
+Input "VALUE? ",X
+Menu("SI PREFIX:","none",K0,"kilo",K1,"milli",K2,"micro",K3,"nano",K4,"mega",K5,"centi",K6)
+Lbl K0
+1→K
+Goto KF
+Lbl K1
+1000→K
+Goto KF
+Lbl K2
+.001→K
+Goto KF
+Lbl K3
+1E-6→K
+Goto KF
+Lbl K4
+1E-9→K
+Goto KF
+Lbl K5
+1000000→K
+Goto KF
+Lbl K6
+.01→K
+Goto KF
+Lbl KF
+X*K→X
+Menu("FROM UNIT:","J",R0,"kJ",R1,"eV",R2,"cal",R3,"kcal",R4)
+Lbl R0
+1→F
+Goto RF
+Lbl R1
+1000→F
+Goto RF
+Lbl R2
+1.60218E-19→F
+Goto RF
+Lbl R3
+4.184→F
+Goto RF
+Lbl R4
+4184→F
+Goto RF
+Lbl RF
+Menu("TO UNIT:","J",S0,"kJ",S1,"eV",S2,"cal",S3,"kcal",S4)
+Lbl S0
+1→T
+Goto ET
+Lbl S1
+1000→T
+Goto ET
+Lbl S2
+1.60218E-19→T
+Goto ET
+Lbl S3
+4.184→T
+Goto ET
+Lbl S4
+4184→T
+Goto ET
+Lbl ET
+ClrHome
+X*F/T→R
+Disp "RESULT:"
+Disp R
+Output(10,1,"ENTER=BACK")
+Pause 
+Goto 0
+Lbl E
+Input "VALUE? ",X
+Menu("FROM UNIT:","K (Kelvin)",T0,"C (Celsius)",T1)
+Lbl T0
+0→G
+Goto TF
+Lbl T1
+1→G
+Goto TF
+Lbl TF
+Menu("TO UNIT:","K (Kelvin)",U0,"C (Celsius)",U1)
+Lbl U0
+0→H
+Goto TT
+Lbl U1
+1→H
+Goto TT
+Lbl TT
+ClrHome
+X→R
+If G=0
+If H=1
+X-273.15→R
+If G=1
+If H=0
+X+273.15→R
+Disp "RESULT:"
+Disp R
+Output(10,1,"ENTER=BACK")
+Pause 
+Goto 0
+Lbl Z
+Return

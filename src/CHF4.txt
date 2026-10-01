@@ -1,7 +1,7 @@
 Lbl 0
-Menu("LIGHT & PHOTOELECTRIC","LIGHT VOCABULARY",A1,"ELECTROMAGNETIC ORDER",A2,"VISIBLE COLORS",A3,"RELATIONSHIPS",A4,"BLACKBODY RADIATION",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
+Menu("LIGHT & PHOTOELECTRIC","LIGHT VOCABULARY",A1,"ELECTROMAGNETIC ORDER",A2,"VISIBLE COLORS",A3,"VISIBLE SPECTRUM NM",A4,"RELATIONSHIPS",A5,"MORE TOPICS ►",A0,"◄ BACK",Z)
 Lbl A0
-Menu("LIGHT & PHOTOELECTRIC","PHOTOELECTRIC THRESH.",A6,"FREQUENCY VS INTENSITY",A7,"CALCULATION CLUES",A8,"◄ BACK",0)
+Menu("LIGHT & PHOTOELECTRIC","BLACKBODY RADIATION",A6,"PHOTOELECTRIC THRESH.",A7,"FREQUENCY VS INTENSITY",A8,"CALCULATION CLUES",A9,"◄ BACK",0)
 Lbl Z
 Return
 Lbl A1
@@ -51,6 +51,18 @@ Pause
 Goto 0
 Lbl A4
 ClrHome
+Disp "VISIBLE SPECTRUM NM","Visible light spans","  roughly 400 to 700 nm."
+Disp "Below 400 nm is","  ultraviolet (UV).","Above 700 nm is infrared"
+Disp "  (IR).","UV has higher energy than","  visible light."
+Output(10,13,"ENTER=NEXT 1/2")
+Pause 
+ClrHome
+Disp "IR has lower energy than","  visible light."
+Output(10,13,"ENTER=BACK 2/2")
+Pause 
+Goto 0
+Lbl A5
+ClrHome
 Disp "RELATIONSHIPS","Longer wavelength means","  lower frequency and"
 Disp "  photon energy.","Shorter wavelength means","  higher frequency and"
 Disp "  photon energy.","At fixed frequency, higher","  intensity does not"
@@ -67,7 +79,7 @@ Disp "  photon-energy equations","  on the equation sheet."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto 0
-Lbl A5
+Lbl A6
 ClrHome
 Disp "BLACKBODY RADIATION","Heated objects emit","  electromagnetic"
 Disp "  radiation.","As temperature rises, peak","  emission shifts toward"
@@ -78,8 +90,8 @@ ClrHome
 Disp "  energy exchanges."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
-Goto 0
-Lbl A6
+Goto A0
+Lbl A7
 ClrHome
 Disp "PHOTOELECTRIC THRESHOLD","Φ is the work function:","  minimum energy needed to"
 Disp "  remove an electron from","  the material.","Photon energy below Φ: no"
@@ -99,7 +111,7 @@ Disp "  shorter wavelength."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto A0
-Lbl A7
+Lbl A8
 ClrHome
 Disp "FREQUENCY VERSUS INTENSITY","Increasing frequency above","  threshold increases"
 Disp "  maximum electron kinetic","  energy.","Increasing intensity at"
@@ -113,7 +125,7 @@ Disp "  emission."
 Output(10,13,"ENTER=BACK 2/2")
 Pause 
 Goto A0
-Lbl A8
+Lbl A9
 ClrHome
 Disp "CALCULATION CLUES","For emitted electron","  speed:"
 Disp "Find photon energy.","Subtract the work function","  to find maximum kinetic"

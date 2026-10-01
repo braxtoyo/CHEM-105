@@ -171,6 +171,12 @@ Red has the longest visible wavelength and lowest visible frequency and photon e
 Violet has the shortest visible wavelength and highest visible frequency and photon energy.
 Infrared is beyond red at longer wavelengths.
 Ultraviolet is beyond violet at shorter wavelengths.
+TOPIC: VISIBLE SPECTRUM NM
+Visible light spans roughly 400 to 700 nm.
+Below 400 nm is ultraviolet (UV).
+Above 700 nm is infrared (IR).
+UV has higher energy than visible light.
+IR has lower energy than visible light.
 TOPIC: RELATIONSHIPS
 Longer wavelength means lower frequency and photon energy.
 Shorter wavelength means higher frequency and photon energy.
@@ -263,6 +269,18 @@ For fixed mass, momentum uncertainty can be related to speed uncertainty.
 Use the uncertainty equation on the equation sheet.
 If asked for the minimum uncertainty, use equality at the limit.
 CATEGORY 7: SCIENTISTS AND EXPERIMENTS
+TOPIC: EXPERIMENT TRIGGERS
+Nucleus small, dense, +: Rutherford (gold foil).
+Negative particles, e-: Thomson (cathode ray).
+Oil drop, e- charge: Millikan (oil drop).
+Radioactivity, atoms emit: Curie (radiation study).
+Neutral particle, mass=p: Chadwick (neutron).
+Blackbody, energy packets: Planck (quantized E).
+Photoelectric effect: Einstein (photon theory).
+Dark lines in sunlight: Fraunhofer (solar spec.).
+Spectral lines by element: Bunsen & Kirchhoff.
+Fixed mass proportions: Proust (definite prop.).
+Whole-number mass ratios: Dalton (multiple prop.).
 TOPIC: GREEK ATOMISTS
 METHOD: Philosophical reasoning about matter.
 PROPOSED: Matter consists of atoms.
@@ -374,6 +392,15 @@ All fractional abundances sum to 1. All percentages sum to 100%.
 The average lies between the isotope masses.
 For two isotopes, if one fraction is x, the other is 1−x.
 A more abundant isotope pulls the average closer to its mass.
+TOPIC: NATURAL ABUNDANCE
+Two-isotope formula:
+Avg = (M1*x) + (M2*(1-x))
+x = fraction of isotope 1.
+x*100 = percent of isotope 1.
+1-x = fraction of isotope 2.
+Direct solve for x:
+x = (Avg - M2) / (M1 - M2)
+Sanity check: Avg is always closest to the mass of the most abundant isotope.
 TOPIC: MASS SPECTROMETRY
 Mass spectrometry separates ions according to mass-to-charge ratio.
 It helps determine isotope masses and relative abundances.
@@ -398,6 +425,12 @@ TOPIC: MASS PERCENT
 Mass percent means component mass divided by total mass, times 100.
 For an element in a compound, compare that element’s contribution to the compound’s molar mass with the total molar mass.
 Mass percent is not the same as atom-count percent.
+TOPIC: LAWS OF COMPOSITION
+Law of definite proportions: A compound always contains the same elements in the same mass ratio.
+Water always has about 8 grams of oxygen for every 1 gram of hydrogen.
+Law of multiple proportions: When two elements form different compounds, the masses of one element that combine with a fixed mass of the other have a small whole-number ratio.
+In CO and CO2, 12 grams of carbon combines with 16 or 32 grams of oxygen. That oxygen ratio is 1:2.
+A related law is conservation of mass: In a chemical reaction, matter is rearranged. Total mass before the reaction equals total mass afterward.
 CATEGORY 9: ATOMS, IONS, AND CHARGES
 TOPIC: SUBATOMIC PARTICLES
 Proton: positive charge; nucleus; approximately 1 amu.
