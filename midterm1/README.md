@@ -1,16 +1,16 @@
 # CHEM 105 Midterm 1 — TI-84 Plus CE (TI-BASIC)
 
-One program, `CHEM`, with my CHEM 105 notes organized by category.
+One program, `MIDTERM1`, with my CHEM 105 Midterm 1 notes and tools.
 
 ## Install
 1. Open **TI Connect CE**, plug in the calculator, go to Calculator Explorer.
 2. Drag **all files** in `midterm1/8xp/` onto the calculator (choose **Replace** if asked):
-   `CHEM, CHFULL, CHF1 ... CHF10, CHPS, CHCV` (14 files).
-3. On the calculator: `prgm` → `CHEM` → `ENTER` → `ENTER`.
+   `MIDTERM1, CHFULL, CHF1 ... CHF10, CHPS, CHCV` (14 files).
+3. On the calculator: `prgm` → `MIDTERM1` → `ENTER` → `ENTER`.
 
 ## Menu
 ```
-CHEM 105 NOTES
+MIDTERM 1  CHEM 105
 1 FULL NOTES ►            10 categories (CHFULL + CHF1..CHF10), each with topic pages
 2 PREFIXES 10^x k μ n     E..a table with powers of ten + converting
 3 ISOELECTRONIC LIST      type symbol + charge -> atoms/known ions with same e- count

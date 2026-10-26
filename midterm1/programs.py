@@ -483,9 +483,9 @@ ISO_CODE = "\n".join([
 # ------------------------------------------------------------------ PROGRAM
 
 PROGRAMS = {}
-PROGRAMS["CHEM"] = r"""
+PROGRAMS["MIDTERM1"] = r"""
 Lbl 0
-Menu("CHEM 105 NOTES","FULL NOTES ►",N,"EXAM SETUP ►",P,"UNIT CONVERT ►",C,"PREFIXES 10^x k μ n",A,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"QUIT",Q)
+Menu("MIDTERM 1  CHEM 105","FULL NOTES ►",N,"EXAM SETUP ►",P,"UNIT CONVERT ►",C,"PREFIXES 10^x k μ n",A,"ISOELECTRONIC LIST",H,"ELECTRON CONFIG",J,"QUIT",Q)
 Lbl N
 prgmCHFULL
 Goto 0
