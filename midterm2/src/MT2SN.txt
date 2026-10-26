@@ -1,0 +1,31 @@
+Lbl 1
+ClrHome
+Disp "SN + LONE PAIRS ► SHAPE","SN = ATOMS + LONE PAIRS","(DBL/TRIPLE BOND = 1)"
+Input "STERIC NUMBER:",S
+Input "LONE PAIRS:",L
+(S<2 or S>6 or L<0 or L≥S or fPart(S) or fPart(L))→E
+If E
+Disp "USE SN 2 TO 6","AND LP 0 TO SN-1"
+If E
+Pause 
+If E
+Goto 1
+prgmMT2G
+ClrHome
+Disp "SN "+sub("0123456789",S+1,1)+" = "+sub("0123456789",(S-L)+1,1)+" ATOMS + "+sub("0123456789",L+1,1)+" LP"
+Disp "EG: "+Str4
+Disp "SHAPE "+Str5
+Disp "ANGLE "+Str6
+Disp "HYBRID: "+Str7+"  ("+sub("0123456789",S+1,1)+" ORBITALS)"
+Disp "EX: "+Str0
+If Y
+Disp "NONPOLAR IF OUTER SAME"
+If not(Y) and S-L=1
+Disp "POLAR IF 2 DIFF. ATOMS"
+If not(Y) and S-L>1
+Disp "POLAR (ASYMMETRIC)"
+Disp "σ BONDS USE THE HYBRIDS","π BONDS USE LEFTOVER p"
+Pause 
+Menu("SN SOLVER","NEW ENTRY",1,"BACK",2)
+Lbl 2
+Return

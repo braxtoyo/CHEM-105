@@ -1,0 +1,187 @@
+"?"→Str4
+"?"→Str5
+"?"→Str6
+"?"→Str7
+"?"→Str0
+0→Y
+If S=2 and L=0
+Then
+"LINEAR"→Str4
+"LINEAR"→Str5
+"180°"→Str6
+"sp"→Str7
+"CO₂ BeCl₂ HCN"→Str0
+1→Y
+End
+If S=2 and L=1
+Then
+"LINEAR"→Str4
+"LINEAR (DIATOMIC)"→Str5
+"180°"→Str6
+"sp"→Str7
+"N IN N₂, C IN CO"→Str0
+0→Y
+End
+If S=3 and L=0
+Then
+"TRIGONAL PLANAR"→Str4
+"TRIGONAL PLANAR"→Str5
+"120°"→Str6
+"sp²"→Str7
+"BF₃ SO₃ CO₃²⁻ NO₃⁻"→Str0
+1→Y
+End
+If S=3 and L=1
+Then
+"TRIGONAL PLANAR"→Str4
+"BENT"→Str5
+"<120°"→Str6
+"sp²"→Str7
+"SO₂ O₃ NO₂⁻"→Str0
+0→Y
+End
+If S=3 and L=2
+Then
+"TRIGONAL PLANAR"→Str4
+"LINEAR (DIATOMIC)"→Str5
+"180°"→Str6
+"sp²"→Str7
+"O IN C=O, O IN O₂"→Str0
+0→Y
+End
+If S=4 and L=0
+Then
+"TETRAHEDRAL"→Str4
+"TETRAHEDRAL"→Str5
+"109.5°"→Str6
+"sp³"→Str7
+"CH₄ NH₄+ SO₄²⁻"→Str0
+1→Y
+End
+If S=4 and L=1
+Then
+"TETRAHEDRAL"→Str4
+"TRIGONAL PYRAMIDAL"→Str5
+"<109.5° (NH₃ 107°)"→Str6
+"sp³"→Str7
+"NH₃ PCl₃ ClO₃⁻"→Str0
+0→Y
+End
+If S=4 and L=2
+Then
+"TETRAHEDRAL"→Str4
+"BENT"→Str5
+"<109.5° (H₂O 104.5°)"→Str6
+"sp³"→Str7
+"H₂O OF₂ ClO₂⁻"→Str0
+0→Y
+End
+If S=4 and L=3
+Then
+"TETRAHEDRAL"→Str4
+"LINEAR (DIATOMIC)"→Str5
+"180°"→Str6
+"sp³"→Str7
+"HF HCl, F IN F₂"→Str0
+0→Y
+End
+If S=5 and L=0
+Then
+"TRIGONAL BIPYRAMIDAL"→Str4
+"TRIGONAL BIPYRAMIDAL"→Str5
+"90° 120° 180°"→Str6
+"sp³d"→Str7
+"PCl₅ PF₅"→Str0
+1→Y
+End
+If S=5 and L=1
+Then
+"TRIGONAL BIPYRAMIDAL"→Str4
+"SEESAW"→Str5
+"<90° AND <120°"→Str6
+"sp³d"→Str7
+"SF₄ IF₄+"→Str0
+0→Y
+End
+If S=5 and L=2
+Then
+"TRIGONAL BIPYRAMIDAL"→Str4
+"T-SHAPED"→Str5
+"<90°"→Str6
+"sp³d"→Str7
+"ClF₃ BrF₃"→Str0
+0→Y
+End
+If S=5 and L=3
+Then
+"TRIGONAL BIPYRAMIDAL"→Str4
+"LINEAR"→Str5
+"180°"→Str6
+"sp³d"→Str7
+"XeF₂ I₃⁻"→Str0
+1→Y
+End
+If S=5 and L=4
+Then
+"TRIGONAL BIPYRAMIDAL"→Str4
+"LINEAR (DIATOMIC)"→Str5
+"180°"→Str6
+"sp³d"→Str7
+"RARE"→Str0
+0→Y
+End
+If S=6 and L=0
+Then
+"OCTAHEDRAL"→Str4
+"OCTAHEDRAL"→Str5
+"90° 180°"→Str6
+"sp³d²"→Str7
+"SF₆ PF₆⁻"→Str0
+1→Y
+End
+If S=6 and L=1
+Then
+"OCTAHEDRAL"→Str4
+"SQUARE PYRAMIDAL"→Str5
+"<90°"→Str6
+"sp³d²"→Str7
+"BrF₅ IF₅ XeOF₄"→Str0
+0→Y
+End
+If S=6 and L=2
+Then
+"OCTAHEDRAL"→Str4
+"SQUARE PLANAR"→Str5
+"90° 180°"→Str6
+"sp³d²"→Str7
+"XeF₄ ICl₄⁻"→Str0
+1→Y
+End
+If S=6 and L=3
+Then
+"OCTAHEDRAL"→Str4
+"T-SHAPED"→Str5
+"<90°"→Str6
+"sp³d²"→Str7
+"RARE"→Str0
+0→Y
+End
+If S=6 and L=4
+Then
+"OCTAHEDRAL"→Str4
+"LINEAR"→Str5
+"180°"→Str6
+"sp³d²"→Str7
+"RARE"→Str0
+1→Y
+End
+If S=6 and L=5
+Then
+"OCTAHEDRAL"→Str4
+"LINEAR (DIATOMIC)"→Str5
+"180°"→Str6
+"sp³d²"→Str7
+"RARE"→Str0
+0→Y
+End
+Return
