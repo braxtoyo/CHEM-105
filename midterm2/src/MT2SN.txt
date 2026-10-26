@@ -1,31 +1,44 @@
 Lbl 1
 ClrHome
-Disp "SN + LONE PAIRS ► SHAPE","SN = ATOMS + LONE PAIRS","(DBL/TRIPLE BOND = 1)"
+Disp "SN + LONE PAIRS ► SHAPE","SN = ATOMS BONDED TO THE","CENTER + ITS LONE PAIRS","(A DOUBLE OR TRIPLE BOND","COUNTS AS 1 ATOM)"
 Input "STERIC NUMBER:",S
 Input "LONE PAIRS:",L
 (S<2 or S>6 or L<0 or L≥S or fPart(S) or fPart(L))→E
 If E
-Disp "USE SN 2 TO 6","AND LP 0 TO SN-1"
+Disp "USE SN 2 TO 6","AND LONE PAIRS 0 TO SN-1"
 If E
 Pause 
 If E
 Goto 1
 prgmMT2G
 ClrHome
-Disp "SN "+sub("0123456789",S+1,1)+" = "+sub("0123456789",(S-L)+1,1)+" ATOMS + "+sub("0123456789",L+1,1)+" LP"
-Disp "EG: "+Str4
-Disp "SHAPE "+Str5
-Disp "ANGLE "+Str6
-Disp "HYBRID: "+Str7+"  ("+sub("0123456789",S+1,1)+" ORBITALS)"
-Disp "EX: "+Str0
-If Y
-Disp "NONPOLAR IF OUTER SAME"
-If not(Y) and S-L=1
-Disp "POLAR IF 2 DIFF. ATOMS"
-If not(Y) and S-L>1
-Disp "POLAR (ASYMMETRIC)"
-Disp "σ BONDS USE THE HYBRIDS","π BONDS USE LEFTOVER p"
+Disp "STERIC NUMBER: "+sub("0123456789",S+1,1)
+" = "+sub("0123456789",(S-L)+1,1)+" ATOM"→Str2
+If S-L≠1
+Str2+"S"→Str2
+Str2+" + "+sub("0123456789",L+1,1)+" LONE PAIR"→Str2
+If L≠1
+Str2+"S"→Str2
+Disp Str2
+Disp "ELECTRON GEOMETRY:","  "+Str4,"MOLECULAR GEOMETRY:","  "+Str5,"BOND ANGLE:","  "+Str6
+Disp "HYBRIDIZATION: "+Str7
+Output(10,17,"ENTER=NEXT")
 Pause 
-Menu("SN SOLVER","NEW ENTRY",1,"BACK",2)
+ClrHome
+Disp "EXAMPLES:","  "+Str0
+If Y
+Disp "NONPOLAR IF ALL OUTER","  ATOMS ARE THE SAME"
+If not(Y) and S-L=1
+Disp "POLAR IF THE 2 ATOMS","  ARE DIFFERENT"
+If not(Y) and S-L>1
+Disp "POLAR (LONE PAIRS MAKE","  IT LOPSIDED)"
+Disp "SIGMA (σ) BONDS USE THE","  "+Str7+" HYBRID ORBITALS","PI (π) BONDS USE LEFTOVER","  UNHYBRIDIZED p ORBITALS"
+Output(10,17,"ENTER=MENU")
+Pause 
+Lbl 3
+Menu("SN SOLVER","NEW ENTRY",1,"WHAT DOES IT MEAN?",4,"BACK",2)
+Lbl 4
+prgmMT2H
+Goto 3
 Lbl 2
 Return

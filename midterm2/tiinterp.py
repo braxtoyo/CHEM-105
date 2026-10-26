@@ -313,6 +313,11 @@ def run(progs, name, env, inputs, menus, screen, maxsteps=3_000_000):
                 screen.append(v if isinstance(v, str) else fmt(v))
             pc += 1
             continue
+        if l.startswith("Output("):
+            a = split_args(l[7:-1])
+            screen.append("[out r%d c%d] %s" % (int(ev(a[0], env)), int(ev(a[1], env)), ev(a[2], env)))
+            pc += 1
+            continue
         if l.startswith("Pause"):
             screen.append("[pause]")
             pc += 1

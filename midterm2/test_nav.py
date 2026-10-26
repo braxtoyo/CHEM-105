@@ -1,6 +1,6 @@
 import re
 from tiinterp import run, Env, Halt
-progs={n:open('src/%s.txt'%n,encoding='utf-8').read().rstrip('\n').replace('Pause ','Pause') for n in ['MT2LW','MT2G','MT2SN','MIDTERM2']}
+progs={n:open('src/%s.txt'%n,encoding='utf-8').read().rstrip('\n').replace('Pause ','Pause') for n in ['MT2LW','MT2G','MT2SN','MIDTERM2','MT2H']}
 src=progs['MIDTERM2']
 labels=set(re.findall(r'^Lbl (\S+)$',src,re.M))
 for t in re.findall(r'^Goto (\S+)$',src,re.M): assert t in labels,t

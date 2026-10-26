@@ -1,7 +1,10 @@
 # MIDTERM 2 (TI-84 Plus CE)
 
-Send all four programs to the calculator: `MIDTERM2`, `MT2SN`, `MT2LW`, `MT2G`.
-Run `prgmMIDTERM2`. (MT2SN, MT2LW, MT2G are helpers it calls.)
+Send all five programs to the calculator: `MIDTERM2`, `MT2SN`, `MT2LW`, `MT2G`, `MT2H`.
+Run `prgmMIDTERM2`. (MT2SN, MT2LW, MT2G, MT2H are helpers it calls.)
+
+Every screen shows 9 lines plus an ENTER=NEXT / ENTER=BACK footer, so pages never scroll.
+Both solvers end with a "WHAT DOES IT MEAN?" option (MT2H) that explains every result in plain words.
 
 - SN+LP ► SHAPE SOLVER: enter steric number + lone pairs → electron geometry, shape, angle, hybridization, examples, polarity.
 - LEWIS SOLVER: type a formula in CAPS (SO4, XEF4, HNO3). The charge can go right in the formula
@@ -13,7 +16,7 @@ Run `prgmMIDTERM2`. (MT2SN, MT2LW, MT2G are helpers it calls.)
   All-caps two-letter symbols are read by context (SBR2 = S + Br2, SBF5 = SbF5).
   Two-center molecules (C2H6, N2H4) get a clear "probably 2+ centers" message.
 - Notes: VSEPR & hybridization, sigma/pi/antibonding/MO, band theory, polyatomic ions, isomers,
-  organic drawing, FC & Lewis rules, theory comparison.
+  organic (drawing rules, carboxylic acid, carboxylate, amines, other functional groups), FC & Lewis rules, theory comparison.
 
 Rebuild: `pip install tivars` then `python3 build.py` (in this folder).
-`tiinterp.py` + `test_lw.py` / `test_nav.py` run the programs in a small TI-BASIC simulator for testing.
+`tiinterp.py` + `preview.py` / `test_lw.py` / `test_nav.py` run the programs in a small TI-BASIC simulator for testing.

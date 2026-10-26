@@ -22,30 +22,43 @@ ClrHome
 Disp "ELECTROMAGNETIC ORDER","From lowest frequency and","  photon energy to"
 Disp "  highest:","Radio.","Microwave."
 Disp "Infrared.","Visible.","Ultraviolet."
-Output(10,13,"ENTER=NEXT 1/2")
+Output(10,13,"ENTER=NEXT 1/4")
 Pause 
 ClrHome
 Disp "X-ray.","Gamma.","Wavelength decreases in"
-Disp "  that order.","The course guide says to","  memorize the order, not"
-Disp "  numerical boundaries."
-Output(10,13,"ENTER=BACK 2/2")
+Disp "  that order.","Approximate wavelengths","  (boundaries vary by"
+Disp "  source;","1 m = 10^9 nm):","Radio: more than 10^9 nm"
+Output(10,13,"ENTER=NEXT 2/4")
+Pause 
+ClrHome
+Disp "  (over 1 m).","Microwave:","10^6 to 10^9 nm (1 mm to 1"
+Disp "  m).","Infrared:","700 to 10^6 nm (700 nm to"
+Disp "  1 mm).","Visible: 400 to 700 nm.","Ultraviolet: 10 to 400 nm."
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "X-ray: 0.01 to 10 nm.","Gamma: less than 0.01 nm.","The course guide says to"
+Disp "  memorize the order, not","  numerical boundaries."
+Output(10,13,"ENTER=BACK 4/4")
 Pause 
 Goto 0
 Lbl A3
 ClrHome
 Disp "VISIBLE COLORS","From lowest photon energy","  to highest:"
-Disp "Red, orange, yellow,","  green, blue, violet.","Red has the longest"
-Disp "  visible wavelength and","  lowest visible frequency","  and photon energy."
+Disp "Red, orange, yellow,","  green, blue, violet.","Approximate wavelengths:"
+Disp "Red: 620 to 700 nm.","Orange: 590 to 620 nm.","Yellow: 570 to 590 nm."
 Output(10,13,"ENTER=NEXT 1/3")
 Pause 
 ClrHome
-Disp "Violet has the shortest","  visible wavelength and","  highest visible"
-Disp "  frequency and photon","  energy.","Infrared is beyond red at"
-Disp "  longer wavelengths.","Ultraviolet is beyond","  violet at shorter"
+Disp "Green: 495 to 570 nm.","Blue: 450 to 495 nm.","Violet: 400 to 450 nm."
+Disp "Red has the longest","  visible wavelength and","  lowest visible frequency"
+Disp "  and photon energy.","Violet has the shortest","  visible wavelength and"
 Output(10,13,"ENTER=NEXT 2/3")
 Pause 
 ClrHome
-Disp "  wavelengths."
+Disp "  highest visible","  frequency and photon","  energy."
+Disp "Infrared is beyond red at","  longer wavelengths.","Ultraviolet is beyond"
+Disp "  violet at shorter","  wavelengths."
 Output(10,13,"ENTER=BACK 3/3")
 Pause 
 Goto 0

@@ -1,6 +1,6 @@
 import sys
 from tiinterp import run, Env, Halt
-progs={n:open('src/%s.txt'%n,encoding='utf-8').read().rstrip('\n').replace('Pause ','Pause') for n in ['MT2LW','MT2G','MT2SN','MIDTERM2']}
+progs={n:open('src/%s.txt'%n,encoding='utf-8').read().rstrip('\n').replace('Pause ','Pause') for n in ['MT2LW','MT2G','MT2SN','MIDTERM2','MT2H']}
 def lewis(f,c):
     env=Env(); scr=[]
     try: run(progs,'MT2LW',env,[f,str(c)],[],scr)

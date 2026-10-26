@@ -8,23 +8,31 @@ Programs:
   MT2G      shared geometry lookup (called by MT2SN and MT2LW)
 """
 
-ROWS = 10
+ROWS = 9  # 9 text lines + a footer on row 10, so the screen never scrolls
 
 
-def pages(label, back, lines, rows=ROWS):
-    """Lbl, then screens of up to `rows` lines, each ending in Pause."""
-    out = ["Lbl " + label]
-    for i in range(0, len(lines), rows):
-        chunk = lines[i:i + rows]
+def _screens(screens, end):
+    out, n = [], len(screens)
+    for i, sc in enumerate(screens, 1):
         out.append("ClrHome")
-        for j in range(0, len(chunk), 3):
-            out.append("Disp " + ",".join('"%s"' % s for s in chunk[j:j + 3]))
+        for j in range(0, len(sc), 3):
+            out.append("Disp " + ",".join('"%s"' % s for s in sc[j:j + 3]))
+        foot = ("ENTER=NEXT %d/%d" % (i, n)) if i < n else ("ENTER=BACK %d/%d" % (i, n))
+        if n == 1:
+            foot = "ENTER=BACK"
+        out.append('Output(10,%d,"%s")' % (27 - len(foot), foot))
         out.append("Pause")
-    out.append("Goto " + back)
-    return "\n".join(out)
+    out.append(end)
+    return out
 
 
-def blocks(label, back, entries, header=(), rows=ROWS):
+def pages(label, back, lines, rows=ROWS, end=None):
+    """Lbl, then screens of up to `rows` lines, each ending in Pause."""
+    scr = [lines[i:i + rows] for i in range(0, len(lines), rows)]
+    return "\n".join(["Lbl " + label] + _screens(scr, end or "Goto " + back))
+
+
+def blocks(label, back, entries, header=(), rows=ROWS, end=None):
     """Like pages() but never splits an entry (list of lines) across screens."""
     screens, cur = [], list(header)
     for e in entries:
@@ -33,14 +41,7 @@ def blocks(label, back, entries, header=(), rows=ROWS):
             cur = []
         cur += e
     screens.append(cur)
-    out = ["Lbl " + label]
-    for sc in screens:
-        out.append("ClrHome")
-        for j in range(0, len(sc), 3):
-            out.append("Disp " + ",".join('"%s"' % s for s in sc[j:j + 3]))
-        out.append("Pause")
-    out.append("Goto " + back)
-    return "\n".join(out)
+    return "\n".join(["Lbl " + label] + _screens(screens, end or "Goto " + back))
 
 
 def menu(label, title, items):
@@ -94,39 +95,54 @@ def d2(x):
             % (x, x, x))
 
 
+NEXT = 'Output(10,17,"ENTER=NEXT")'
+
 MT2SN = r"""
 Lbl 1
 ClrHome
-Disp "SN + LONE PAIRS ► SHAPE","SN = ATOMS + LONE PAIRS","(DBL/TRIPLE BOND = 1)"
+Disp "SN + LONE PAIRS ► SHAPE","SN = ATOMS BONDED TO THE","CENTER + ITS LONE PAIRS","(A DOUBLE OR TRIPLE BOND","COUNTS AS 1 ATOM)"
 Input "STERIC NUMBER:",S
 Input "LONE PAIRS:",L
 (S<2 or S>6 or L<0 or L≥S or fPart(S) or fPart(L))→E
 If E
-Disp "USE SN 2 TO 6","AND LP 0 TO SN-1"
+Disp "USE SN 2 TO 6","AND LONE PAIRS 0 TO SN-1"
 If E
 Pause
 If E
 Goto 1
 prgmMT2G
 ClrHome
-Disp "SN "+%(S)s+" = "+%(A)s+" ATOMS + "+%(L)s+" LP"
-Disp "EG: "+Str4
-Disp "SHAPE "+Str5
-Disp "ANGLE "+Str6
-Disp "HYBRID: "+Str7+"  ("+%(S)s+" ORBITALS)"
-Disp "EX: "+Str0
-If Y
-Disp "NONPOLAR IF OUTER SAME"
-If not(Y) and S-L=1
-Disp "POLAR IF 2 DIFF. ATOMS"
-If not(Y) and S-L>1
-Disp "POLAR (ASYMMETRIC)"
-Disp "σ BONDS USE THE HYBRIDS","π BONDS USE LEFTOVER p"
+Disp "STERIC NUMBER: "+%(S)s
+" = "+%(A)s+" ATOM"→Str2
+If S-L≠1
+Str2+"S"→Str2
+Str2+" + "+%(L)s+" LONE PAIR"→Str2
+If L≠1
+Str2+"S"→Str2
+Disp Str2
+Disp "ELECTRON GEOMETRY:","  "+Str4,"MOLECULAR GEOMETRY:","  "+Str5,"BOND ANGLE:","  "+Str6
+Disp "HYBRIDIZATION: "+Str7
+%(NEXT)s
 Pause
-Menu("SN SOLVER","NEW ENTRY",1,"BACK",2)
+ClrHome
+Disp "EXAMPLES:","  "+Str0
+If Y
+Disp "NONPOLAR IF ALL OUTER","  ATOMS ARE THE SAME"
+If not(Y) and S-L=1
+Disp "POLAR IF THE 2 ATOMS","  ARE DIFFERENT"
+If not(Y) and S-L>1
+Disp "POLAR (LONE PAIRS MAKE","  IT LOPSIDED)"
+Disp "SIGMA (σ) BONDS USE THE","  "+Str7+" HYBRID ORBITALS","PI (π) BONDS USE LEFTOVER","  UNHYBRIDIZED p ORBITALS"
+Output(10,17,"ENTER=MENU")
+Pause
+Lbl 3
+Menu("SN SOLVER","NEW ENTRY",1,"WHAT DOES IT MEAN?",4,"BACK",2)
+Lbl 4
+prgmMT2H
+Goto 3
 Lbl 2
 Return
-""" % {"S": d1("S"), "A": d1("(S-L)"), "L": d1("L")}
+""" % {"S": d1("S"), "A": d1("(S-L)"), "L": d1("L"), "NEXT": NEXT}
 
 # ---------------------------------------------------------------- Lewis
 HAL = "(J=7 or J=12 or J=17 or J=23)"
@@ -229,6 +245,14 @@ Q→ʟLWQ(B)
 End
 End
 """
+
+NEEDP = """If Z+%d>9
+Then
+Output(10,17,"ENTER=NEXT")
+Pause
+ClrHome
+0→Z
+End"""
 
 MT2LW = r"""
 Lbl S
@@ -417,18 +441,35 @@ Lbl D
 %(BUILD)s
 %(DECODE)s
 %(EVAL)s
+min(4,max(⁻4,F))→ʟLWR(20)
 ClrHome
+0→Z
 If ʟLWR(21)
-Disp "OCTET-ONLY VERSION:"
-Disp Str1+"  CHARGE "+%(FCC)s
-Disp "VALENCE e⁻: "+%(V2)s
+Then
+Disp "OCTET-ONLY VERSION","(IF YOUR CLASS DOES NOT","ALLOW EXPANDED OCTETS):"
+3→Z
+End
+min(4,max(⁻4,C))→F
+If C
+Disp Str1+"  (CHARGE "+%(FCT)s+")"
+If not(C)
+Disp Str1+"  (NEUTRAL)"
+Disp %(V2)s+" VALENCE e⁻ IN TOTAL"
 ʟLWR(16)→J
-sub(Str8,2J-1,2-(sub(Str8,2J,1)=" "))→Str6
-min(4,max(⁻4,F))→F
-"CENTER "+Str6+": "+%(LP)s+" LP"→Str2
+Disp "CENTER ATOM: "+sub(Str8,2J-1,2-(sub(Str8,2J,1)=" "))
+ʟLWR(20)→F
+"  "+%(LP)s+" LONE PAIR"→Str2
+If int(L/2)≠1
+Str2+"S"→Str2
+Disp Str2+", FC "+%(FCT)s
+Z+4→Z
 If fPart(L/2)
-Str2+"+1e⁻"→Str2
-Disp Str2+" FC "+%(FCF)s
+Then
+Disp "  + 1 UNPAIRED e⁻"
+Z+1→Z
+End
+Disp "BONDED TO:"
+Z+1→Z
 For(I,1,M)
 100ʟLWT(I)+10ʟLWH(I)+ʟLWO(I)→D
 0→E
@@ -443,16 +484,44 @@ End
 End
 If not(E)
 Then
+%(NEED2)s
 ʟLWT(I)→J
-sub(Str8,2J-1,2)+" "→Str6
+sub(Str8,2J-1,2-(sub(Str8,2J,1)=" "))+" ATOM"→Str6
 If ʟLWH(I)
-"O-H"→Str6
+"O-H GROUP"→Str6
+If N>1
+Str6+"S"→Str6
+sub("SINGLEDOUBLETRIPLE",6ʟLWO(I)-5,6)+" BOND"→Str2
+If N>1
+Str2+"S"→Str2
+Disp %(N1)s+" "+Str6+", "+Str2
 min(4,max(⁻4,ʟLWF(I)))→F
-Disp sub("SNGLDBL TRPL",4ʟLWO(I)-3,4)+" "+Str6+"  "+sub("0123",ʟLWL(I)/2+1,1)+" LP  FC "+%(FCF)s+"  ×"+%(N1)s
+"  "→Str2
+If N>1
+"  EACH: "→Str2
+Str2+sub("0123",ʟLWL(I)/2+1,1)+" LONE PAIR"→Str2
+If ʟLWL(I)≠2
+Str2+"S"→Str2
+If N>1
+Str2+" FC "→Str2
+If N=1
+Str2+", FC "→Str2
+Disp Str2+%(FCT)s
+Z+2→Z
 End
 End
 If θ
-Disp "SNGL H    0 LP  FC  0  ×"+%(TH)s
+Then
+%(NEED1)s
+"H ATOM"→Str6
+If θ>1
+"H ATOMS"→Str6
+"SINGLE BOND"→Str2
+If θ>1
+"SINGLE BONDS"→Str2
+Disp %(TH)s+" "+Str6+", "+Str2
+End
+Output(10,17,"ENTER=NEXT")
 Pause
 If ʟLWR(21)
 Goto E
@@ -464,12 +533,21 @@ int((L+1)/2)→E
 D+E→S
 E→L
 prgmMT2G
-Disp "SN "+%(SS)s+" = "+%(DD)s+" ATOMS + "+%(LL)s+" LP"
-Disp "EG: "+Str4
-Disp "SHAPE "+Str5
-Disp "ANGLE "+Str6
-Disp "HYBRID (CENTER): "+Str7
-Disp "σ BONDS "+%(SIG)s+"   π BONDS "+%(PI)s
+Disp "STERIC NUMBER (SN): "+%(SS)s
+" = "+%(DD)s+" ATOM"→Str2
+If D≠1
+Str2+"S"→Str2
+Str2+" + "+%(LL)s+" LONE PAIR"→Str2
+If L≠1
+Str2+"S"→Str2
+Disp Str2
+Disp "ELECTRON GEOMETRY:","  "+Str4,"MOLECULAR GEOMETRY:","  "+Str5,"BOND ANGLE:","  "+Str6
+Output(10,17,"ENTER=NEXT")
+Pause
+ClrHome
+Disp "HYBRIDIZATION: "+Str7
+Disp "SIGMA (σ) BONDS: "+%(SIG)s
+Disp "PI (π) BONDS: "+%(PI)s
 ʟLWR(19)→E
 If E>8
 Disp "EXPANDED OCTET: "+%(E2)s+" e⁻"
@@ -496,19 +574,23 @@ If D=1 and θ=1
 0→E
 If E and (Y or D=1)
 Then
-Disp "NONPOLAR"
+Disp "NONPOLAR MOLECULE"
 Else
-Disp "POLAR"
+Disp "POLAR MOLECULE"
 End
 End
+Disp "OTHER RESONANCE FORMS: "+%(RES)s
 0→E
 For(I,1,M)
 If ʟLWT(I)=4
 1→E
 End
 If E and D≥2
-Disp "CHECK: MAY BE 2+ CENTERS"
-Disp "EQUAL RESONANCE FORMS: "+%(RES)s
+Disp "CHECK: MAY HAVE 2+","  CENTER ATOMS"
+If ʟLWR(19)>8 and ʟLWS(B)<9ᴇ99
+Output(10,8,"ENTER=OCTET VERSION")
+If ʟLWR(19)≤8 or ʟLWS(B)=9ᴇ99
+Output(10,17,"ENTER=MENU")
 Pause
 If ʟLWR(19)>8 and ʟLWS(B)<9ᴇ99
 Then
@@ -519,7 +601,10 @@ End
 If ʟLWR(21)
 Goto D
 Lbl E
-Menu("LEWIS SOLVER","NEW MOLECULE",S,"BACK",R)
+Menu("LEWIS SOLVER","NEW MOLECULE",S,"WHAT DOES IT MEAN?",H,"BACK",R)
+Lbl H
+prgmMT2H
+Goto E
 Lbl R
 DelVar ʟLWV
 DelVar ʟLWE
@@ -544,7 +629,9 @@ Return
     "LP": d1("int(L/2)"), "N1": d1("N"), "TH": d1("θ"),
     "SS": d1("S"), "DD": d1("D"), "LL": d1("L"),
     "SIG": d1("min(9,D+O)"), "PI": d1("(ʟLWR(20)-D)"),
-    "E2": d2("E"), "E1": d1("E"), "RES": d1("min(9,ʟLWR(5))"),
+    "E2": d2("E"), "E1": d1("E"), "RES": d1("min(9,ʟLWR(5)-1)"),
+    "FCT": 'sub("-4-3-2-1 0+1+2+3+4",2F+9+(F=0),2-(F=0))',
+    "NEED1": NEEDP % 1, "NEED2": NEEDP % 2,
 }
 
 # ---------------------------------------------------------------- notes
@@ -556,7 +643,7 @@ N.append(menu("0", "MIDTERM 2  CHEM 105", [
     ("BANDS & CONDUCTION ►", "B"), ("MORE ►", "X"), ("QUIT", "Q")]))
 N.append("Lbl S\nprgmMT2SN\nGoto 0\nLbl L\nprgmMT2LW\nGoto 0\nLbl Q\nClrHome\nStop")
 N.append(menu("X", "MORE", [
-    ("POLYATOMIC IONS ►", "A"), ("ISOMERS ►", "I"), ("ORGANIC DRAWING", "O1"),
+    ("POLYATOMIC IONS ►", "A"), ("ISOMERS ►", "I"), ("ORGANIC GROUPS ►", "O"),
     ("FC & LEWIS RULES ►", "F"), ("THEORY COMPARE ►", "T"),
     ("BACK", "0"), ("QUIT", "Q")]))
 
@@ -736,7 +823,10 @@ N.append(pages("I5", "I", [
     "  SUPERIMPOSABLE ► SAME"]))
 
 # organic drawing
-N.append(pages("O1", "X", [
+N.append(menu("O", "ORGANIC", [
+    ("DRAWING RULES", "O1"), ("CARBOXYLIC ACID", "O2"), ("CARBOXYLATE", "O3"),
+    ("AMINES", "O4"), ("OTHER GROUPS", "O5"), ("BACK", "X"), ("QUIT", "Q")]))
+N.append(pages("O1", "O", [
     "ORGANIC LINE DRAWINGS", "EACH CORNER/END = C", "C ALWAYS HAS 4 BONDS",
     "H ON C NOT DRAWN (IMPLIED)", "  # H = 4 - LINES ON C", "OTHER ATOMS ARE DRAWN",
     "  (N, O...) AND THEIR H", "LONE PAIRS OFTEN NOT", "  DRAWN BUT ARE THERE", "",
@@ -746,6 +836,37 @@ N.append(pages("O1", "X", [
     "  C 3 BONDS 1 LP = -1",
     "C SHAPE BY BONDS:", "4 SINGLE ► sp³ 109.5°", "1 DOUBLE ► sp² 120°",
     "TRIPLE OR 2 DBL ► sp 180°", "N, O: COUNT LP AS DOMAINS"]))
+
+N.append(pages("O2", "O", [
+    "CARBOXYLIC ACID: R-COOH", "  R-C(=O)-O-H", "  (R = REST OF MOLECULE)",
+    "C: DOUBLE BOND TO ONE O,", "  SINGLE BOND TO THE OH", "C IS sp², TRIG PLANAR 120°",
+    "WEAK ACID: GIVES UP THE H+", "  FROM THE O-H", "  R-COOH ► R-COO⁻ + H+",
+    "NAME ENDS IN -OIC ACID", "  CH₃COOH = ETHANOIC ACID", "    (ACETIC ACID, VINEGAR)",
+    "  HCOOH = METHANOIC ACID", "    (FORMIC ACID)", "POLAR + H-BONDS ►",
+    "  HIGH BOILING POINT", "  SMALL ONES MIX WITH H₂O"]))
+N.append(pages("O3", "O", [
+    "CARBOXYLATE ION: R-COO⁻", "= CARBOXYLIC ACID THAT", "  LOST ITS H+",
+    "  (ITS CONJUGATE BASE)", "CHARGE -1 SHARED BY BOTH", "  O ATOMS (RESONANCE)",
+    "2 RESONANCE FORMS: THE", "  DOUBLE BOND SWITCHES", "  BETWEEN THE 2 O",
+    "BOTH C-O BONDS ARE EQUAL", "  (BOND ORDER 1.5)", "C IS sp², TRIG PLANAR 120°",
+    "NAME ENDS IN -OATE", "  CH₃COO⁻ = ETHANOATE", "    (ACETATE)",
+    "SALT: CH₃COONa =", "  SODIUM ACETATE",
+    "IN THE BODY (pH 7.4):", "  ACIDS ARE MOSTLY IN THE", "  CARBOXYLATE FORM"]))
+N.append(pages("O4", "O", [
+    "AMINE: N BONDED TO C", "  (NH₃ WITH H REPLACED", "  BY CARBON GROUPS)",
+    "PRIMARY 1°:   R-NH₂", "SECONDARY 2°: R₂NH", "TERTIARY 3°:  R₃N",
+    "  (COUNT C GROUPS ON N)", "N: 3 BONDS + 1 LONE PAIR", "  sp³, TRIG PYRAMIDAL",
+    "  ABOUT 107° (LIKE NH₃)", "WEAK BASE: LONE PAIR", "  GRABS AN H+",
+    "  R-NH₂ + H+ ► R-NH₃+", "  (AMMONIUM ION, N FC +1)", "NAME ENDS IN -AMINE",
+    "  CH₃NH₂ = METHYLAMINE", "1° AND 2° HAVE N-H ►", "  CAN H-BOND",
+    "AMINO ACIDS HAVE BOTH", "  -NH₂ AND -COOH", "IN THE BODY: -NH₃+ AND",
+    "  -COO⁻ (ZWITTERION)", "AMIDE IS NOT AN AMINE:", "  N ON A C=O, R-C(=O)-N",
+    "  NOT BASIC; PEPTIDE BOND"]))
+N.append(pages("O5", "O", [
+    "GROUP     FORMULA  NAME", "ALCOHOL   R-OH     -OL", "ETHER     R-O-R    ETHER",
+    "ALDEHYDE  R-CHO    -AL", "KETONE    R-CO-R   -ONE", "CARB ACID R-COOH -OIC ACID",
+    "CARBOXYLATE R-COO⁻ -OATE", "ESTER     R-COO-R  -OATE", "AMINE     R-NH₂    -AMINE",
+    "AMIDE     R-CONH₂  -AMIDE"]))
 
 # FC & Lewis rules
 N.append(menu("F", "FORMAL CHARGE & LEWIS", [
@@ -869,6 +990,31 @@ N.append(pages("A5", "A", [
     "STRONG ACIDS (100% IONIZE)", "  HCl  HBr  HI", "  HNO₃  H₂SO₄  HClO₄",
     "  (HClO₃ OFTEN COUNTED)", "ALL OTHERS ARE WEAK", "HF IS WEAK!"]))
 
+
+HELP = [
+    ["WHAT THE RESULTS MEAN", ""],
+    ["VALENCE e⁻: OUTER e⁻ THAT", "  FORM BONDS (ADD e⁻ FOR A", "  - ION, SUBTRACT FOR +)"],
+    ["LONE PAIR: 2 e⁻ ON ONE", "  ATOM, NOT SHARED (DOTS)"],
+    ["SINGLE BOND = 1 LINE", "DOUBLE BOND = 2 LINES", "TRIPLE BOND = 3 LINES"],
+    ["FC = FORMAL CHARGE: THE", "  CHARGE AN ATOM SEEMS TO", "  HAVE IN THE DRAWING",
+     "  FC = VALENCE - DOTS -", "    LINES", "  BEST DRAWING: ALL FC AS", "  CLOSE TO 0 AS POSSIBLE"],
+    ["CENTER ATOM: THE ONE THE", "  OTHERS BOND TO"],
+    ["STERIC NUMBER (SN) =", "  ATOMS ON THE CENTER +", "  LONE PAIRS ON THE CENTER"],
+    ["ELECTRON GEOMETRY: SHAPE", "  OF ATOMS + LONE PAIRS"],
+    ["MOLECULAR GEOMETRY: SHAPE", "  OF THE ATOMS ONLY (WHAT", "  THE MOLECULE LOOKS LIKE)",
+     "  SAME AS ELECTRON GEOM.", "  IF CENTER HAS NO LONE", "  PAIRS",
+     "(NEITHER ONE IS MO THEORY)"],
+    ["BOND ANGLE: ANGLE BETWEEN", "  2 BONDS ON THE CENTER"],
+    ["HYBRIDIZATION: MIXED", "  ORBITALS ON THE CENTER", "  SN 2 sp, 3 sp², 4 sp³,", "  5 sp³d, 6 sp³d²"],
+    ["SIGMA σ: EVERY BOND HAS 1", "PI π: THE EXTRA LINES IN", "  DOUBLE/TRIPLE BONDS"],
+    ["OCTET: 8 e⁻ AROUND AN ATOM", "  EXPANDED: OVER 8", "  (ONLY PERIOD 3 AND UP)",
+     "  INCOMPLETE: UNDER 8", "  (H, Be, B, Al)"],
+    ["POLAR: CHARGE IS LOPSIDED", "  (UNEVEN SHAPE OR MIXED", "  OUTER ATOMS)"],
+    ["OTHER RESONANCE FORMS: #", "  OF OTHER EQUALLY GOOD", "  DRAWINGS (SAME ATOMS,",
+     "  DOUBLE BOND MOVED)", "  0 = ONLY ONE DRAWING", "  REAL MOLECULE = AVERAGE"],
+]
+MT2H = blocks("1", "", HELP, end="Return")
+
 MIDTERM2 = "\n".join(N)
 
 PROGRAMS = {
@@ -876,4 +1022,5 @@ PROGRAMS = {
     "MT2SN": MT2SN,
     "MT2LW": MT2LW,
     "MT2G": mt2g(),
+    "MT2H": MT2H,
 }

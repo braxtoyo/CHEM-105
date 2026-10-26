@@ -321,18 +321,35 @@ Z+abs(F)→Z
 max(U,abs(F))→U
 G+F*ʟLWR(13)→G
 20(20000(40000(10(20(1-ʟLWR(15))(8-min(Y,8))+Z)+U)+ʟLWR(25)+100(6-M-θ)+20000ʟLWR(17)(θ>0)(ʟLWR(16)≠6))+round(100G,0)+10000)+Y→S
+min(4,max(⁻4,F))→ʟLWR(20)
 ClrHome
+0→Z
 If ʟLWR(21)
-Disp "OCTET-ONLY VERSION:"
-Disp Str1+"  CHARGE "+sub("-4-3-2-1 0+1+2+3+4",2C+9,2)
-Disp "VALENCE e⁻: "+sub(" 123456789",int(V/10)+1,1)+sub("0123456789",V-10int(V/10)+1,1)
+Then
+Disp "OCTET-ONLY VERSION","(IF YOUR CLASS DOES NOT","ALLOW EXPANDED OCTETS):"
+3→Z
+End
+min(4,max(⁻4,C))→F
+If C
+Disp Str1+"  (CHARGE "+sub("-4-3-2-1 0+1+2+3+4",2F+9+(F=0),2-(F=0))+")"
+If not(C)
+Disp Str1+"  (NEUTRAL)"
+Disp sub(" 123456789",int(V/10)+1,1)+sub("0123456789",V-10int(V/10)+1,1)+" VALENCE e⁻ IN TOTAL"
 ʟLWR(16)→J
-sub(Str8,2J-1,2-(sub(Str8,2J,1)=" "))→Str6
-min(4,max(⁻4,F))→F
-"CENTER "+Str6+": "+sub("0123456789",int(L/2)+1,1)+" LP"→Str2
+Disp "CENTER ATOM: "+sub(Str8,2J-1,2-(sub(Str8,2J,1)=" "))
+ʟLWR(20)→F
+"  "+sub("0123456789",int(L/2)+1,1)+" LONE PAIR"→Str2
+If int(L/2)≠1
+Str2+"S"→Str2
+Disp Str2+", FC "+sub("-4-3-2-1 0+1+2+3+4",2F+9+(F=0),2-(F=0))
+Z+4→Z
 If fPart(L/2)
-Str2+"+1e⁻"→Str2
-Disp Str2+" FC "+sub("-4-3-2-1 0+1+2+3+4",2F+9,2)
+Then
+Disp "  + 1 UNPAIRED e⁻"
+Z+1→Z
+End
+Disp "BONDED TO:"
+Z+1→Z
 For(I,1,M)
 100ʟLWT(I)+10ʟLWH(I)+ʟLWO(I)→D
 0→E
@@ -347,16 +364,56 @@ End
 End
 If not(E)
 Then
+If Z+2>9
+Then
+Output(10,17,"ENTER=NEXT")
+Pause 
+ClrHome
+0→Z
+End
 ʟLWT(I)→J
-sub(Str8,2J-1,2)+" "→Str6
+sub(Str8,2J-1,2-(sub(Str8,2J,1)=" "))+" ATOM"→Str6
 If ʟLWH(I)
-"O-H"→Str6
+"O-H GROUP"→Str6
+If N>1
+Str6+"S"→Str6
+sub("SINGLEDOUBLETRIPLE",6ʟLWO(I)-5,6)+" BOND"→Str2
+If N>1
+Str2+"S"→Str2
+Disp sub("0123456789",N+1,1)+" "+Str6+", "+Str2
 min(4,max(⁻4,ʟLWF(I)))→F
-Disp sub("SNGLDBL TRPL",4ʟLWO(I)-3,4)+" "+Str6+"  "+sub("0123",ʟLWL(I)/2+1,1)+" LP  FC "+sub("-4-3-2-1 0+1+2+3+4",2F+9,2)+"  ×"+sub("0123456789",N+1,1)
+"  "→Str2
+If N>1
+"  EACH: "→Str2
+Str2+sub("0123",ʟLWL(I)/2+1,1)+" LONE PAIR"→Str2
+If ʟLWL(I)≠2
+Str2+"S"→Str2
+If N>1
+Str2+" FC "→Str2
+If N=1
+Str2+", FC "→Str2
+Disp Str2+sub("-4-3-2-1 0+1+2+3+4",2F+9+(F=0),2-(F=0))
+Z+2→Z
 End
 End
 If θ
-Disp "SNGL H    0 LP  FC  0  ×"+sub("0123456789",θ+1,1)
+Then
+If Z+1>9
+Then
+Output(10,17,"ENTER=NEXT")
+Pause 
+ClrHome
+0→Z
+End
+"H ATOM"→Str6
+If θ>1
+"H ATOMS"→Str6
+"SINGLE BOND"→Str2
+If θ>1
+"SINGLE BONDS"→Str2
+Disp sub("0123456789",θ+1,1)+" "+Str6+", "+Str2
+End
+Output(10,17,"ENTER=NEXT")
 Pause 
 If ʟLWR(21)
 Goto E
@@ -368,12 +425,21 @@ int((L+1)/2)→E
 D+E→S
 E→L
 prgmMT2G
-Disp "SN "+sub("0123456789",S+1,1)+" = "+sub("0123456789",D+1,1)+" ATOMS + "+sub("0123456789",L+1,1)+" LP"
-Disp "EG: "+Str4
-Disp "SHAPE "+Str5
-Disp "ANGLE "+Str6
-Disp "HYBRID (CENTER): "+Str7
-Disp "σ BONDS "+sub("0123456789",min(9,D+O)+1,1)+"   π BONDS "+sub("0123456789",(ʟLWR(20)-D)+1,1)
+Disp "STERIC NUMBER (SN): "+sub("0123456789",S+1,1)
+" = "+sub("0123456789",D+1,1)+" ATOM"→Str2
+If D≠1
+Str2+"S"→Str2
+Str2+" + "+sub("0123456789",L+1,1)+" LONE PAIR"→Str2
+If L≠1
+Str2+"S"→Str2
+Disp Str2
+Disp "ELECTRON GEOMETRY:","  "+Str4,"MOLECULAR GEOMETRY:","  "+Str5,"BOND ANGLE:","  "+Str6
+Output(10,17,"ENTER=NEXT")
+Pause 
+ClrHome
+Disp "HYBRIDIZATION: "+Str7
+Disp "SIGMA (σ) BONDS: "+sub("0123456789",min(9,D+O)+1,1)
+Disp "PI (π) BONDS: "+sub("0123456789",(ʟLWR(20)-D)+1,1)
 ʟLWR(19)→E
 If E>8
 Disp "EXPANDED OCTET: "+sub(" 123456789",int(E/10)+1,1)+sub("0123456789",E-10int(E/10)+1,1)+" e⁻"
@@ -400,19 +466,23 @@ If D=1 and θ=1
 0→E
 If E and (Y or D=1)
 Then
-Disp "NONPOLAR"
+Disp "NONPOLAR MOLECULE"
 Else
-Disp "POLAR"
+Disp "POLAR MOLECULE"
 End
 End
+Disp "OTHER RESONANCE FORMS: "+sub("0123456789",min(9,ʟLWR(5)-1)+1,1)
 0→E
 For(I,1,M)
 If ʟLWT(I)=4
 1→E
 End
 If E and D≥2
-Disp "CHECK: MAY BE 2+ CENTERS"
-Disp "EQUAL RESONANCE FORMS: "+sub("0123456789",min(9,ʟLWR(5))+1,1)
+Disp "CHECK: MAY HAVE 2+","  CENTER ATOMS"
+If ʟLWR(19)>8 and ʟLWS(B)<9ᴇ99
+Output(10,8,"ENTER=OCTET VERSION")
+If ʟLWR(19)≤8 or ʟLWS(B)=9ᴇ99
+Output(10,17,"ENTER=MENU")
 Pause 
 If ʟLWR(19)>8 and ʟLWS(B)<9ᴇ99
 Then
@@ -423,7 +493,10 @@ End
 If ʟLWR(21)
 Goto D
 Lbl E
-Menu("LEWIS SOLVER","NEW MOLECULE",S,"BACK",R)
+Menu("LEWIS SOLVER","NEW MOLECULE",S,"WHAT DOES IT MEAN?",H,"BACK",R)
+Lbl H
+prgmMT2H
+Goto E
 Lbl R
 DelVar ʟLWV
 DelVar ʟLWE

@@ -46,20 +46,27 @@ Pause
 Goto 0
 Lbl A3
 ClrHome
-Disp "THREE FILLING RULES","Aufbau: fill the lowest","  available energy"
-Disp "  orbitals first.","Pauli: each orbital holds","  at most two electrons,"
-Disp "  with opposite spins.","No two electrons in an","  atom can have all four"
-Output(10,13,"ENTER=NEXT 1/3")
+Disp "THREE FILLING RULES","Aufbau Principle:","Electrons fill orbitals in"
+Disp "  order of increasing","  energy, populating","  lower-energy orbitals"
+Disp "  first before moving to","  higher-energy ones (1s","  2s 2p 3s …)."
+Output(10,13,"ENTER=NEXT 1/4")
 Pause 
 ClrHome
-Disp "  quantum numbers","  identical.","Hund: fill equal-energy"
-Disp "  orbitals singly with","  parallel spins before","  pairing."
-Disp "For three p orbitals,","  place one electron in","  each before adding a"
-Output(10,13,"ENTER=NEXT 2/3")
+Disp "Pauli Exclusion Principle:","No two electrons in the","  same atom can have the"
+Disp "  exact same set of four","  quantum numbers (n, l,","  ml, ms)."
+Disp "Consequently, an","  individual orbital","  (defined by n, l, ml)"
+Output(10,13,"ENTER=NEXT 2/4")
 Pause 
 ClrHome
-Disp "  second electron to any","  orbital."
-Output(10,13,"ENTER=BACK 3/3")
+Disp "  can hold at most 2","  electrons, and they must","  have opposite spins (ms"
+Disp "  = +1/2 and ms = -1/2).","Hunds Rule:","When filling degenerate"
+Disp "  orbitals (orbitals of","  equal energy within the","  same subshell, like the"
+Output(10,13,"ENTER=NEXT 3/4")
+Pause 
+ClrHome
+Disp "  three p orbitals),","  electrons occupy them","  singly with parallel"
+Disp "  spins before any orbital","  receives a second,","  paired electron."
+Output(10,13,"ENTER=BACK 4/4")
 Pause 
 Goto 0
 Lbl A4
