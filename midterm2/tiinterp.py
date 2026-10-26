@@ -5,7 +5,7 @@ TOKRE = re.compile(r'''
  (?P<str>"[^"\n→]*"?)
 |(?P<num>(?:\d+\.?\d*|\.\d+)(?:ᴇ⁻?\d+)?)
 |(?P<sci>ᴇ⁻?\d+)
-|(?P<func>(?:sub|inString|length|int|fPart|abs|min|max|round|not|dim|iPart|remainder)\()
+|(?P<func>(?:sub|inString|length|int|fPart|abs|min|max|round|not|dim|iPart|remainder|log|sum)\()
 |(?P<strv>Str\d)
 |(?P<list>ʟ[A-Zθ0-9]+)
 |(?P<op>≠|≤|≥|=|<|>|\+|-|\*|/|\^|⁻|\(|\)|,|\{|\})
@@ -191,6 +191,10 @@ class Parser:
                 return max(a)
             if f == 'round':
                 return float(round(a[0], int(a[1])))
+            if f == 'log':
+                return math.log10(a[0])
+            if f == 'sum':
+                return float(sum(a[0]))
             if f == 'not':
                 return float(not a[0])
             if f == 'dim':
@@ -328,7 +332,7 @@ def run(progs, name, env, inputs, menus, screen, maxsteps=3_000_000):
             if var.startswith("Str"):
                 env.strs[var] = val
             else:
-                env.vars[var] = float(val)
+                env.vars[var] = ev(val, env)
             pc += 1
             continue
         if l.startswith("Menu("):

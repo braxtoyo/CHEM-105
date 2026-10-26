@@ -255,8 +255,12 @@ ClrHome
 End"""
 
 MT2LW = r"""
+{W=1234}→ʟMT2
 Lbl S
 ClrHome
+If ʟMT2(1)
+Disp "COUNT IN A SAMPLE","TYPE THE FORMULA IN CAPS","EX: KRF2  SO2  CH4"
+If not(ʟMT2(1))
 Disp "LEWIS SOLVER (1 CENTER)","TYPE CAPS: SO4 XEF4 HNO3","CHARGE OK: NH4+  SO4-2"
 Input "FORMULA:",Str1
 "0"→Str2
@@ -266,7 +270,7 @@ Then
 sub(Str1,P,length(Str1)-P+1)→Str2
 sub(Str1,1,P-1)→Str1
 End
-If not(P)
+If not(P) and not(ʟMT2(1))
 Input "CHARGE (0 IF NONE):",Str2
 Str2+" "→Str3
 0→M
@@ -291,13 +295,14 @@ Disp "WORKING..."
 {1,2,3,4,5,6,7,3,4,5,6,7,3,4,5,6,7,8,3,4,5,6,7,8}→ʟLWV
 {2.2,1.57,2.04,2.55,3.04,3.44,3.98,1.61,1.9,2.19,2.58,3.16,1.81,2.01,2.18,2.55,2.96,3,1.78,1.96,2.05,2.1,2.66,2.6}→ʟLWE
 {1,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5}→ʟLWP
+{1.008,9.012,10.81,12.011,14.007,15.999,18.998,26.982,28.085,30.974,32.06,35.45,69.723,72.63,74.922,78.971,79.904,83.798,114.818,118.71,121.76,127.6,126.904,131.293}→ʟLWM
 7→dim(ʟLWT)
 7→dim(ʟLWH)
 7→dim(ʟLWB)
 7→dim(ʟLWO)
 7→dim(ʟLWL)
 7→dim(ʟLWF)
-25→dim(ʟLWR)
+30→dim(ʟLWR)
 Fill(0,ʟLWR)
 Str1+"  "→Str3
 length(Str1)→N
@@ -436,6 +441,8 @@ Goto S
 ʟLWR(2)→B
 ʟLWR(3)→O
 ʟLWR(4)→Q
+If ʟMT2(1)
+Goto C
 Lbl D
 %(SETUP)s
 %(BUILD)s
@@ -605,6 +612,165 @@ Menu("LEWIS SOLVER","NEW MOLECULE",S,"WHAT DOES IT MEAN?",H,"BACK",R)
 Lbl H
 prgmMT2H
 Goto E
+Lbl C
+%(SETUP)s
+%(BUILD)s
+%(DECODE)s
+%(EVAL)s
+2(X+O)→ʟLWR(26)
+M+θ+O→ʟLWR(27)
+X-M-θ→ʟLWR(28)
+0→ʟLWR(29)
+0→ʟLWR(30)
+If Y>8 and ʟLWS(B)<9ᴇ99
+Then
+ʟLWU(B)→O
+ʟLWQ(B)→Q
+%(BUILD)s
+%(DECODE)s
+%(EVAL)s
+2(X+O)→ʟLWR(29)
+X-M-θ→ʟLWR(30)
+End
+0→G
+For(I,1,K)
+G+ʟLWM(ʟLWA(I))ʟLWN(I)→G
+End
+sum(ʟLWN)→H
+Lbl A
+Menu("HOW MUCH DO YOU HAVE?","GRAMS (g)",G1,"MILLIGRAMS (mg)",G2,"KILOGRAMS (kg)",G3,"MICROGRAMS (μg)",G4,"MOLES (mol)",G5,"# OF MOLECULES",G6,"CANCEL",GC)
+Lbl G1
+1→U
+Goto G0
+Lbl G2
+.001→U
+Goto G0
+Lbl G3
+1000→U
+Goto G0
+Lbl G4
+1ᴇ⁻6→U
+Goto G0
+Lbl G5
+⁻1→U
+Goto G0
+Lbl G6
+⁻2→U
+Lbl G0
+ClrHome
+Disp Str1+" SAMPLE"
+Input "AMOUNT (EX 240):",Z
+If Z≤0
+Goto A
+If U>0
+Z*U/G→P
+If U=⁻1
+Z→P
+If U=⁻2
+Z/6.02214076ᴇ23→P
+P*6.02214076ᴇ23→N
+ClrHome
+Output(1,1,"IN YOUR "+Str1+" SAMPLE:")
+Output(2,1,"MOLAR MASS")
+G→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(2,16,R)
+Output(3,1,"MOLES")
+P→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(3,16,R)
+Output(4,1,"MOLECULES")
+N→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(4,16,R)
+Output(5,1,"ATOMS")
+NH→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(5,16,R)
+Output(6,1,"BONDING e⁻")
+N*ʟLWR(26)→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(6,16,R)
+Output(7,1,"LONE-PAIR e⁻")
+N(V-ʟLWR(26))→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(7,16,R)
+Output(8,1,"VALENCE e⁻")
+NV→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(8,16,R)
+Output(9,1,"SIGMA σ BONDS")
+N*ʟLWR(27)→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(9,16,R)
+Output(10,17,"ENTER=NEXT")
+Pause
+ClrHome
+Output(1,1,"PI π BONDS")
+N*ʟLWR(28)→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(1,16,R)
+Output(3,1,"EACH MOLECULE HAS:")
+Output(4,1,"  ATOMS")
+Output(4,16,H)
+Output(5,1,"  BONDING e⁻")
+Output(5,16,ʟLWR(26))
+Output(6,1,"  LONE-PAIR e⁻")
+Output(6,16,V-ʟLWR(26))
+Output(7,1,"  VALENCE e⁻")
+Output(7,16,V)
+Output(8,1,"  σ BONDS")
+Output(8,16,ʟLWR(27))
+Output(9,1,"  π BONDS")
+Output(9,16,ʟLWR(28))
+Output(10,1,"4 SIG FIGS")
+Output(10,17,"ENTER=NEXT")
+Pause
+If not(ʟLWR(29))
+Goto GM
+ClrHome
+Disp "NOTE: THIS ANSWER USES","AN EXPANDED OCTET. IF","YOUR CLASS DRAWS OCTETS","ONLY, USE THESE INSTEAD:"
+Output(5,1,"BONDING e⁻")
+N*ʟLWR(29)→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(5,16,R)
+Output(6,1,"LONE-PAIR e⁻")
+N(V-ʟLWR(29))→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(6,16,R)
+Output(7,1,"PI π BONDS")
+N*ʟLWR(30)→R
+If R>0
+round(R/10^(int(log(R))),3)*10^(int(log(R)))→R
+Output(7,16,R)
+Output(8,1,"  (EACH: "+%(B29)s+" BONDING e⁻)")
+Output(10,17,"ENTER=NEXT")
+Pause
+Lbl GM
+Menu("SAMPLE COUNTS","NEW AMOUNT",A,"NEW MOLECULE",S,"SEE LEWIS STRUCTURE",GL,"WHAT DOES IT MEAN?",GH,"BACK",R)
+Lbl GH
+prgmMT2H
+Goto GM
+Lbl GL
+0→ʟMT2(1)
+ʟLWR(2)→B
+ʟLWR(3)→O
+ʟLWR(4)→Q
+0→ʟLWR(21)
+Goto D
+Lbl GC
+Goto R
 Lbl R
 DelVar ʟLWV
 DelVar ʟLWE
@@ -621,6 +787,8 @@ DelVar ʟLWN
 DelVar ʟLWS
 DelVar ʟLWU
 DelVar ʟLWQ
+DelVar ʟLWM
+DelVar ʟMT2
 Return
 """ % {
     "SETUP": SETUP.strip(), "BUILD": BUILD.strip(), "DECODE": DECODE.strip(),
@@ -629,7 +797,7 @@ Return
     "LP": d1("int(L/2)"), "N1": d1("N"), "TH": d1("θ"),
     "SS": d1("S"), "DD": d1("D"), "LL": d1("L"),
     "SIG": d1("min(9,D+O)"), "PI": d1("(ʟLWR(20)-D)"),
-    "E2": d2("E"), "E1": d1("E"), "RES": d1("min(9,ʟLWR(5)-1)"),
+    "E2": d2("E"), "E1": d1("E"), "B29": d2("ʟLWR(29)"), "RES": d1("min(9,ʟLWR(5)-1)"),
     "FCT": 'sub("-4-3-2-1 0+1+2+3+4",2F+9+(F=0),2-(F=0))',
     "NEED1": NEEDP % 1, "NEED2": NEEDP % 2,
 }
@@ -639,9 +807,11 @@ N = []  # main program pieces
 
 N.append(menu("0", "MIDTERM 2  CHEM 105", [
     ("SN+LP ► SHAPE SOLVER", "S"), ("LEWIS SOLVER", "L"),
-    ("VSEPR & HYBRID ►", "V"), ("σ π BONDS & MO ►", "M"),
-    ("BANDS & CONDUCTION ►", "B"), ("MORE ►", "X"), ("QUIT", "Q")]))
-N.append("Lbl S\nprgmMT2SN\nGoto 0\nLbl L\nprgmMT2LW\nGoto 0\nLbl Q\nClrHome\nStop")
+    ("COUNT IN A SAMPLE", "C"), ("VSEPR & HYBRID ►", "V"),
+    ("BONDING, MO, BANDS ►", "K"), ("MORE ►", "X"), ("QUIT", "Q")]))
+N.append(menu("K", "BONDING, MO, BANDS", [
+    ("σ π BONDS & MO ►", "M"), ("BAND THEORY ►", "B"), ("BACK", "0"), ("QUIT", "Q")]))
+N.append("Lbl S\nprgmMT2SN\nGoto 0\nLbl L\n0→W\nprgmMT2LW\nGoto 0\nLbl C\n1234→W\nprgmMT2LW\nGoto 0\nLbl Q\nClrHome\nStop")
 N.append(menu("X", "MORE", [
     ("POLYATOMIC IONS ►", "A"), ("ISOMERS ►", "I"), ("ORGANIC GROUPS ►", "O"),
     ("FC & LEWIS RULES ►", "F"), ("THEORY COMPARE ►", "T"),
@@ -701,7 +871,7 @@ N.append(pages("V5", "V", [
 N.append(menu("M", "σ π BONDS & MO THEORY", [
     ("SIGMA VS PI", "M1"), ("ANTIBONDING & NODES", "M2"), ("MO FILL ORDER", "M3"),
     ("BOND ORDER & MAGNETISM", "M4"), ("MO EXAMPLES", "M5"),
-    ("BACK", "0"), ("QUIT", "Q")]))
+    ("BACK", "K"), ("QUIT", "Q")]))
 N.append(pages("M1", "M", [
     "σ (SIGMA) BOND", "END-ON (HEAD-TO-HEAD)", "  OVERLAP ON THE BOND AXIS",
     "e⁻ DENSITY ON THE AXIS,", "  BETWEEN THE NUCLEI", "FROM s+s, s+p, p+p END-ON,",
@@ -751,7 +921,7 @@ N.append(pages("M5", "M", [
 # bands
 N.append(menu("B", "BAND THEORY", [
     ("BAND BASICS", "B1"), ("GAP & CONDUCTIVITY", "B2"), ("TEMPERATURE & LIGHT", "B3"),
-    ("N-TYPE DOPING", "B4"), ("P-TYPE DOPING", "B5"), ("BACK", "0"), ("QUIT", "Q")]))
+    ("N-TYPE DOPING", "B4"), ("P-TYPE DOPING", "B5"), ("BACK", "K"), ("QUIT", "Q")]))
 N.append(pages("B1", "B", [
     "BAND THEORY = MO THEORY", "  FOR A WHOLE SOLID", "N ATOMIC ORBITALS ► N MOs",
     "HUGE N ► MOs MERGE INTO", "  CONTINUOUS BANDS", "VALENCE BAND: FILLED",
@@ -1010,6 +1180,11 @@ HELP = [
     ["OCTET: 8 e⁻ AROUND AN ATOM", "  EXPANDED: OVER 8", "  (ONLY PERIOD 3 AND UP)",
      "  INCOMPLETE: UNDER 8", "  (H, Be, B, Al)"],
     ["POLAR: CHARGE IS LOPSIDED", "  (UNEVEN SHAPE OR MIXED", "  OUTER ATOMS)"],
+    ["SAMPLE COUNTS:", "MOLAR MASS = GRAMS IN 1", "  MOLE (ATOM MASSES ADDED)",
+     "MOLES = GRAMS / MOLAR MASS", "MOLECULES = MOLES ×", "  6.022ᴇ23 (AVOGADRO)",
+     "BONDING e⁻ = 2 PER LINE", "  (DOUBLE BOND = 4)"],
+    ["LONE-PAIR e⁻ = 2 PER DOT", "  PAIR (NOT IN BONDS)", "VALENCE e⁻ = BONDING +",
+     "  LONE-PAIR e⁻"],
     ["OTHER RESONANCE FORMS: #", "  OF OTHER EQUALLY GOOD", "  DRAWINGS (SAME ATOMS,",
      "  DOUBLE BOND MOVED)", "  0 = ONLY ONE DRAWING", "  REAL MOLECULE = AVERAGE"],
 ]

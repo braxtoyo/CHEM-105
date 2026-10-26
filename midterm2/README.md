@@ -7,6 +7,9 @@ Every screen shows 9 lines plus an ENTER=NEXT / ENTER=BACK footer, so pages neve
 Both solvers end with a "WHAT DOES IT MEAN?" option (MT2H) that explains every result in plain words.
 
 - SN+LP ► SHAPE SOLVER: enter steric number + lone pairs → electron geometry, shape, angle, hybridization, examples, polarity.
+- COUNT IN A SAMPLE: type a formula (KRF2), pick the unit (g, mg, kg, μg, mol, or # of molecules), type the amount.
+  Shows molar mass, moles, molecules, atoms, bonding e⁻, lone-pair e⁻, valence e⁻, σ and π bonds in the sample
+  (4 sig figs) plus the per-molecule counts. Flags when an octet-only drawing would give a different answer.
 - LEWIS SOLVER: type a formula in CAPS (SO4, XEF4, HNO3). The charge can go right in the formula
   (NH4+, SO4-2, NO3-) or at the CHARGE prompt (-2, 2-, +, or 0). Single central atom only.
   Picks the central atom and bonds by formal charge + electronegativity, shows lone pairs, FC,
